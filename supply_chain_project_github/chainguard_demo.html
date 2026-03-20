@@ -1,0 +1,3792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chainguard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    :root {
+      --bg: #070B14;
+      --surface: #0D1525;
+      --surface2: #131D30;
+      --surface3: #1A2840;
+      --border: rgba(255, 255, 255, 0.07);
+      --border2: rgba(255, 255, 255, 0.13);
+      --text: #F0F4FF;
+      --text-muted: #7A8BA8;
+      --text-dim: #4A5A72;
+      --accent: #00D4AA;
+      --accent2: #6366F1;
+      --accent3: #F59E0B;
+      --danger: #EF4444;
+      --warning: #F97316;
+      --success: #22C55E;
+      --info: #38BDF8;
+      --r: 12px;
+      --rlg: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(0, 212, 170, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 170, 0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 232px;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      z-index: 100
+    }
+
+    .logo-area {
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--accent);
+      letter-spacing: -0.5px
+    }
+
+    .logo span {
+      color: var(--text-muted);
+      font-weight: 400
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px
+    }
+
+    .nav {
+      flex: 1;
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      overflow-y: auto
+    }
+
+    .nav-sec {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 10px 8px 3px
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all .18s;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      position: relative;
+      user-select: none
+    }
+
+    .nav-item:hover {
+      background: var(--surface2);
+      color: var(--text)
+    }
+
+    .nav-item.active {
+      background: rgba(0, 212, 170, 0.11);
+      color: var(--accent)
+    }
+
+    .nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      bottom: 20%;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 0 3px 3px 0
+    }
+
+    .nav-icon {
+      font-size: 15px;
+      width: 20px;
+      text-align: center
+    }
+
+    .nbadge {
+      margin-left: auto;
+      background: var(--warning);
+      color: #000;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .sidebar-footer {
+      padding: 14px 16px;
+      border-top: 1px solid var(--border)
+    }
+
+    .pulse-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--surface2);
+      border-radius: var(--r);
+      border: 1px solid var(--border)
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--danger);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+      flex-shrink: 0
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, .4)
+      }
+
+      50% {
+        box-shadow: 0 0 0 7px rgba(239, 68, 68, 0)
+      }
+    }
+
+    .pulse-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35
+    }
+
+    .pulse-text strong {
+      color: var(--text);
+      display: block;
+      font-size: 12px
+    }
+
+    /* TOPBAR */
+    .main {
+      margin-left: 232px;
+      min-height: 100vh;
+      position: relative;
+      z-index: 1
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(7, 11, 20, .92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      padding: 13px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700
+    }
+
+    .tbadge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 12px;
+      color: var(--text-muted)
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%
+    }
+
+    /* PAGES */
+    .page {
+      display: none;
+      padding: 24px 28px;
+      animation: fadeUp .3s ease
+    }
+
+    .page.active {
+      display: block
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px
+    }
+
+    .scard {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--rlg);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s
+    }
+
+    .scard:hover {
+      border-color: var(--border2);
+      transform: translateY(-1px)
+    }
+
+    .scard::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--ca, var(--accent))
+    }
+
+    .scard.d {
+      --ca: var(--danger)
+    }
+
+    .scard.w {
+      --ca: var(--warning)
+    }
+
+    .scard.i {
+      --ca: var(--info)
+    }
+
+    .scard.s {
+      --ca: var(--success)
+    }
+
+    .scard.p {
+      --ca: var(--accent2)
+    }
+
+    .slabel {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 6px
+    }
+
+    .sval {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1
+    }
+
+    .ssub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 5px
+    }
+
+    .ssub.up {
+      color: var(--danger)
+    }
+
+    .ssub.dn {
+      color: var(--success)
+    }
+
+    /* GRID */
+    .g2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px
+    }
+
+    .g3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 18px
+    }
+
+    .g64 {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 18px;
+      margin-bottom: 18px
+    }
+
+    .g46 {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 18px;
+      margin-bottom: 18px
+    }
+
+    /* CARD */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--rlg);
+      padding: 22px
+    }
+
+    .ch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
+
+    .ct {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700
+    }
+
+    .csub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px
+    }
+
+    .ca {
+      font-size: 12px;
+      color: var(--accent);
+      cursor: pointer;
+      padding: 4px 10px;
+      background: rgba(0, 212, 170, .08);
+      border-radius: 6px;
+      border: 1px solid rgba(0, 212, 170, .2)
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 100px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: .2px;
+      font-family: 'JetBrains Mono', monospace
+    }
+
+    .bc {
+      background: rgba(239, 68, 68, .15);
+      color: #FCA5A5;
+      border: 1px solid rgba(239, 68, 68, .3)
+    }
+
+    .bh {
+      background: rgba(249, 115, 22, .15);
+      color: #FDBA74;
+      border: 1px solid rgba(249, 115, 22, .3)
+    }
+
+    .bm {
+      background: rgba(245, 158, 11, .15);
+      color: #FCD34D;
+      border: 1px solid rgba(245, 158, 11, .3)
+    }
+
+    .bl {
+      background: rgba(34, 197, 94, .15);
+      color: #86EFAC;
+      border: 1px solid rgba(34, 197, 94, .3)
+    }
+
+    /* TABLE */
+    .tw {
+      overflow-x: auto
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--border)
+    }
+
+    th {
+      text-align: left;
+      padding: 9px 13px;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--text-dim);
+      white-space: nowrap
+    }
+
+    td {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: middle
+    }
+
+    tr:last-child td {
+      border-bottom: none
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, .018)
+    }
+
+    .tname {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px
+    }
+
+    /* PROGRESS */
+    .pw {
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .pb {
+      flex: 1;
+      height: 4px;
+      background: var(--surface3);
+      border-radius: 2px;
+      overflow: hidden;
+      min-width: 55px
+    }
+
+    .pf {
+      height: 100%;
+      border-radius: 2px;
+      transition: width .6s ease
+    }
+
+    .pv {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      min-width: 32px;
+      text-align: right
+    }
+
+    /* ALERT */
+    .alert {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 15px;
+      background: rgba(249, 115, 22, .08);
+      border: 1px solid rgba(249, 115, 22, .3);
+      border-radius: 9px;
+      margin-bottom: 18px;
+      font-size: 12.5px;
+      color: #FDBA74
+    }
+
+    /* TIMELINE */
+    .tl {
+      display: flex;
+      flex-direction: column
+    }
+
+    .tli {
+      display: flex;
+      gap: 13px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .tli:last-child {
+      border-bottom: none
+    }
+
+    .tldot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0
+    }
+
+    .tltitle {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 3px
+    }
+
+    .tlmeta {
+      font-size: 11px;
+      color: var(--text-dim);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    /* DIS CARDS */
+    .dgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 12px;
+      max-height: 420px;
+      overflow-y: auto
+    }
+
+    .dcard {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 14px;
+      transition: border-color .2s
+    }
+
+    .dcard:hover {
+      border-color: var(--border2)
+    }
+
+    .dch {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px
+    }
+
+    .dfactor {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text)
+    }
+
+    .dmeta {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 3px
+    }
+
+    .dimp {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 7px 0 4px
+    }
+
+    .dtags {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 7px
+    }
+
+    .dtag {
+      font-size: 10px;
+      padding: 2px 7px;
+      background: var(--surface3);
+      color: var(--text-dim);
+      border-radius: 4px
+    }
+
+    /* FEAT IMPORTANCE */
+    .fr {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .fr:last-child {
+      border-bottom: none
+    }
+
+    .fn {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      width: 170px;
+      flex-shrink: 0
+    }
+
+    .fbw {
+      flex: 1;
+      height: 5px;
+      background: var(--surface3);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .fbf {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      border-radius: 3px
+    }
+
+    .fpct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: var(--text);
+      min-width: 40px;
+      text-align: right
+    }
+
+    /* PREDICT FORM */
+    .fgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 5px
+    }
+
+    .fl {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .6px
+    }
+
+    .sr {
+      display: flex;
+      align-items: center;
+      gap: 11px
+    }
+
+    input[type=range] {
+      flex: 1;
+      height: 4px;
+      accent-color: var(--accent);
+      background: var(--surface3);
+      border-radius: 2px;
+      outline: none;
+      border: none;
+      cursor: pointer
+    }
+
+    .sv {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: var(--accent);
+      min-width: 35px;
+      text-align: right
+    }
+
+    input[type=number],
+    select {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      padding: 7px 11px;
+      font-size: 12.5px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color .2s
+    }
+
+    input[type=number]:focus,
+    select:focus {
+      border-color: var(--accent)
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 11px 26px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Syne', sans-serif
+    }
+
+    .btn:hover {
+      background: #00F0C0;
+      transform: translateY(-1px)
+    }
+
+    .pres {
+      background: var(--surface2);
+      border-radius: var(--r);
+      padding: 20px;
+      border: 1px solid var(--border);
+      margin-top: 18px;
+      display: none
+    }
+
+    .pres.show {
+      display: block;
+      animation: fadeUp .3s ease
+    }
+
+    .pgrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 14px
+    }
+
+    .pitem {
+      text-align: center
+    }
+
+    .plabel {
+      font-size: 10.5px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .7px
+    }
+
+    .pval {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 4px 0
+    }
+
+    .recbox {
+      background: rgba(0, 212, 170, .06);
+      border: 1px solid rgba(0, 212, 170, .2);
+      border-radius: 7px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6
+    }
+
+    .recbox strong {
+      color: var(--accent)
+    }
+
+    .sec {
+      font-family: 'Syne', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .sec::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border)
+    }
+
+    /* FILTER BAR */
+    .fbar {
+      display: flex;
+      gap: 9px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .fb {
+      padding: 6px 14px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      transition: all .18s;
+      user-select: none
+    }
+
+    .fb:hover {
+      border-color: var(--border2);
+      color: var(--text)
+    }
+
+    .fb.active {
+      background: rgba(0, 212, 170, .1);
+      border-color: rgba(0, 212, 170, .4);
+      color: var(--accent)
+    }
+
+    /* METRIC BOX */
+    .mbox {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 13px;
+      text-align: center
+    }
+
+    .mbl {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .7px
+    }
+
+    .mbv {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 4px 0 0
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface3);
+      border-radius: 3px
+    }
+
+    /* MODAL */
+    .movl {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .72);
+      backdrop-filter: blur(5px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px
+    }
+
+    .movl.show {
+      display: flex
+    }
+
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 22px;
+      padding: 28px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      animation: fadeUp .3s ease
+    }
+
+    .mh {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px
+    }
+
+    .mc {
+      cursor: pointer;
+      color: var(--text-dim);
+      font-size: 18px;
+      padding: 3px
+    }
+
+    .mc:hover {
+      color: var(--text)
+    }
+
+    .mg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px
+    }
+
+    /* MAP PAGE */
+    #map-container {
+      border-radius: var(--rlg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative
+    }
+
+    #supplyMap {
+      height: 520px;
+      width: 100%;
+      background: #0a1628
+    }
+
+    .leaflet-container {
+      background: #0a1628 !important;
+      font-family: 'DM Sans', sans-serif
+    }
+
+    .leaflet-tile {
+      filter: brightness(0.55) saturate(0.4) hue-rotate(170deg)
+    }
+
+    .map-popup .leaflet-popup-content-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .6);
+      padding: 0
+    }
+
+    .map-popup .leaflet-popup-tip {
+      background: var(--surface)
+    }
+
+    .map-popup .leaflet-popup-content {
+      margin: 0;
+      min-width: 200px
+    }
+
+    .popup-inner {
+      padding: 14px 16px
+    }
+
+    .popup-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px
+    }
+
+    .popup-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 10px
+    }
+
+    .popup-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px
+    }
+
+    .popup-metric {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 6px 8px;
+      text-align: center
+    }
+
+    .popup-metric .pm-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .popup-metric .pm-lbl {
+      font-size: 9.5px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-top: 1px
+    }
+
+    .map-legend {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(13, 21, 37, .9);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      backdrop-filter: blur(8px)
+    }
+
+    .legend-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 5px;
+      font-size: 11.5px;
+      color: var(--text-muted)
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .map-controls {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .map-ctrl-btn {
+      background: rgba(13, 21, 37, .9);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .18s;
+      backdrop-filter: blur(8px);
+      white-space: nowrap
+    }
+
+    .map-ctrl-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+
+    .map-ctrl-btn.active {
+      background: rgba(0, 212, 170, .12);
+      border-color: rgba(0, 212, 170, .4);
+      color: var(--accent)
+    }
+
+    .live-feed {
+      max-height: 320px;
+      overflow-y: auto
+    }
+
+    .feed-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      animation: feedIn .4s ease
+    }
+
+    .feed-item:last-child {
+      border-bottom: none
+    }
+
+    @keyframes feedIn {
+      from {
+        opacity: 0;
+        transform: translateX(-8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    .feed-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 4px;
+      flex-shrink: 0
+    }
+
+    .feed-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5
+    }
+
+    .feed-text strong {
+      color: var(--text)
+    }
+
+    .feed-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 2px
+    }
+
+    .shipment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 250px;
+      overflow-y: auto
+    }
+
+    .ship-item {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color .18s
+    }
+
+    .ship-item:hover {
+      border-color: var(--border2)
+    }
+
+    .ship-name {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text)
+    }
+
+    .ship-route {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 2px
+    }
+
+    .ship-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 5px
+    }
+
+    .ss-moving {
+      background: rgba(34, 197, 94, .12);
+      color: #86EFAC;
+      border: 1px solid rgba(34, 197, 94, .25)
+    }
+
+    .ss-delayed {
+      background: rgba(249, 115, 22, .12);
+      color: #FDBA74;
+      border: 1px solid rgba(249, 115, 22, .25)
+    }
+
+    .ss-stopped {
+      background: rgba(239, 68, 68, .12);
+      color: #FCA5A5;
+      border: 1px solid rgba(239, 68, 68, .25)
+    }
+
+    .map-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px
+    }
+
+    .mstat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .mstat::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--ms-c, var(--accent))
+    }
+
+    .mstat.d {
+      --ms-c: var(--danger)
+    }
+
+    .mstat.w {
+      --ms-c: var(--warning)
+    }
+
+    .mstat.s {
+      --ms-c: var(--success)
+    }
+
+    .mstat.i {
+      --ms-c: var(--info)
+    }
+
+    .ms-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 2px
+    }
+
+    .ms-lbl {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .6px
+    }
+
+    .tracking-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--success);
+      background: rgba(34, 197, 94, .08);
+      border: 1px solid rgba(34, 197, 94, .2);
+      border-radius: 6px;
+      padding: 4px 10px
+    }
+
+    .tracking-pulse::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite
+    }
+
+    /* AI COPILOT CHAT */
+    .ai-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+
+    .ai-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .ai-panel {
+      position: fixed;
+      bottom: 90px;
+      right: 28px;
+      width: 380px;
+      height: 520px;
+      background: rgba(13, 21, 37, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .ai-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .ai-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .ai-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .ai-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .ai-status {
+      font-size: 11px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ai-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .ai-body {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ai-msg {
+      max-width: 85%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .ai-msg.bot {
+      background: var(--surface2);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      color: var(--text);
+    }
+
+    .ai-msg.user {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+      color: #fff;
+    }
+
+    .ai-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .ai-chip {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #A5B4FC;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .ai-chip:hover {
+      background: rgba(99, 102, 241, 0.3);
+      color: #fff;
+    }
+
+    .ai-input-area {
+      padding: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .ai-input {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 20px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .ai-input:focus {
+      border-color: #6366F1;
+    }
+
+    .ai-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .ai-send:hover {
+      background: #6366F1;
+      color: #fff;
+    }
+
+    .typing-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--text-muted);
+      border-radius: 50%;
+      margin: 0 2px;
+      animation: typing 1.4s infinite ease-in-out both;
+    }
+
+    .typing-dot:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .typing-dot:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes typing {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo-area">
+      <div class="logo">Chain<span>Guard</span></div>
+      <div class="logo-sub">Risk Intelligence Platform</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-sec">Overview</div>
+      <div class="nav-item active" onclick="nav('dashboard',this)"><span class="nav-icon">⬡</span>Dashboard</div>
+      <div class="nav-sec">Analysis</div>
+      <div class="nav-item" onclick="nav('suppliers',this)"><span class="nav-icon">◈</span>Suppliers<span
+          class="nbadge">18</span></div>
+      <div class="nav-item" onclick="nav('disruptions',this)"><span class="nav-icon">⚡</span>Disruptions</div>
+      <div class="nav-item" onclick="nav('timeseries',this)"><span class="nav-icon">〜</span>Risk Timeline</div>
+      <div class="nav-sec">Intelligence</div>
+      <div class="nav-item" onclick="nav('predict',this)"><span class="nav-icon">◎</span>ML Predictor</div>
+      <div class="nav-item" onclick="nav('scenario',this)"><span class="nav-icon">⚄</span>Scenario Engine</div>
+      <div class="nav-item" onclick="nav('india',this)"><span class="nav-icon">🇮🇳</span>India Intelligence</div>
+      <div class="nav-item" onclick="nav('alerts',this)"><span class="nav-icon">🔔</span>Smart Alert System</div>
+      <div class="nav-item" onclick="nav('analytics',this)"><span class="nav-icon">◫</span>Analytics</div>
+      <div class="nav-item" onclick="nav('tracker',this)"><span class="nav-icon">📍</span>Live Tracker<span
+          class="tracking-pulse" style="font-size:9px;padding:2px 6px;margin-left:auto">LIVE</span></div>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="pulse-box">
+        <div class="pulse-dot"></div>
+        <div class="pulse-text"><strong>Risk Index: 95.0%</strong>18 High-Risk Suppliers Active</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="topbar">
+      <div class="page-title" id="ptitle">Dashboard</div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="tbadge">
+          <div class="dot" style="background:var(--warning)"></div>18 High Risk Suppliers
+        </div>
+        <div class="tbadge">01 Mar 2026</div>
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="alert">⚠ 18 supplier(s) in HIGH risk zone · Total at-risk exposure: ₹150.98 Cr · Immediate action
+        recommended</div>
+      <div class="stats">
+        <div class="scard d">
+          <div class="slabel">High Risk Suppliers</div>
+          <div class="sval">18</div>
+          <div class="ssub up">60% of total</div>
+        </div>
+        <div class="scard w">
+          <div class="slabel">Active Disruptions</div>
+          <div class="sval">33</div>
+          <div class="ssub">140 YTD incidents</div>
+        </div>
+        <div class="scard i">
+          <div class="slabel">At-Risk Value</div>
+          <div class="sval">₹150.98Cr</div>
+          <div class="ssub up">64.8% of portfolio</div>
+        </div>
+        <div class="scard s">
+          <div class="slabel">Avg Risk Score</div>
+          <div class="sval">31.0%</div>
+          <div class="ssub">Overall Index: 95.0%</div>
+        </div>
+      </div>
+      <div class="g64">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Supply Chain Risk Index</div>
+              <div class="csub">30-day daily composite score</div>
+            </div>
+            <div style="display:flex;gap:7px"><span class="fb active" onclick="switchTS(30,this)">30D</span><span
+                class="fb" onclick="switchTS(90,this)">90D</span></div>
+          </div>
+          <div style="position: relative; height: 90px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="riChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Supplier Risk Distribution</div>
+              <div class="csub">By risk classification</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:18px;height:190px">
+            <div style="width:130px;height:130px;flex-shrink:0">
+              <div style="position: relative; height: 100%; width: 100%;">
+                <div style="position: relative; height: 100%; width: 100%;"><canvas id="donutC"></canvas></div>
+              </div>
+            </div>
+            <div id="dlegend"></div>
+          </div>
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Top Risk Suppliers</div>
+              <div class="csub">Ranked by composite risk score</div>
+            </div><span class="ca" onclick="nav('suppliers',document.querySelectorAll('.nav-item')[1])">View All</span>
+          </div>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>Supplier</th>
+                  <th>Risk</th>
+                  <th>Score</th>
+                  <th>Value (₹)</th>
+                </tr>
+              </thead>
+              <tbody id="trBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Recent Disruptions</div>
+              <div class="csub">Latest tracked incidents</div>
+            </div><span class="ca" onclick="nav('disruptions',document.querySelectorAll('.nav-item')[2])">View
+              All</span>
+          </div>
+          <div class="tl" id="tlBody"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPLIERS -->
+    <div class="page" id="page-suppliers">
+      <div class="fbar" id="sfbar">
+        <div class="fb active" onclick="sfilt('all',this)">All (30)</div>
+        <div class="fb" onclick="sfilt('High',this)">🟠 High (18)</div>
+        <div class="fb" onclick="sfilt('Medium',this)">🟡 Medium (11)</div>
+        <div class="fb" onclick="sfilt('Low',this)">🟢 Low (1)</div>
+        <select id="catSel" onchange="renderST()" style="margin-left:auto">
+          <option value="">All Categories</option>
+          <option>Agri-Products</option>
+          <option>Auto Components</option>
+          <option>Chemicals</option>
+          <option>Electronics</option>
+          <option>Energy</option>
+          <option>IT Services</option>
+          <option>Logistics</option>
+          <option>Packaging</option>
+          <option>Pharma</option>
+          <option>Raw Materials</option>
+        </select>
+      </div>
+      <div class="card">
+        <div class="tw">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Supplier</th>
+                <th>Category</th>
+                <th>Region</th>
+                <th>Risk</th>
+                <th>Risk Score</th>
+                <th>Reliability</th>
+                <th>Financial Health</th>
+                <th>Contract Value</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="stBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISRUPTIONS -->
+    <div class="page" id="page-disruptions">
+      <div class="g3" style="margin-bottom:18px">
+        <div class="scard d">
+          <div class="slabel">Critical Events</div>
+          <div class="sval">21</div>
+        </div>
+        <div class="scard w">
+          <div class="slabel">Avg Financial Impact</div>
+          <div class="sval">₹14.0L</div>
+        </div>
+        <div class="scard i">
+          <div class="slabel">Avg Recovery Days</div>
+          <div class="sval">19.4d</div>
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Disruptions by Risk Factor</div>
+          </div>
+          <div style="position: relative; height: 220px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="rfChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Monthly Disruption Trend</div>
+          </div>
+          <div style="position: relative; height: 220px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="mdChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch">
+          <div>
+            <div class="ct">All Disruption Events</div>
+            <div class="csub">Sorted by date — most recent first</div>
+          </div>
+          <select id="sevSel" onchange="renderDG()">
+            <option value="">All Severities</option>
+            <option>Critical</option>
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+          </select>
+        </div>
+        <div class="dgrid" id="dgrid"></div>
+      </div>
+    </div>
+
+    <!-- TIMESERIES -->
+    <div class="page" id="page-timeseries">
+      <div class="g3" style="margin-bottom:18px">
+        <div class="scard d">
+          <div class="slabel">Current Risk Index</div>
+          <div class="sval">95.0%</div>
+          <div class="ssub">Live reading — Critical zone</div>
+        </div>
+        <div class="scard w">
+          <div class="slabel">Peak (Last 90 Days)</div>
+          <div class="sval">95.8%</div>
+        </div>
+        <div class="scard p">
+          <div class="slabel">Avg Delivery Delay</div>
+          <div class="sval">7.2 days</div>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:18px">
+        <div class="ch">
+          <div>
+            <div class="ct">Risk Index — Full 400-Day Timeline</div>
+            <div class="csub">Daily composite supply chain risk score</div>
+          </div>
+        </div>
+        <div style="position: relative; height: 100px; width: 100%;">
+          <div style="position: relative; height: 100%; width: 100%;"><canvas id="fullTS"></canvas></div>
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Daily Supplier Disruptions</div>
+          </div>
+          <div style="position: relative; height: 170px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="dcChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Avg Delivery Delay Trend (Days)</div>
+          </div>
+          <div style="position: relative; height: 170px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="ddChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREDICT -->
+    <div class="page" id="page-predict">
+      <div class="g46" style="align-items:start">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">ML Risk Predictor</div>
+              <div class="csub">RandomForest + GradientBoosting ensemble</div>
+            </div>
+          </div>
+          <div class="fgrid">
+            <div class="fg"><label class="fl">Reliability Score</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.01" value="0.45" id="s1"
+                  oninput="sv('v1',this.value)"><span class="sv" id="v1">0.45</span></div>
+            </div>
+            <div class="fg"><label class="fl">Financial Health</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.01" value="0.38" id="s2"
+                  oninput="sv('v2',this.value)"><span class="sv" id="v2">0.38</span></div>
+            </div>
+            <div class="fg"><label class="fl">Geopolitical Risk</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.01" value="0.72" id="s3"
+                  oninput="sv('v3',this.value)"><span class="sv" id="v3">0.72</span></div>
+            </div>
+            <div class="fg"><label class="fl">Delivery Performance</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.01" value="0.51" id="s4"
+                  oninput="sv('v4',this.value)"><span class="sv" id="v4">0.51</span></div>
+            </div>
+            <div class="fg"><label class="fl">Quality Score</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.01" value="0.60" id="s5"
+                  oninput="sv('v5',this.value)"><span class="sv" id="v5">0.60</span></div>
+            </div>
+            <div class="fg"><label class="fl">Years Relationship</label><input type="number" id="s6" value="2" min="1"
+                max="30" style="width:100%"></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+            <button class="btn" onclick="runPred()">▶ Run Prediction</button>
+            <span style="font-size:11.5px;color:var(--text-dim)">Powered by scikit-learn</span>
+          </div>
+          <div class="pres show" id="pres">
+            <div class="sec">Prediction Output</div>
+            <div class="pgrid">
+              <div class="pitem">
+                <div class="plabel">Failure Probability</div>
+                <div class="pval" style="color:var(--warning)" id="pp">94.0%</div>
+              </div>
+              <div class="pitem">
+                <div class="plabel">Risk Score</div>
+                <div class="pval" style="color:var(--warning)" id="ps">42.0%</div>
+              </div>
+              <div class="pitem">
+                <div class="plabel">Risk Level</div>
+                <div class="pval" id="pl"><span class="badge bh">High</span></div>
+              </div>
+            </div>
+            <div class="recbox"><strong>💡 Recommendation: </strong><span id="pr">High priority: Diversify supplier
+                base, increase safety stock levels, and conduct monthly performance reviews.</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Feature Importance</div>
+              <div class="csub">Random Forest model weights</div>
+            </div>
+          </div>
+          <div id="fi"></div>
+          <div style="margin-top:20px">
+            <div class="ct" style="font-size:12.5px;margin-bottom:12px">Risk Score Distribution</div>
+            <div style="position: relative; height: 140px; width: 100%;">
+              <div style="position: relative; height: 100%; width: 100%;"><canvas id="rdChart"></canvas></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SCENARIO ENGINE -->
+    <div class="page" id="page-scenario">
+      <div class="g46" style="align-items:start">
+        <!-- What-If Control Panel -->
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">What-If Simulation Engine</div>
+              <div class="csub">Simulate macro-economic shocks & supply chain strains</div>
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fg"><label class="fl">Fuel & Energy Costs (+%)</label>
+              <div class="sr"><input type="range" min="0" max="100" step="5" value="0" id="sim1"
+                  oninput="sv('simV1',this.value)"><span class="sv" id="simV1">0</span></div>
+            </div>
+            <div class="fg"><label class="fl">Global Tariff Rate (+%)</label>
+              <div class="sr"><input type="range" min="0" max="50" step="1" value="0" id="sim2"
+                  oninput="sv('simV2',this.value)"><span class="sv" id="simV2">0</span></div>
+            </div>
+            <div class="fg"><label class="fl">Labor Unrest Probability</label>
+              <div class="sr"><input type="range" min="0" max="1" step="0.05" value="0.1" id="sim3"
+                  oninput="sv('simV3',this.value)"><span class="sv" id="simV3">0.10</span></div>
+            </div>
+            <div class="fg"><label class="fl">Port Congestion Delay (Days)</label>
+              <div class="sr"><input type="range" min="0" max="30" step="1" value="3" id="sim4"
+                  oninput="sv('simV4',this.value)"><span class="sv" id="simV4">3</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+            <button class="btn" onclick="runSimulation()" style="background:linear-gradient(135deg, #F59E0B, #EA580C)">⚡
+              Run Scenario Simulation</button>
+          </div>
+
+          <!-- Auto Decision Recommendation Output -->
+          <div class="pres" id="simDecisions"
+            style="margin-top:20px; border-color:rgba(234,88,12,0.3); background:rgba(234,88,12,0.05)">
+            <div class="sec" style="color:#F59E0B">Auto Decision Recommendations</div>
+            <ul style="font-size:12px; padding-left:16px; margin-top:10px; line-height:1.6; color:var(--text-muted)"
+              id="simRecList">
+              <li>Awaiting simulation execution...</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cost Impact Prediction Dashboard -->
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Cost Impact Prediction</div>
+              <div class="csub">Financial exposure modeling based on scenario</div>
+            </div>
+          </div>
+
+          <div class="stats" style="grid-template-columns: 1fr 1fr; margin-bottom:18px;">
+            <div class="scard d" style="padding:14px;">
+              <div class="slabel">Projected Financial Loss</div>
+              <div class="sval" id="simLoss">₹0.0L</div>
+              <div class="ssub" id="simPct">+0.0% vs Baseline</div>
+            </div>
+            <div class="scard i" style="padding:14px;">
+              <div class="slabel">Supplier Failure Count</div>
+              <div class="sval" id="simFail">0</div>
+              <div class="ssub">Simulated bankruptcies/defaults</div>
+            </div>
+          </div>
+
+          <div class="ct" style="font-size:12.5px;margin-bottom:12px">Impact by Industry Category</div>
+          <div style="position: relative; height: 180px; width: 100%;"><canvas id="simImpactChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- INDIA INTELLIGENCE -->
+    <div class="page" id="page-india">
+      <div class="g46" style="align-items:start">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">India-Specific Risk & AI Early Warning</div>
+              <div class="csub">Predict disruption 7–30 days early based on local telemetry</div>
+            </div>
+          </div>
+
+          <div class="stats" style="grid-template-columns: 1fr 1fr;">
+            <div class="scard w" style="padding:14px;">
+              <div class="slabel">Monsoon Risk (Next 14 Days)</div>
+              <div class="sval">Severe</div>
+              <div class="ssub up">Red Alert: Maharashtra coast</div>
+            </div>
+            <div class="scard d" style="padding:14px;">
+              <div class="slabel">Port Delay Prediction</div>
+              <div class="sval">+6 Days</div>
+              <div class="ssub up" style="color:var(--danger)">JNPT & Mundra capacity at 98%</div>
+            </div>
+          </div>
+          <div class="stats" style="grid-template-columns: 1fr 1fr; margin-bottom:18px;">
+            <div class="scard i" style="padding:14px;">
+              <div class="slabel">Festival Demand Spike</div>
+              <div class="sval">Diwali Peak</div>
+              <div class="ssub">+45% projected logistics constraint</div>
+            </div>
+            <div class="scard s" style="padding:14px;">
+              <div class="slabel">Highway Congestion Risk</div>
+              <div class="sval">NH-48 Alert</div>
+              <div class="ssub up" style="color:var(--danger)">Toll delays expect +4hrs</div>
+            </div>
+          </div>
+
+          <div class="ct" style="font-size:12.5px;margin-bottom:12px">AI 30-Day Disruption Probability Forecast</div>
+          <div style="position: relative; height: 180px; width: 100%;"><canvas id="indiaAiChart"></canvas></div>
+        </div>
+
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">AI Early Warning Feed</div>
+              <div class="csub">7-30 Day Outlook Insights</div>
+            </div>
+          </div>
+
+          <div class="tl">
+            <div class="tli">
+              <div class="tldot" style="background:var(--danger)"></div>
+              <div>
+                <div class="tltitle">Monsoon Flooding Risk - Mumbai Logistics Hub</div>
+                <div class="tlmeta"><span>Lead Time: 8 Days</span><span>Probability: 86%</span><span
+                    style="color:var(--danger)">High Impact</span></div>
+              </div>
+            </div>
+
+            <div class="tli">
+              <div class="tldot" style="background:var(--warning)"></div>
+              <div>
+                <div class="tltitle">Diwali Logistics Capacity Crunch</div>
+                <div class="tlmeta"><span>Lead Time: 28 Days</span><span>Probability: 95%</span><span
+                    style="color:var(--warning)">Medium Impact</span></div>
+              </div>
+            </div>
+
+            <div class="tli">
+              <div class="tldot" style="background:var(--danger)"></div>
+              <div>
+                <div class="tltitle">JNPT Port Berth Congestion Spillover</div>
+                <div class="tlmeta"><span>Lead Time: 12 Days</span><span>Probability: 78%</span><span
+                    style="color:var(--danger)">High Impact</span></div>
+              </div>
+            </div>
+
+            <div class="tli">
+              <div class="tldot" style="background:var(--info)"></div>
+              <div>
+                <div class="tltitle">NH-48 Toll Infrastructure Maintenance</div>
+                <div class="tlmeta"><span>Lead Time: 15 Days</span><span>Probability: 62%</span><span
+                    style="color:var(--info)">Low Impact</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMART ALERTS -->
+    <div class="page" id="page-alerts">
+      <div class="g64" style="align-items:start">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Smart Alert Control Center</div>
+              <div class="csub">Configure multichannel disruption notifications</div>
+            </div>
+          </div>
+
+          <div class="fgrid">
+            <div class="fg" style="margin-bottom:15px">
+              <label class="fl" style="font-size:14px;color:var(--text);margin-bottom:8px">1. Select Threat
+                Trigger</label>
+              <select class="ai-input" id="alertTrigger">
+                <option>Risk Index > 75% (Critical)</option>
+                <option>Supplier ML Failure Probability > 80%</option>
+                <option>Delivery Delay > 48 Hours</option>
+                <option>Monsoon / Extreme Weather Alert</option>
+              </select>
+            </div>
+
+            <div class="fg" style="margin-bottom:15px">
+              <label class="fl" style="font-size:14px;color:var(--text);margin-bottom:8px">2. Select Notification
+                Channels</label>
+              <div style="display:flex;gap:15px;align-items:center;">
+                <label style="cursor:pointer; display:flex; align-items:center; gap:5px;"><input type="checkbox" checked
+                    id="chkDash"> Dashboard Banner</label>
+                <label style="cursor:pointer; display:flex; align-items:center; gap:5px;"><input type="checkbox" checked
+                    id="chkEmail"> Email</label>
+                <label style="cursor:pointer; display:flex; align-items:center; gap:5px;"><input type="checkbox" checked
+                    id="chkSms"> SMS / WhatsApp</label>
+              </div>
+            </div>
+
+            <div class="fg">
+              <label class="fl" style="font-size:14px;color:var(--text);margin-bottom:8px">3. Recipient
+                Information</label>
+              <input type="text" class="ai-input" id="alertContact" placeholder="manager@supply.in, +91 9876543210"
+                value="procurement_team@chainguard.in">
+            </div>
+          </div>
+
+          <div style="margin-top:25px;display:flex;gap:12px;align-items:center">
+            <button class="btn" onclick="fireTestAlert()"
+              style="background:linear-gradient(135deg, #EF4444, #B91C1C)">🔔 Trigger Test Alert</button>
+            <span style="font-size:11.5px;color:var(--text-dim)" id="alertFeedback"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Active System Alerts</div>
+              <div class="csub">Global Dashboard Notification Stream</div>
+            </div>
+          </div>
+
+          <div id="dashboardAlertStream">
+            <div class="alert">
+              <div class="pulse-dot" style="animation:none;background:var(--warning)"></div>
+              <div><strong>Auto-Alert System Online</strong><br><span
+                  style="color:var(--text-dim);font-size:11px;">Waiting for triggers...</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- COST IMPACT PREDICTION -->
+    <div class="page" id="page-cost">
+      <div class="g46" style="align-items:start">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Loss Estimation Intelligence</div>
+              <div class="csub">Dynamic financial exposure tracking from tracked vulnerabilities</div>
+            </div>
+          </div>
+
+          <div class="stats" style="grid-template-columns: 1fr 1fr;">
+            <div class="scard d" style="padding:14px;">
+              <div class="slabel">Total Projected Loss (Current Risk)</div>
+              <div class="sval">₹142.5L</div>
+              <div class="ssub up" style="color:var(--danger)">+12.4% vs last week</div>
+            </div>
+            <div class="scard i" style="padding:14px;">
+              <div class="slabel">Estimated Delay Costs</div>
+              <div class="sval">₹18.2L</div>
+              <div class="ssub">From port & route congestion</div>
+            </div>
+          </div>
+
+          <div class="ct" style="font-size:12.5px;margin:18px 0 12px">Financial Loss Prediction By Sector</div>
+          <div style="position: relative; height: 210px; width: 100%;"><canvas id="costLossChart"></canvas></div>
+        </div>
+
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Delay Cost Predictor</div>
+              <div class="csub">Analyzes transit times against penalty clauses</div>
+            </div>
+          </div>
+
+          <div class="tl">
+            <div class="tli">
+              <div class="tldot" style="background:var(--danger)"></div>
+              <div>
+                <div class="tltitle">Shipment SHP001 (Hindalco)</div>
+                <div class="tlmeta"><span style="color:var(--danger)">Predicted Cost: ₹4.2L</span><span>Demurrage & SLA
+                    Penalty</span></div>
+              </div>
+            </div>
+
+            <div class="tli">
+              <div class="tldot" style="background:var(--warning)"></div>
+              <div>
+                <div class="tltitle">JNPT Container Hold</div>
+                <div class="tlmeta"><span style="color:var(--warning)">Predicted Cost: ₹1.8L</span><span>Warehousing
+                    surge fees</span></div>
+              </div>
+            </div>
+
+            <div class="tli">
+              <div class="tldot" style="background:var(--info)"></div>
+              <div>
+                <div class="tltitle">Wipro IT Hardware Transit</div>
+                <div class="tlmeta"><span style="color:var(--info)">Protected</span><span>In-built grace period</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ct" style="font-size:12.5px;margin:18px 0 12px">Predicted Carrier Delay Costs</div>
+          <div style="position: relative; height: 160px; width: 100%;"><canvas id="costDelayChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- API INTEGRATION -->
+    <div class="page" id="page-integrations">
+      <div class="alert" style="border-left:4px solid var(--accent2)">
+        <strong>PROFESSIONAL FEATURE:</strong> API Integration Hub is active. Securely connect your supply chain
+        architecture.
+      </div>
+      <div class="g3">
+        <!-- ERP -->
+        <div class="card">
+          <div class="ch" style="margin-bottom:10px">
+            <div class="ct">ERP Systems Integration</div>
+            <span class="nbadge" style="background:var(--success);color:#fff">Active</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);margin-bottom:20px;line-height:1.5">Connect enterprise
+            resource planners to auto-ingest POs, contract values, and inventory levels.</div>
+
+          <div
+            style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:12px;background:var(--surface2);border-radius:8px">
+            <div
+              style="width:40px;height:40px;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" width="24" height="12"
+                alt="SAP"></div>
+            <div>
+              <div style="font-size:13px;font-weight:600">SAP S/4HANA</div>
+              <div style="font-size:11px;color:var(--success)">Connected (Synced 2m ago)</div>
+            </div>
+          </div>
+          <div
+            style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:12px;background:var(--surface2);border-radius:8px">
+            <div
+              style="width:40px;height:40px;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" width="28" height="8"
+                alt="Oracle"></div>
+            <div>
+              <div style="font-size:13px;font-weight:600">Oracle NetSuite</div>
+              <div style="font-size:11px;color:var(--text-dim)">Ready to connect</div>
+            </div>
+            <button class="btn" style="margin-left:auto;padding:5px 12px;font-size:11px">Connect</button>
+          </div>
+        </div>
+
+        <!-- LOGISTICS -->
+        <div class="card">
+          <div class="ch" style="margin-bottom:10px">
+            <div class="ct">Logistics Systems API</div>
+            <span class="nbadge" style="background:var(--accent2);color:#fff">Configured</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);margin-bottom:20px;line-height:1.5">Stream live GPS pings,
+            freight forwarding telemetry, and port authority data directly.</div>
+
+          <div
+            style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:12px;background:var(--surface2);border-radius:8px">
+            <div
+              style="width:40px;height:40px;background:#323232;border-radius:6px;display:flex;align-items:center;justify-content:center">
+              <div style="font-weight:700;color:#fff;font-size:10px">PROJECT44</div>
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:600">Project44 Telemetry</div>
+              <div style="font-size:11px;color:var(--success)">Webhooks Active</div>
+            </div>
+          </div>
+          <div
+            style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:12px;background:var(--surface2);border-radius:8px">
+            <div
+              style="width:40px;height:40px;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:bold;font-size:10px">
+              FLEXPORT</div>
+            <div>
+              <div style="font-size:13px;font-weight:600">Flexport API</div>
+              <div style="font-size:11px;color:var(--success)">Ocean Freight tracking synced</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXCEL -->
+        <div class="card">
+          <div class="ch" style="margin-bottom:10px">
+            <div class="ct">Manual Excel Uploads</div>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);margin-bottom:20px;line-height:1.5">Need to manually process
+            vendor lists or legacy contracts? Drop your Excel sheets here.</div>
+
+          <div
+            style="border:2px dashed var(--border2);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:120px;background:rgba(255,255,255,0.01);cursor:pointer;transition:all 0.2s">
+            <div style="font-size:24px;margin-bottom:8px">📄</div>
+            <div style="font-size:12px;color:var(--text-muted)">Drag & drop .XLSX or .CSV here</div>
+          </div>
+
+          <div style="margin-top:16px;text-align:center">
+            <button class="btn" style="width:100%">Browse Local Files</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTOMATED REPORTS -->
+    <div class="page" id="page-reports">
+      <div class="g46">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Generate & Export PDF Reports</div>
+          </div>
+          <p style="font-size:13px;color:var(--text-dim);margin-bottom:20px">Generate executive-ready PDF folios
+            summarizing supply chain friction, current value-at-risk, and AI-driven mitigation recommendations.</p>
+
+          <div class="fgrid">
+            <div class="fg">
+              <label class="fl">Report Template</label>
+              <select class="ai-input">
+                <option>Executive Risk Summary</option>
+                <option>Supplier Audit (Deep-Dive)</option>
+                <option>Financial Impact & Loss Estimation</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label class="fl">Time Filter</label>
+              <select class="ai-input">
+                <option>Last 30 Days</option>
+                <option>Last 90 Days</option>
+                <option>Year To Date</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn"
+            style="margin-top:20px;background:var(--surface2);border:1px solid var(--border);width:100%"
+            onclick="alert('Generating 14-page PDF document. Please wait...')">📄 Download PDF Report</button>
+        </div>
+
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Automated Report Scheduling</div>
+          </div>
+
+          <div
+            style="display:flex; justify-content:space-between; align-items:center; padding:16px; background:var(--surface2); border-radius:10px; margin-bottom:12px">
+            <div>
+              <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px">Weekly Risk Reports</div>
+              <div style="font-size:11px;color:var(--text-muted)">Sent every Monday at 8:00 AM IST</div>
+            </div>
+            <div>
+              <label style="position:relative;display:inline-block;width:40px;height:24px"><input type="checkbox"
+                  checked style="opacity:0;width:0;height:0"><span
+                  style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--accent);transition:.4s;border-radius:34px"></span><span
+                  style="position:absolute;content:'';height:16px;width:16px;left:4px;bottom:4px;background-color:white;transition:.4s;border-radius:50%;transform:translateX(16px)"></span></label>
+            </div>
+          </div>
+
+          <div
+            style="display:flex; justify-content:space-between; align-items:center; padding:16px; background:var(--surface2); border-radius:10px;">
+            <div>
+              <div style="font-weight:600;font-size:14px;color:var(--text);margin-bottom:4px">Monthly Executive Analysis
+              </div>
+              <div style="font-size:11px;color:var(--text-muted)">Dispatched on 1st of every month to Management</div>
+            </div>
+            <div>
+              <label style="position:relative;display:inline-block;width:40px;height:24px"><input type="checkbox"
+                  checked style="opacity:0;width:0;height:0"><span
+                  style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--accent);transition:.4s;border-radius:34px"></span><span
+                  style="position:absolute;content:'';height:16px;width:16px;left:4px;bottom:4px;background-color:white;transition:.4s;border-radius:50%;transform:translateX(16px)"></span></label>
+            </div>
+          </div>
+
+          <div class="fg" style="margin-top:20px">
+            <label class="fl">Subscribed Distribution List</label>
+            <input type="text" class="ai-input" value="cxo_board@chainguard.in, vp_procurement@chainguard.in">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HISTORICAL RISK ANALYTICS -->
+    <div class="page" id="page-history">
+      <div class="card" style="margin-bottom:18px">
+        <div class="ch">
+          <div>
+            <div class="ct">Long-Term Historical Risk Trends</div>
+            <div class="csub">Analyzed rolling behavior across multi-year architectures</div>
+          </div>
+          <div style="display:flex;gap:7px"><span class="fb active">1-Year</span><span class="fb">3-Year</span></div>
+        </div>
+        <div style="position: relative; height: 180px; width: 100%;"><canvas id="histTrendChart"></canvas></div>
+      </div>
+
+      <div class="g2">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Monthly Disruption Analysis</div>
+          </div>
+          <div style="position: relative; height: 220px; width: 100%;"><canvas id="histMonthlyChart"></canvas></div>
+        </div>
+
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Supplier Benchmarking & Comparison</div>
+              <div class="csub">Compare vendor resilience historically side-by-side</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;margin-bottom:12px">
+            <select class="ai-input" style="flex:1" onchange="loadHistory()">
+              <option>Hindalco Industries (SUP1025)</option>
+              <option>Asian Paints Supply</option>
+            </select>
+            <span style="color:var(--text-muted);font-weight:bold;margin-top:8px">VS</span>
+            <select class="ai-input" style="flex:1" onchange="loadHistory()">
+              <option>Tata Steel Ltd (SUP1000)</option>
+              <option>JSW Steel</option>
+            </select>
+          </div>
+          <div style="position: relative; height: 155px; width: 100%;"><canvas id="histCompareChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYTICS -->
+    <div class="page" id="page-analytics">
+      <div class="g2" style="margin-bottom:18px">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Avg Risk Score by Category</div>
+          </div>
+          <div style="position: relative; height: 210px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="catChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Risk Exposure by Region (Radar)</div>
+          </div>
+          <div style="position: relative; height: 210px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="regChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Financial Impact by Severity</div>
+          </div>
+          <div style="position: relative; height: 210px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="impChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div class="ct">Reliability vs Financial Health</div>
+            <div class="csub">Bubble size = risk score</div>
+          </div>
+          <div style="position: relative; height: 210px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="scChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE TRACKER -->
+    <div class="page" id="page-tracker">
+      <div class="map-stats-bar">
+        <div class="mstat s">
+          <div class="ms-val" id="mt-moving">—</div>
+          <div class="ms-lbl">Shipments Moving</div>
+        </div>
+        <div class="mstat w">
+          <div class="ms-val" id="mt-delayed">—</div>
+          <div class="ms-lbl">Delayed Shipments</div>
+        </div>
+        <div class="mstat d">
+          <div class="ms-val" id="mt-stopped">—</div>
+          <div class="ms-lbl">At-Risk / Stopped</div>
+        </div>
+        <div class="mstat i">
+          <div class="ms-val" id="mt-suppliers">30</div>
+          <div class="ms-lbl">Tracked Suppliers</div>
+        </div>
+      </div>
+
+      <div class="g64" style="align-items:start">
+        <!-- Map -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div>
+              <div class="ct" style="font-family:Syne,sans-serif;font-size:15px;font-weight:700">Real-Time Supply Chain
+                Map</div>
+              <div class="csub" style="font-size:11px;color:var(--text-muted);margin-top:2px">Live supplier locations &
+                shipment routes across India</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <span class="tracking-pulse">Tracking Active</span>
+              <span class="map-ctrl-btn active" id="btnAll" onclick="mapFilter('all',this)">All</span>
+              <span class="map-ctrl-btn" id="btnHigh" onclick="mapFilter('High',this)">High Risk</span>
+              <span class="map-ctrl-btn" id="btnRoutes" onclick="toggleRoutes(this)">Routes</span>
+            </div>
+          </div>
+          <div id="map-container">
+            <div id="supplyMap"></div>
+            <div class="map-legend">
+              <div class="legend-title">Risk Level</div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#EF4444"></div>Critical
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#F97316"></div>High
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#F59E0B"></div>Medium
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#22C55E"></div>Low
+              </div>
+              <div style="height:1px;background:var(--border);margin:8px 0"></div>
+              <div class="legend-item">
+                <div style="width:18px;height:3px;background:#00D4AA;border-radius:2px"></div>Active Route
+              </div>
+              <div class="legend-item">
+                <div style="width:18px;height:3px;background:#F97316;border-radius:2px;border-top:2px dashed #F97316">
+                </div>Delayed
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <!-- Live Feed -->
+          <div class="card">
+            <div class="ch" style="margin-bottom:14px">
+              <div>
+                <div class="ct">Live Event Feed</div>
+                <div class="csub">Real-time location & risk updates</div>
+              </div>
+              <span class="tracking-pulse" style="font-size:10px">Live</span>
+            </div>
+            <div class="live-feed" id="liveFeed"></div>
+          </div>
+
+          <!-- Active Shipments -->
+          <div class="card">
+            <div class="ch" style="margin-bottom:14px">
+              <div>
+                <div class="ct">Active Shipments</div>
+                <div class="csub">In-transit cargo tracking</div>
+              </div>
+            </div>
+            <div class="shipment-list" id="shipmentList"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row: heatmap + region breakdown -->
+      <div class="g2" style="margin-top:16px">
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Supplier Location Risk Heatmap</div>
+              <div class="csub">Risk intensity by geographic cluster</div>
+            </div>
+          </div>
+          <div style="position: relative; height: 180px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="heatCanvas"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch">
+            <div>
+              <div class="ct">Shipment Status Breakdown</div>
+              <div class="csub">Live status across all routes</div>
+            </div>
+          </div>
+          <div style="position: relative; height: 180px; width: 100%;">
+            <div style="position: relative; height: 100%; width: 100%;"><canvas id="shipDonut"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- AI COPILOT UI -->
+  <div class="ai-btn" onclick="toggleAI()">✨</div>
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header">
+      <div class="ai-icon">AI</div>
+      <div>
+        <div class="ai-title">ChainGuard Copilot</div>
+        <div class="ai-status">Online · Ready to assist</div>
+      </div>
+      <span style="margin-left:auto;cursor:pointer;color:var(--text-dim);font-size:18px;" onclick="toggleAI()">✕</span>
+    </div>
+    <div class="ai-body" id="aiBody">
+      <div class="ai-msg bot">Hello! I am your ChainGuard AI Risk Analyst. I've analyzed your live supply chain
+        network.<br><br>I noticed <strong>18 suppliers</strong> are currently in the high-risk zone. How can I assist
+        you in mitigating these risks today?</div>
+
+      <div class="ai-chips">
+        <div class="ai-chip" onclick="askCopilot('Summarize highest risk suppliers')">Summarize highest risk risks</div>
+        <div class="ai-chip" onclick="askCopilot('Draft mitigation plan for SUP1025')">Draft mitigation for SUP1025
+        </div>
+        <div class="ai-chip" onclick="askCopilot('What happens if fuel increases 20%?')">Run fuel shock scenario</div>
+      </div>
+    </div>
+    <div class="ai-input-area">
+      <input type="text" class="ai-input" id="aiInput" placeholder="Ask about risks, suppliers, or logistics..."
+        onkeypress="if(event.key==='Enter')sendAI()">
+      <button class="ai-send" onclick="sendAI()">➤</button>
+    </div>
+  </div>
+
+  <!-- SUPPLIER DETAIL MODAL -->
+  <div class="movl" id="smovl" onclick="if(event.target===this)closeM()">
+    <div class="modal">
+      <div class="mh">
+        <div>
+          <div style="font-family:Syne,sans-serif;font-size:18px;font-weight:700" id="mn"></div>
+          <div style="font-size:12.5px;color:var(--text-muted);margin-top:3px" id="mm"></div>
+        </div>
+        <span class="mc" onclick="closeM()">✕</span>
+      </div>
+      <div class="mg" id="mmg"></div>
+      <div class="sec">ML Risk Assessment</div>
+      <div style="display:flex;gap:14px;margin-bottom:18px">
+        <div class="mbox" style="flex:1">
+          <div class="mbl">ML Failure Probability</div>
+          <div class="mbv" id="mlp">—</div>
+        </div>
+        <div class="mbox" style="flex:1">
+          <div class="mbl">ML Risk Score</div>
+          <div class="mbv" id="mls">—</div>
+        </div>
+      </div>
+      <div class="sec">Performance Metrics</div>
+      <div id="mperf" style="margin-bottom:18px"></div>
+      <div class="sec">Recent Disruptions</div>
+      <div id="mdis"></div>
+    </div>
+  </div>
+
+  <script>
+    Chart.defaults.color = '#7A8BA8'; Chart.defaults.borderColor = 'rgba(255,255,255,0.055)';
+    Chart.defaults.font.family = "'DM Sans',sans-serif"; Chart.defaults.font.size = 11;
+    const ch = {};
+    function dc(id) { if (ch[id]) { ch[id].destroy(); delete ch[id]; } }
+    const rc = l => ({ Critical: '#EF4444', High: '#F97316', Medium: '#F59E0B', Low: '#22C55E' })[l] || '#7A8BA8';
+    const rb = l => `<span class="badge b${l[0].toLowerCase()}">${l}</span>`;
+    const fmt = n => { if (n >= 1e7) return '₹' + (n / 1e7).toFixed(1) + 'Cr'; if (n >= 1e5) return '₹' + (n / 1e5).toFixed(1) + 'L'; return '₹' + n.toLocaleString('en-IN') };
+    const pb = (v, c) => `<div class="pw"><div class="pb"><div class="pf" style="width:${v * 100}%;background:${c}"></div></div><span class="pv">${(v * 100).toFixed(0)}%</span></div>`;
+
+    // DATA
+    const SUPPLIERS = [
+      { id: 'SUP1025', name: 'Hindalco Industries', category: 'Electronics', region: 'Punjab', risk_level: 'High', risk_score: .435, reliability_score: .68, financial_health: .59, geo_risk_index: .70, delivery_performance: .53, quality_score: .78, years_relationship: 19, contract_value_inr: 27338513, failure_probability: .385, on_time_delivery_pct: 53, defect_rate_pct: 2.2 },
+      { id: 'SUP1009', name: 'Maruti Suzuki Vendors', category: 'Energy', region: 'Rajasthan', risk_level: 'High', risk_score: .429, reliability_score: .62, financial_health: .50, geo_risk_index: .64, delivery_performance: .79, quality_score: .75, years_relationship: 20, contract_value_inr: 126141184, failure_probability: .51, on_time_delivery_pct: 79, defect_rate_pct: 2.5 },
+      { id: 'SUP1013', name: 'Asian Paints Supply', category: 'Pharma', region: 'Tamil Nadu', risk_level: 'High', risk_score: .413, reliability_score: .66, financial_health: .54, geo_risk_index: .55, delivery_performance: .54, quality_score: .89, years_relationship: 3, contract_value_inr: 143497222, failure_probability: .439, on_time_delivery_pct: 54, defect_rate_pct: 1.1 },
+      { id: 'SUP1010', name: 'L&T Procurement', category: 'Agri-Products', region: 'West Bengal', risk_level: 'High', risk_score: .39, reliability_score: .85, financial_health: .47, geo_risk_index: .81, delivery_performance: .86, quality_score: .90, years_relationship: 11, contract_value_inr: 30444558, failure_probability: .337, on_time_delivery_pct: 86, defect_rate_pct: 1.0 },
+      { id: 'SUP1016', name: 'Cipla Pharma Supply', category: 'Energy', region: 'Tamil Nadu', risk_level: 'High', risk_score: .365, reliability_score: .65, financial_health: .94, geo_risk_index: .79, delivery_performance: .53, quality_score: .69, years_relationship: 16, contract_value_inr: 58008755, failure_probability: .398, on_time_delivery_pct: 53, defect_rate_pct: 3.1 },
+      { id: 'SUP1002', name: 'Reliance Industries', category: 'Electronics', region: 'West Bengal', risk_level: 'High', risk_score: .355, reliability_score: .88, financial_health: .50, geo_risk_index: .44, delivery_performance: .63, quality_score: .68, years_relationship: 11, contract_value_inr: 27936862, failure_probability: .298, on_time_delivery_pct: 63, defect_rate_pct: 3.2 },
+      { id: 'SUP1000', name: 'Tata Steel Ltd', category: 'IT Services', region: 'West Bengal', risk_level: 'High', risk_score: .35, reliability_score: .83, financial_health: .42, geo_risk_index: .32, delivery_performance: .61, quality_score: .89, years_relationship: 18, contract_value_inr: 23837464, failure_probability: .284, on_time_delivery_pct: 61, defect_rate_pct: 1.1 },
+      { id: 'SUP1008', name: 'Bajaj Auto Parts', category: 'Packaging', region: 'Gujarat', risk_level: 'High', risk_score: .363, reliability_score: .70, financial_health: .58, geo_risk_index: .60, delivery_performance: .65, quality_score: .82, years_relationship: 8, contract_value_inr: 45210000, failure_probability: .32, on_time_delivery_pct: 65, defect_rate_pct: 1.8 },
+      { id: 'SUP1011', name: 'Hindustan Unilever', category: 'Raw Materials', region: 'Maharashtra', risk_level: 'High', risk_score: .333, reliability_score: .74, financial_health: .55, geo_risk_index: .52, delivery_performance: .70, quality_score: .85, years_relationship: 14, contract_value_inr: 89500000, failure_probability: .30, on_time_delivery_pct: 70, defect_rate_pct: 1.5 },
+      { id: 'SUP1015', name: 'BHEL Components', category: 'Energy', region: 'Rajasthan', risk_level: 'High', risk_score: .38, reliability_score: .67, financial_health: .60, geo_risk_index: .68, delivery_performance: .58, quality_score: .80, years_relationship: 6, contract_value_inr: 67320000, failure_probability: .35, on_time_delivery_pct: 58, defect_rate_pct: 2.0 },
+      { id: 'SUP1001', name: 'Mahindra Logistics', category: 'Logistics', region: 'Telangana', risk_level: 'Medium', risk_score: .276, reliability_score: .65, financial_health: .70, geo_risk_index: .12, delivery_performance: .60, quality_score: .85, years_relationship: 18, contract_value_inr: 113113994, failure_probability: .286, on_time_delivery_pct: 60, defect_rate_pct: 1.5 },
+      { id: 'SUP1003', name: 'Infosys BPO', category: 'IT Services', region: 'Karnataka', risk_level: 'Medium', risk_score: .22, reliability_score: .92, financial_health: .88, geo_risk_index: .15, delivery_performance: .90, quality_score: .95, years_relationship: 12, contract_value_inr: 95400000, failure_probability: .12, on_time_delivery_pct: 90, defect_rate_pct: 0.5 },
+      { id: 'SUP1004', name: 'Wipro Supply Chain', category: 'Logistics', region: 'Haryana', risk_level: 'Medium', risk_score: .25, reliability_score: .80, financial_health: .76, geo_risk_index: .20, delivery_performance: .82, quality_score: .90, years_relationship: 9, contract_value_inr: 72100000, failure_probability: .18, on_time_delivery_pct: 82, defect_rate_pct: 1.0 },
+      { id: 'SUP1005', name: 'Adani Ports', category: 'Logistics', region: 'Gujarat', risk_level: 'Low', risk_score: .14, reliability_score: .96, financial_health: .92, geo_risk_index: .08, delivery_performance: .95, quality_score: .98, years_relationship: 15, contract_value_inr: 185600000, failure_probability: .08, on_time_delivery_pct: 95, defect_rate_pct: 0.2 },
+      { id: 'SUP1006', name: 'ITC Agri-Business', category: 'Agri-Products', region: 'Uttar Pradesh', risk_level: 'Medium', risk_score: .28, reliability_score: .78, financial_health: .72, geo_risk_index: .30, delivery_performance: .75, quality_score: .88, years_relationship: 10, contract_value_inr: 42300000, failure_probability: .22, on_time_delivery_pct: 75, defect_rate_pct: 1.2 },
+      { id: 'SUP1007', name: 'Sun Pharma Vendors', category: 'Pharma', region: 'Gujarat', risk_level: 'Medium', risk_score: .30, reliability_score: .75, financial_health: .65, geo_risk_index: .38, delivery_performance: .72, quality_score: .82, years_relationship: 7, contract_value_inr: 156800000, failure_probability: .25, on_time_delivery_pct: 72, defect_rate_pct: 1.8 },
+    ];
+    const DISRUPTIONS = [
+      { id: 'DIS2010', date: '2024-11-24', risk_factor: 'Quality Issues', category: 'IT Services', region: 'Rajasthan', severity: 'Medium', financial_impact_inr: 9163417, recovery_days: 27, resolved: true, supplier_id: 'SUP1025' },
+      { id: 'DIS2075', date: '2024-11-19', risk_factor: 'Quality Issues', category: 'Auto Components', region: 'Uttar Pradesh', severity: 'High', financial_impact_inr: 4129852, recovery_days: 12, resolved: false, supplier_id: 'SUP1017' },
+      { id: 'DIS2008', date: '2024-11-17', risk_factor: 'Pandemic', category: 'Auto Components', region: 'Gujarat', severity: 'Medium', financial_impact_inr: 21351976, recovery_days: 30, resolved: true, supplier_id: 'SUP1003' },
+      { id: 'DIS2098', date: '2024-11-14', risk_factor: 'Geopolitical', category: 'Logistics', region: 'West Bengal', severity: 'High', financial_impact_inr: 36917878, recovery_days: 3, resolved: true, supplier_id: 'SUP1024' },
+      { id: 'DIS2067', date: '2024-11-13', risk_factor: 'Regulatory Change', category: 'Agri-Products', region: 'Punjab', severity: 'Low', financial_impact_inr: 1596596, recovery_days: 8, resolved: true, supplier_id: 'SUP1020' },
+      { id: 'DIS2045', date: '2024-11-10', risk_factor: 'Currency Fluctuation', category: 'Electronics', region: 'Maharashtra', severity: 'Critical', financial_impact_inr: 125000000, recovery_days: 45, resolved: false, supplier_id: 'SUP1025' },
+      { id: 'DIS2032', date: '2024-11-08', risk_factor: 'Natural Disaster', category: 'Pharma', region: 'Tamil Nadu', severity: 'Critical', financial_impact_inr: 89000000, recovery_days: 60, resolved: false, supplier_id: 'SUP1013' },
+      { id: 'DIS2061', date: '2024-11-05', risk_factor: 'Strike/Labour', category: 'Energy', region: 'Rajasthan', severity: 'High', financial_impact_inr: 43000000, recovery_days: 18, resolved: true, supplier_id: 'SUP1009' },
+      { id: 'DIS2019', date: '2024-11-01', risk_factor: 'Port Congestion', category: 'Logistics', region: 'Gujarat', severity: 'Medium', financial_impact_inr: 12500000, recovery_days: 7, resolved: true, supplier_id: 'SUP1001' },
+      { id: 'DIS2088', date: '2024-10-28', risk_factor: 'Transportation Delay', category: 'Raw Materials', region: 'Karnataka', severity: 'Low', financial_impact_inr: 3200000, recovery_days: 4, resolved: true, supplier_id: 'SUP1011' },
+      { id: 'DIS2101', date: '2024-10-22', risk_factor: 'Financial Instability', category: 'Electronics', region: 'Punjab', severity: 'Critical', financial_impact_inr: 95000000, recovery_days: 35, resolved: false, supplier_id: 'SUP1025' },
+      { id: 'DIS2114', date: '2024-10-18', risk_factor: 'Geopolitical', category: 'Agri-Products', region: 'West Bengal', severity: 'High', financial_impact_inr: 28000000, recovery_days: 14, resolved: true, supplier_id: 'SUP1010' },
+      { id: 'DIS2026', date: '2024-10-12', risk_factor: 'Currency Fluctuation', category: 'Packaging', region: 'Gujarat', severity: 'Medium', financial_impact_inr: 8700000, recovery_days: 9, resolved: true, supplier_id: 'SUP1008' },
+    ];
+
+    // Generate timeseries
+    const TS_DATA = [];
+    let walk = 0.35;
+    for (let i = 0; i < 400; i++) {
+      const d = new Date(2024, 0, 1 + i);
+
+      // Smooth random walk
+      walk += (Math.random() - .5) * 0.03;
+      walk = Math.max(0.2, Math.min(0.6, walk));
+
+      const season = 0.08 * Math.sin(2 * Math.PI * i / 120);
+      const shock = Math.random() > 0.98 ? 0.15 : 0;
+
+      // Base risk starts around 0.35, then gradually rises at the end of the year to hit 0.95
+      let trend = (i / 400) * 0.5; // grows from 0 to 0.5
+
+      let rv = walk + season + trend + shock;
+
+      // Force the last value to exactly 0.95 to match the dashboard hardcoded metric
+      if (i === 399) rv = 0.95;
+      else if (i > 370) rv = rv * 0.4 + 0.95 * 0.6; // smooth transition to 0.95 at the end
+
+      rv = Math.max(0.05, Math.min(0.98, rv));
+
+      TS_DATA.push({
+        date: d.toISOString().substring(0, 10),
+        risk_index: parseFloat(rv.toFixed(4)),
+        supplier_disruptions: Math.floor(Math.max(0, rv * 20 + (Math.random() - .5) * 4)),
+        avg_delivery_delay_days: parseFloat((Math.max(0, rv * 15 + (Math.random() - .5) * 3)).toFixed(1))
+      });
+    }
+
+    let curRF = 'all';
+
+    // NAV
+    function nav(page, el) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      el.classList.add('active');
+      const titles = { dashboard: 'Dashboard', suppliers: 'Supplier Risk Management', disruptions: 'Disruption Events', timeseries: 'Risk Timeline', predict: 'ML Risk Predictor', scenario: 'What-If Cost Simulation', india: 'India Intelligence & AI Early Warning', alerts: 'Smart Alert System', analytics: 'Analytics & Insights', tracker: '📍 Real-Time Location Tracker', cost: 'Cost Impact & Loss Estimation', integrations: 'API & Data Integrations', reports: 'Automated Reporting Center', history: 'Historical Risk Analytics' };
+      document.getElementById('ptitle').textContent = titles[page] || page;
+      if (page === 'dashboard') loadDashboard();
+      if (page === 'timeseries') loadTS();
+      if (page === 'analytics') loadAnalytics();
+      if (page === 'predict') loadPredict();
+      if (page === 'scenario') loadScenario();
+      if (page === 'india') loadIndia();
+      if (page === 'alerts') loadAlerts();
+      if (page === 'disruptions') loadDisruptions();
+      if (page === 'tracker') { setTimeout(loadTracker, 80); }
+      if (page === 'cost') loadCost();
+      if (page === 'integrations') loadIntegrations();
+      if (page === 'reports') loadReports();
+      if (page === 'history') loadHistory();
+      if (page === 'cost') loadCost();
+      if (page === 'integrations') loadIntegrations();
+      if (page === 'reports') loadReports();
+      if (page === 'history') loadHistory();
+    }
+
+    // ── DASHBOARD ──
+    function loadDashboard() {
+      // Risk Index Chart (30 days)
+      drawRI(30);
+      // Donut
+      drawDonut();
+      // Top Risk Table
+      const tbody = document.getElementById('trBody');
+      tbody.innerHTML = SUPPLIERS.slice(0, 8).map(s => `<tr onclick="viewS('${s.id}')" style="cursor:pointer">
+    <td class="tname">${s.name.substring(0, 20)}...</td>
+    <td>${rb(s.risk_level)}</td>
+    <td class="mono">${(s.risk_score * 100).toFixed(1)}%</td>
+    <td class="mono" style="color:var(--accent)">${fmt(s.contract_value_inr)}</td>
+  </tr>`).join('');
+      // Timeline
+      document.getElementById('tlBody').innerHTML = DISRUPTIONS.slice(0, 6).map(d => `
+    <div class="tli"><div class="tldot" style="background:${rc(d.severity)}"></div>
+    <div><div class="tltitle">${d.risk_factor} — ${d.category}</div>
+    <div class="tlmeta"><span>${d.date}</span><span>${d.region}</span>
+    <span style="color:${rc(d.severity)}">${d.severity}</span>
+    <span style="color:var(--accent)">${fmt(d.financial_impact_inr)}</span></div></div></div>`).join('');
+    }
+
+    function drawRI(days) {
+      dc('ri');
+      const data = TS_DATA.slice(-days);
+      const ctx = document.getElementById('riChart').getContext('2d');
+      const g = ctx.createLinearGradient(0, 0, 0, 180);
+      g.addColorStop(0, 'rgba(0,212,170,.3)'); g.addColorStop(1, 'rgba(0,212,170,0)');
+      ch['ri'] = new Chart(ctx, {
+        type: 'line', data: { labels: data.map(d => d.date.substring(5)), datasets: [{ data: data.map(d => d.risk_index * 100), borderColor: '#00D4AA', backgroundColor: g, borderWidth: 2, fill: true, tension: .4, pointRadius: 0, pointHoverRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `Risk: ${c.raw.toFixed(1)}%` } } }, scales: { x: { ticks: { maxTicksLimit: 8 }, grid: { display: false } }, y: { min: 0, max: 100, ticks: { callback: v => v + '%' } } } }
+      });
+    }
+
+    function switchTS(d, el) { document.querySelectorAll('#page-dashboard .fb').forEach(b => b.classList.remove('active')); el.classList.add('active'); drawRI(d); }
+
+    function drawDonut() {
+      dc('donut');
+      const counts = [0, 18, 11, 1];
+      const ctx = document.getElementById('donutC').getContext('2d');
+      ch['donut'] = new Chart(ctx, {
+        type: 'doughnut', data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: counts, backgroundColor: ['#EF4444', '#F97316', '#F59E0B', '#22C55E'], borderWidth: 0, hoverOffset: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, cutout: '73%', plugins: { legend: { display: false } } }
+      });
+      const labels = ['Critical', 'High', 'Medium', 'Low']; const cols = ['#EF4444', '#F97316', '#F59E0B', '#22C55E'];
+      document.getElementById('dlegend').innerHTML = labels.map((l, i) => `<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+    <div style="width:9px;height:9px;border-radius:50%;background:${cols[i]};flex-shrink:0"></div>
+    <span style="font-size:12px;color:var(--text-muted);flex:1">${l}</span>
+    <span style="font-family:JetBrains Mono,monospace;font-size:12px;color:var(--text)">${counts[i]}</span>
+    <span style="font-size:11px;color:var(--text-dim)">${Math.round(counts[i] / 30 * 100)}%</span>
+  </div>`).join('');
+    }
+
+    // ── SUPPLIERS ──
+    function sfilt(v, el) { curRF = v; document.querySelectorAll('#sfbar .fb').forEach(b => b.classList.remove('active')); el.classList.add('active'); renderST(); }
+    function renderST() {
+      const cat = document.getElementById('catSel').value;
+      let data = SUPPLIERS.filter(s => curRF === 'all' || s.risk_level === curRF).filter(s => !cat || s.category === cat);
+      document.getElementById('stBody').innerHTML = data.map(s => `<tr>
+    <td class="mono" style="color:var(--accent2)">${s.id}</td>
+    <td class="tname">${s.name}</td>
+    <td style="font-size:11.5px">${s.category}</td>
+    <td style="font-size:11.5px">${s.region}</td>
+    <td>${rb(s.risk_level)}</td>
+    <td>${pb(s.risk_score, rc(s.risk_level))}</td>
+    <td>${pb(s.reliability_score, '#6366F1')}</td>
+    <td>${pb(s.financial_health, '#22C55E')}</td>
+    <td class="mono">${fmt(s.contract_value_inr)}</td>
+    <td><span class="ca" onclick="viewS('${s.id}')">Details</span></td>
+  </tr>`).join('');
+    }
+
+    function viewS(id) {
+      const s = SUPPLIERS.find(x => x.id === id); if (!s) return;
+      document.getElementById('mn').textContent = s.name;
+      document.getElementById('mm').innerHTML = `${s.id} &nbsp;·&nbsp; ${s.category} &nbsp;·&nbsp; ${s.region}`;
+      document.getElementById('mmg').innerHTML = [
+        { label: 'Risk Level', value: rb(s.risk_level) },
+        { label: 'Contract Value', value: fmt(s.contract_value_inr) },
+        { label: 'Years Relation', value: s.years_relationship + ' yrs' },
+        { label: 'Failure Prob', value: (s.failure_probability * 100).toFixed(1) + '%' },
+        { label: 'On-Time Delivery', value: s.on_time_delivery_pct + '%' },
+        { label: 'Defect Rate', value: s.defect_rate_pct + '%' },
+      ].map(m => `<div class="mbox"><div class="mbl">${m.label}</div><div class="mbv" style="font-size:15px">${m.value}</div></div>`).join('');
+      document.getElementById('mlp').textContent = (s.failure_probability * 100).toFixed(1) + '%';
+      document.getElementById('mlp').style.color = s.failure_probability > .4 ? '#EF4444' : '#F59E0B';
+      document.getElementById('mls').textContent = (s.risk_score * 100).toFixed(1) + '%';
+      document.getElementById('mperf').innerHTML = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">${[['Reliability', s.reliability_score, '#00D4AA'], ['Financial Health', s.financial_health, '#22C55E'], ['Delivery Performance', s.delivery_performance, '#6366F1'], ['Quality Score', s.quality_score, '#38BDF8']].map(([l, v, c]) => `
+    <div><div style="font-size:11.5px;color:var(--text-muted);margin-bottom:5px">${l}</div>${pb(v, c)}</div>`).join('')}</div>`;
+      const dis = DISRUPTIONS.filter(d => d.supplier_id === id);
+      document.getElementById('mdis').innerHTML = dis.length ? dis.slice(0, 3).map(d => `<div class="tli"><div class="tldot" style="background:${rc(d.severity)}"></div>
+    <div><div class="tltitle">${d.risk_factor}</div><div class="tlmeta"><span>${d.date}</span>${rb(d.severity)}<span style="color:var(--accent)">${fmt(d.financial_impact_inr)}</span><span>${d.recovery_days}d recovery</span></div></div></div>`).join('')
+        : '<div style="color:var(--text-dim);font-size:12.5px">No disruptions found for this supplier</div>';
+      document.getElementById('smovl').classList.add('show');
+    }
+    function closeM() { document.getElementById('smovl').classList.remove('show'); }
+
+    // ── DISRUPTIONS ──
+    function loadDisruptions() {
+      dc('rf'); dc('md');
+      // Risk factor chart
+      const rfData = [{ rf: 'Currency Fluctuation', c: 24 }, { rf: 'Strike/Labour', c: 19 }, { rf: 'Regulatory Change', c: 19 }, { rf: 'Natural Disaster', c: 15 }, { rf: 'Quality Issues', c: 14 }, { rf: 'Transportation Delay', c: 12 }, { rf: 'Geopolitical', c: 11 }, { rf: 'Pandemic', c: 9 }];
+      const rfCtx = document.getElementById('rfChart').getContext('2d');
+      ch['rf'] = new Chart(rfCtx, {
+        type: 'bar', data: { labels: rfData.map(d => d.rf), datasets: [{ data: rfData.map(d => d.c), backgroundColor: 'rgba(99,102,241,.6)', borderColor: '#6366F1', borderWidth: 1, borderRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxRotation: 25, font: { size: 10 } }, grid: { display: false } }, y: { beginAtZero: true } } }
+      });
+      // Monthly
+      const mdData = [{ m: 'Jun', c: 4 }, { m: 'Jul', c: 1 }, { m: 'Aug', c: 7 }, { m: 'Sep', c: 6 }, { m: 'Oct', c: 6 }, { m: 'Nov', c: 9 }];
+      const mdCtx = document.getElementById('mdChart').getContext('2d');
+      ch['md'] = new Chart(mdCtx, {
+        type: 'bar', data: { labels: mdData.map(d => d.m), datasets: [{ data: mdData.map(d => d.c), backgroundColor: 'rgba(245,158,11,.55)', borderColor: '#F59E0B', borderWidth: 1, borderRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true } } }
+      });
+      renderDG();
+    }
+    function renderDG() {
+      const sev = document.getElementById('sevSel').value;
+      const data = DISRUPTIONS.filter(d => !sev || d.severity === sev);
+      document.getElementById('dgrid').innerHTML = data.map(d => `<div class="dcard">
+    <div class="dch"><div><div class="dfactor">${d.risk_factor}</div><div class="dmeta">${d.date} · ${d.region}</div></div>${rb(d.severity)}</div>
+    <div class="dimp">${fmt(d.financial_impact_inr)}</div>
+    <div class="dtags"><span class="dtag">${d.category}</span><span class="dtag">${d.recovery_days}d recovery</span>
+    <span class="dtag" style="color:${d.resolved ? 'var(--success)' : 'var(--warning)'}">${d.resolved ? '✓ Resolved' : '⏳ Active'}</span></div>
+  </div>`).join('');
+    }
+
+    // ── TIMESERIES ──
+    function loadTS() {
+      dc('fts'); dc('dcc'); dc('ddc');
+      const g1 = document.getElementById('fullTS').getContext('2d');
+      const gr = g1.createLinearGradient(0, 0, 0, 200); gr.addColorStop(0, 'rgba(0,212,170,.28)'); gr.addColorStop(1, 'rgba(0,212,170,0)');
+      ch['fts'] = new Chart(g1, {
+        type: 'line', data: { labels: TS_DATA.map(d => d.date.substring(5)), datasets: [{ data: TS_DATA.map(d => d.risk_index * 100), borderColor: '#00D4AA', backgroundColor: gr, borderWidth: 1.5, fill: true, tension: .35, pointRadius: 0 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 12 }, grid: { display: false } }, y: { min: 0, max: 100, ticks: { callback: v => v + '%' } } } }
+      });
+      const last60 = TS_DATA.slice(-60);
+      const dcCtx = document.getElementById('dcChart').getContext('2d');
+      ch['dcc'] = new Chart(dcCtx, {
+        type: 'bar', data: { labels: last60.map(d => d.date.substring(5)), datasets: [{ data: last60.map(d => d.supplier_disruptions), backgroundColor: 'rgba(239,68,68,.5)', borderRadius: 2 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 10 }, grid: { display: false } }, y: { beginAtZero: true } } }
+      });
+      const ddCtx = document.getElementById('ddChart').getContext('2d');
+      const g2 = ddCtx.createLinearGradient(0, 0, 0, 170); g2.addColorStop(0, 'rgba(249,115,22,.3)'); g2.addColorStop(1, 'rgba(249,115,22,0)');
+      ch['ddc'] = new Chart(ddCtx, {
+        type: 'line', data: { labels: last60.map(d => d.date.substring(5)), datasets: [{ data: last60.map(d => d.avg_delivery_delay_days), borderColor: '#F97316', backgroundColor: g2, borderWidth: 2, fill: true, tension: .4, pointRadius: 0 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 10 }, grid: { display: false } }, y: { min: 0 } } }
+      });
+    }
+
+    // ── PREDICT ──
+    function sv(id, v) { document.getElementById(id).textContent = parseFloat(v).toFixed(2); }
+    function loadPredict() {
+      const feats = [{ f: 'Delivery Performance', i: .2525 }, { f: 'Reliability Score', i: .2116 }, { f: 'Geo Risk Index', i: .2044 }, { f: 'Financial Health', i: .1777 }, { f: 'Quality Score', i: .0947 }, { f: 'Years Relationship', i: .0592 }];
+      document.getElementById('fi').innerHTML = feats.map(f => `<div class="fr"><div class="fn">${f.f}</div>
+    <div class="fbw"><div class="fbf" style="width:${f.i / .2525 * 100}%"></div></div>
+    <div class="fpct">${(f.i * 100).toFixed(1)}%</div></div>`).join('');
+      dc('rd');
+      const rdCtx = document.getElementById('rdChart').getContext('2d');
+      const bins = ['0–10', '10–20', '20–30', '30–40', '40–50', '50+'];
+      const counts = [1, 4, 7, 11, 6, 1];
+      ch['rd'] = new Chart(rdCtx, {
+        type: 'bar', data: { labels: bins, datasets: [{ data: counts, backgroundColor: ['rgba(34,197,94,.6)', 'rgba(34,197,94,.6)', 'rgba(245,158,11,.6)', 'rgba(249,115,22,.6)', 'rgba(239,68,68,.6)', 'rgba(239,68,68,.6)'], borderRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { stepSize: 2 } } } }
+      });
+    }
+    async function runPred() {
+      const features = {
+        r: parseFloat(document.getElementById('s1').value),
+        f: parseFloat(document.getElementById('s2').value),
+        g: parseFloat(document.getElementById('s3').value),
+        d: parseFloat(document.getElementById('s4').value),
+        q: parseFloat(document.getElementById('s5').value),
+        y: parseInt(document.getElementById('s6').value)
+      };
+
+      try {
+        const res = await fetch('/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(features)
+        });
+
+        if (!res.ok) throw new Error('Network response was not ok');
+
+        const data = await res.json();
+        const { fp, rs, level, rec } = data;
+
+        document.getElementById('pp').textContent = (fp * 100).toFixed(1) + '%';
+        document.getElementById('ps').textContent = (rs * 100).toFixed(1) + '%';
+        document.getElementById('pl').innerHTML = rb(level);
+        document.getElementById('pr').textContent = rec;
+        document.getElementById('pp').style.color = rc(level);
+        document.getElementById('ps').style.color = rc(level);
+        document.getElementById('pres').classList.add('show');
+      } catch (err) {
+        console.error("Backend integration error, fallback to demo mode:", err);
+        // Fallback if backend isn't reachable
+        const rs = (1 - features.r) * .25 + (1 - features.f) * .30 + features.g * .20 + (1 - features.d) * .15 + (1 - features.q) * .10;
+        const fp = Math.min(.99, rs * 1.8 + (1 - features.y / 30) * .05 + Math.random() * .05);
+        const level = rs > .45 ? 'Critical' : rs > .30 ? 'High' : rs > .15 ? 'Medium' : 'Low';
+        document.getElementById('pp').textContent = (fp * 100).toFixed(1) + '%';
+        document.getElementById('ps').textContent = (rs * 100).toFixed(1) + '%';
+        document.getElementById('pl').innerHTML = rb(level);
+        document.getElementById('pp').style.color = rc(level);
+        document.getElementById('ps').style.color = rc(level);
+        document.getElementById('pres').classList.add('show');
+      }
+    }
+
+
+    // ── SCENARIO ENGINE LOGIC ──
+    function loadScenario() {
+      // Just initialize empty charts if they don't exist
+      if (!ch['simImpact']) {
+        const ctx = document.getElementById('simImpactChart').getContext('2d');
+        ch['simImpact'] = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Electronics', 'Energy', 'Pharma', 'Agri-Products', 'Logistics'],
+            datasets: [{
+              data: [0, 0, 0, 0, 0],
+              backgroundColor: 'rgba(234,88,12,0.6)',
+              borderColor: '#EA580C',
+              borderWidth: 1,
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `₹${c.raw}L` } } },
+            scales: { x: { grid: { display: false } }, y: { beginAtZero: true } }
+          }
+        });
+      }
+    }
+
+    function runSimulation() {
+      const fuel = parseFloat(document.getElementById('sim1').value);
+      const tariff = parseFloat(document.getElementById('sim2').value);
+      const lab = parseFloat(document.getElementById('sim3').value);
+      const port = parseFloat(document.getElementById('sim4').value);
+
+      // Compute mathematical simulation logic mapping constraints
+      // Cost Impact Prediction
+      const baseLoss = 24.5; // 24.5L base
+      const multiplier = 1 + (fuel / 100) * 0.4 + (tariff / 100) * 0.6 + lab * 0.8 + (port / 30) * 0.5;
+      const totalLoss = baseLoss * multiplier;
+
+      const pctIncrease = ((multiplier - 1) * 100).toFixed(1);
+      const failureCount = Math.floor(multiplier * 1.5 + (Math.random() * 2));
+
+      // Update Cost Impact Numbers
+      document.getElementById('simLoss').textContent = `₹${totalLoss.toFixed(1)}L`;
+      document.getElementById('simPct').textContent = `+${pctIncrease}% vs Baseline`;
+      document.getElementById('simFail').textContent = failureCount;
+
+      // Animate Chart Update
+      const simData = [
+        (fuel * 0.5 + tariff * 0.8) * 1.2,
+        (fuel * 1.2 + tariff * 0.1),
+        (port * 1.5 + lab * 10),
+        (tariff * 0.8 + lab * 5),
+        (fuel * 1.5 + port * 2)
+      ].map(v => Math.floor(v + 5));
+
+      ch['simImpact'].data.datasets[0].data = simData;
+      ch['simImpact'].update();
+
+      // Generate Auto Decision Recommendations based on inputs
+      const recList = document.getElementById('simRecList');
+      let recs = [];
+
+      if (fuel > 40) recs.push("<strong>Fuel cost extreme:</strong> Shift 45% of trucking logistics to rail freight immediately to absorb margin compression.");
+      if (tariff > 20) recs.push("<strong>Tariff barrier detected:</strong> Activate dual-sourcing protocol. Move procurement from West Bengal to localized Maharashtra suppliers.");
+      if (lab > 0.5) recs.push("<strong>High labor unrest:</strong> Pre-approve overtime budgets for unaffected regional plants. Increase safety stock by 20% globally.");
+      if (port > 10) recs.push("<strong>Severe port timeline:</strong> Reroute maritime containers to Gujarat JNPT port and fallback to air-freight for Critical priority items.");
+
+      if (recs.length === 0) recs.push("Macro environment stable. Maintain standard procurement operations and Just-in-Time inventory models.");
+
+      recList.innerHTML = recs.map(r => `<li style="margin-bottom:8px">${r}</li>`).join('');
+
+      // Show container
+      const decBox = document.getElementById('simDecisions');
+      decBox.classList.add('show');
+    }
+
+
+    function loadIndia() {
+      if (!ch['indiaAi']) {
+        const ctx = document.getElementById('indiaAiChart').getContext('2d');
+        const g = ctx.createLinearGradient(0, 0, 0, 180);
+        g.addColorStop(0, 'rgba(239,68,68,.3)'); g.addColorStop(1, 'rgba(239,68,68,0)');
+
+        const dates = [];
+        const probs = [];
+        let p = 30;
+        for (let i = 1; i <= 30; i++) {
+          dates.push('Day +' + i);
+          p += (Math.random() - 0.4) * 8; // slight upward trend
+          p = Math.max(10, Math.min(98, p));
+          if (i > 24) p += 15; // Spike around end of 30 days due to festival/monsoon projection
+          p = Math.min(99, p);
+          probs.push(p.toFixed(1));
+        }
+
+        ch['indiaAi'] = new Chart(ctx, {
+          type: 'line', data: { labels: dates, datasets: [{ data: probs, borderColor: '#EF4444', backgroundColor: g, borderWidth: 2, fill: true, tension: .4 }] },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { maxTicksLimit: 6 }, grid: { display: false } }, y: { min: 0, max: 100, ticks: { callback: v => v + '%' } } } }
+        });
+      }
+    }
+
+    function loadAlerts() {
+      // Intentionally empty init
+    }
+
+    function fireTestAlert() {
+      const trigger = document.getElementById('alertTrigger').value;
+      const dash = document.getElementById('chkDash').checked;
+      const email = document.getElementById('chkEmail').checked;
+      const sms = document.getElementById('chkSms').checked;
+      const contact = document.getElementById('alertContact').value;
+
+      const btn = document.querySelector('button[onclick="fireTestAlert()"]');
+      const fb = document.getElementById('alertFeedback');
+
+      btn.textContent = "Sending...";
+      fb.textContent = "";
+
+      setTimeout(() => {
+        let msg = "";
+        if (email) msg += "[Email Sent] ";
+        if (sms) msg += "[SMS Dispatched] ";
+        fb.innerHTML = `<span style="color:var(--success)">✓ ${msg} to ${contact}</span>`;
+        btn.textContent = "🔔 Trigger Test Alert";
+
+        if (dash) {
+          const stream = document.getElementById('dashboardAlertStream');
+          const d = new Date().toLocaleTimeString();
+          const div = document.createElement('div');
+          div.className = 'alert';
+          div.style.background = 'rgba(239, 68, 68, .08)';
+          div.style.borderColor = 'rgba(239, 68, 68, .3)';
+          div.style.color = '#FCA5A5';
+          div.innerHTML = `<div class="pulse-dot"></div><div><strong>[TEST ALERT] ${trigger}</strong><br><span style="color:var(--text-dim);font-size:11px;">Triggered manually at ${d}</span></div>`;
+          stream.insertBefore(div, stream.firstChild);
+        }
+      }, 800);
+    }
+
+
+    function loadCost() {
+      if (!ch['costLoss']) {
+        const c1 = document.getElementById('costLossChart').getContext('2d');
+        ch['costLoss'] = new Chart(c1, {
+          type: 'bar', data: { labels: ['Electronics', 'Auto', 'Energy', 'Raw Materials'], datasets: [{ data: [45.2, 38.6, 28.1, 30.6], backgroundColor: 'rgba(239, 68, 68, 0.7)', borderRadius: 4 }] },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: v => `₹${v}L` } } } }
+        });
+
+        const c2 = document.getElementById('costDelayChart').getContext('2d');
+        ch['costDelay'] = new Chart(c2, {
+          type: 'doughnut', data: { labels: ['Demurrage', 'Warehousing', 'Late Penalties', 'Expedited Air Freight'], datasets: [{ data: [8.5, 4.2, 3.1, 2.4], backgroundColor: ['#EF4444', '#F59E0B', '#38BDF8', '#8B5CF6'], borderWidth: 0 }] },
+          options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { position: 'right', labels: { boxWidth: 10, color: '#7A8BA8' } } } }
+        });
+      }
+    }
+
+    function loadIntegrations() { }
+    function loadReports() { }
+
+    function loadHistory() {
+      if (!ch['histTrend']) {
+        const ctx1 = document.getElementById('histTrendChart').getContext('2d');
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        ch['histTrend'] = new Chart(ctx1, {
+          type: 'line', data: {
+            labels: months, datasets: [
+              { label: '2025 Risk Base', data: [35, 33, 36, 41, 45, 42, 40, 38, 36, 44, 48, 45], borderColor: 'rgba(255,255,255,0.2)', borderWidth: 2, borderDash: [5, 5], pointRadius: 0 },
+              { label: '2026 Forecasted & Realized', data: [34, 31, 48, 51, 55, 50, 49, 45, 41, 52, 58, 54], borderColor: '#6366F1', backgroundColor: 'rgba(99,102,241,0.1)', borderWidth: 3, fill: true, pointRadius: 4 }
+            ]
+          },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#7A8BA8' } } }, scales: { y: { min: 20 } } }
+        });
+      }
+
+      if (!ch['histMonthly']) {
+        const ctx2 = document.getElementById('histMonthlyChart').getContext('2d');
+        ch['histMonthly'] = new Chart(ctx2, {
+          type: 'bar', data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ label: 'Incidents Configured', data: [12, 9, 18, 15, 22, 11], backgroundColor: 'rgba(56, 189, 248, 0.6)' }] },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+      }
+
+      if (ch['histCompare']) {
+        // Redraw random data on select change for visual interactivity 
+        ch['histCompare'].data.datasets[0].data = [Math.random() * 20 + 5, Math.random() * 15 + 4, Math.random() * 25 + 10, Math.random() * 20 + 5, Math.random() * 10 + 5, Math.random() * 15 + 5];
+        ch['histCompare'].data.datasets[1].data = [Math.random() * 10 + 2, Math.random() * 10 + 2, Math.random() * 8 + 2, Math.random() * 10 + 3, Math.random() * 5 + 1, Math.random() * 7 + 2];
+        ch['histCompare'].update();
+      } else {
+        const ctx3 = document.getElementById('histCompareChart').getContext('2d');
+        ch['histCompare'] = new Chart(ctx3, {
+          type: 'radar', data: {
+            labels: ['Price Fluctuations', 'Quality Drops', 'Delivery Delays', 'Geopolitics', 'Financial Stress', 'ESG Lapses'],
+            datasets: [
+              { label: 'Supplier A', data: [15, 8, 22, 12, 6, 10], backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: '#EF4444', borderWidth: 2 },
+              { label: 'Supplier B', data: [7, 4, 6, 8, 2, 4], backgroundColor: 'rgba(34, 197, 94, 0.2)', borderColor: '#22C55E', borderWidth: 2 }
+            ]
+          },
+          options: { responsive: true, maintainAspectRatio: false, scales: { r: { ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' } } }, plugins: { legend: { display: false } } }
+        });
+      }
+    }
+
+    // ── ANALYTICS ──
+    function loadAnalytics() {
+      dc('cat'); dc('reg'); dc('imp'); dc('sc');
+      // Category
+      const cats = ['Agri-Products', 'Auto Components', 'Electronics', 'Energy', 'IT Services', 'Logistics', 'Packaging', 'Pharma', 'Raw Materials'];
+      const avgR = [33.6, 33.5, 35.2, 30.8, 30.3, 23.0, 32.1, 30.3, 31.2];
+      const maxR = [39.0, 36.2, 43.5, 42.9, 35.0, 27.6, 36.3, 41.3, 33.3];
+      const catCtx = document.getElementById('catChart').getContext('2d');
+      ch['cat'] = new Chart(catCtx, {
+        type: 'bar', data: {
+          labels: cats, datasets: [
+            { label: 'Avg Risk %', data: avgR, backgroundColor: 'rgba(99,102,241,.6)', borderColor: '#6366F1', borderWidth: 1, borderRadius: 3 },
+            { label: 'Max Risk %', data: maxR, backgroundColor: 'rgba(239,68,68,.3)', borderColor: '#EF4444', borderWidth: 1, borderRadius: 3 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#7A8BA8' } } }, scales: { x: { ticks: { maxRotation: 30, font: { size: 10 } }, grid: { display: false } }, y: { ticks: { callback: v => v + '%' }, beginAtZero: true } } }
+      });
+      // Region radar
+      const regs = ['Maharashtra', 'Gujarat', 'Tamil Nadu', 'Karnataka', 'Rajasthan', 'UP', 'West Bengal', 'Telangana', 'Punjab', 'Haryana'];
+      const rvals = [35.9, 28.5, 38.9, 24.6, 35.9, 30.9, 31.6, 27.6, 35.9, 25.1];
+      const regCtx = document.getElementById('regChart').getContext('2d');
+      ch['reg'] = new Chart(regCtx, {
+        type: 'radar', data: { labels: regs, datasets: [{ label: 'Avg Risk %', data: rvals, borderColor: '#00D4AA', backgroundColor: 'rgba(0,212,170,.1)', pointBackgroundColor: '#00D4AA', borderWidth: 2 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { grid: { color: 'rgba(255,255,255,.05)' }, ticks: { display: false } } } }
+      });
+      // Impact donut
+      const impCtx = document.getElementById('impChart').getContext('2d');
+      ch['imp'] = new Chart(impCtx, {
+        type: 'doughnut', data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: [3578, 2128, 984, 362], backgroundColor: ['rgba(239,68,68,.75)', 'rgba(249,115,22,.75)', 'rgba(245,158,11,.75)', 'rgba(34,197,94,.75)'], borderWidth: 0, hoverOffset: 6 }] },
+        options: { responsive: true, maintainAspectRatio: false, cutout: '58%', plugins: { legend: { position: 'right', labels: { color: '#7A8BA8', boxWidth: 10 } }, tooltip: { callbacks: { label: c => `₹${c.raw}L` } } } }
+      });
+      // Scatter
+      const scCtx = document.getElementById('scChart').getContext('2d');
+      ch['sc'] = new Chart(scCtx, {
+        type: 'bubble', data: { datasets: [{ data: SUPPLIERS.map(s => ({ x: s.reliability_score, y: s.financial_health, r: s.risk_score * 22 + 4 })), backgroundColor: SUPPLIERS.map(s => rc(s.risk_level) + '88'), borderColor: SUPPLIERS.map(s => rc(s.risk_level)), borderWidth: 1 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { min: .4, max: 1.05, title: { display: true, text: 'Reliability Score', color: '#7A8BA8' } }, y: { min: .3, max: 1.05, title: { display: true, text: 'Financial Health', color: '#7A8BA8' } } } }
+      });
+    }
+
+    // ── LIVE TRACKER ──
+    const SUPPLIER_COORDS = {
+      'SUP1000': { lat: 22.57, lng: 88.36, city: 'Kolkata' },  // Tata Steel - WB
+      'SUP1001': { lat: 17.38, lng: 78.49, city: 'Hyderabad' }, // Mahindra - Telangana
+      'SUP1002': { lat: 22.57, lng: 88.36, city: 'Kolkata' },   // Reliance - WB
+      'SUP1003': { lat: 12.97, lng: 77.59, city: 'Bengaluru' }, // Infosys - Karnataka
+      'SUP1004': { lat: 28.47, lng: 77.03, city: 'Gurugram' },  // Wipro - Haryana
+      'SUP1005': { lat: 23.02, lng: 72.57, city: 'Ahmedabad' }, // Adani - Gujarat
+      'SUP1006': { lat: 26.85, lng: 80.94, city: 'Lucknow' },   // ITC - UP
+      'SUP1007': { lat: 22.30, lng: 73.18, city: 'Vadodara' },  // Sun Pharma - Gujarat
+      'SUP1008': { lat: 18.52, lng: 73.86, city: 'Pune' },      // Bajaj - Gujarat
+      'SUP1009': { lat: 26.92, lng: 75.82, city: 'Jaipur' },    // Maruti - Rajasthan
+      'SUP1010': { lat: 22.57, lng: 88.36, city: 'Kolkata' },   // L&T - WB
+      'SUP1011': { lat: 19.08, lng: 72.88, city: 'Mumbai' },    // HUL - Maharashtra
+      'SUP1012': { lat: 28.64, lng: 77.22, city: 'Delhi' },
+      'SUP1013': { lat: 13.08, lng: 80.27, city: 'Chennai' },   // Asian Paints - TN
+      'SUP1014': { lat: 17.68, lng: 83.21, city: 'Visakhapatnam' },
+      'SUP1015': { lat: 26.92, lng: 75.82, city: 'Jaipur' },    // BHEL - Rajasthan
+      'SUP1016': { lat: 13.08, lng: 80.27, city: 'Chennai' },   // Cipla - TN
+      'SUP1017': { lat: 31.15, lng: 75.34, city: 'Jalandhar' }, // Punjab
+      'SUP1018': { lat: 23.02, lng: 72.57, city: 'Ahmedabad' },
+      'SUP1019': { lat: 12.97, lng: 77.59, city: 'Bengaluru' },
+      'SUP1020': { lat: 30.73, lng: 76.78, city: 'Chandigarh' },// Punjab
+      'SUP1021': { lat: 21.14, lng: 79.08, city: 'Nagpur' },
+      'SUP1022': { lat: 20.27, lng: 85.84, city: 'Bhubaneswar' },
+      'SUP1023': { lat: 25.59, lng: 85.13, city: 'Patna' },
+      'SUP1024': { lat: 22.57, lng: 88.36, city: 'Kolkata' },
+      'SUP1025': { lat: 31.15, lng: 75.34, city: 'Jalandhar' }, // Hindalco - Punjab
+      'SUP1026': { lat: 21.14, lng: 72.83, city: 'Surat' },
+      'SUP1027': { lat: 15.85, lng: 74.50, city: 'Belagavi' },
+      'SUP1028': { lat: 22.72, lng: 75.86, city: 'Indore' },
+      'SUP1029': { lat: 19.99, lng: 73.79, city: 'Nashik' },
+    };
+
+    // Shipments with lat/lng for polylines
+    const SHIPMENTS = [
+      { id: 'SHP001', name: 'Hindalco → Mumbai Hub', from: { lat: 31.15, lng: 75.34 }, to: { lat: 19.08, lng: 72.88 }, status: 'delayed', supplier: 'SUP1025', cargo: 'Electronic Components', value: 2340000, eta: '2h 45m overdue' },
+      { id: 'SHP002', name: 'Maruti Vendors → Pune', from: { lat: 26.92, lng: 75.82 }, to: { lat: 18.52, lng: 73.86 }, status: 'moving', supplier: 'SUP1009', cargo: 'Auto Parts', value: 8760000, eta: 'On time – 4h 20m' },
+      { id: 'SHP003', name: 'Asian Paints → Delhi', from: { lat: 13.08, lng: 80.27 }, to: { lat: 28.64, lng: 77.22 }, status: 'delayed', supplier: 'SUP1013', cargo: 'Pharma Raw Materials', value: 5430000, eta: '1h 15m overdue' },
+      { id: 'SHP004', name: 'Adani Port → Ahmedabad', from: { lat: 22.96, lng: 69.61 }, to: { lat: 23.02, lng: 72.57 }, status: 'moving', supplier: 'SUP1005', cargo: 'Import Container', value: 12400000, eta: 'On time – 2h 10m' },
+      { id: 'SHP005', name: 'Tata Steel → Jamshedpur', from: { lat: 22.57, lng: 88.36 }, to: { lat: 22.80, lng: 86.18 }, status: 'moving', supplier: 'SUP1000', cargo: 'Steel Coils', value: 18900000, eta: 'On time – 1h 55m' },
+      { id: 'SHP006', name: 'BHEL → Hyderabad', from: { lat: 26.92, lng: 75.82 }, to: { lat: 17.38, lng: 78.49 }, status: 'stopped', supplier: 'SUP1015', cargo: 'Heavy Equipment', value: 34500000, eta: '⚠ Stopped — port delay' },
+      { id: 'SHP007', name: 'Cipla → Chennai Port', from: { lat: 13.08, lng: 80.27 }, to: { lat: 13.09, lng: 80.29 }, status: 'moving', supplier: 'SUP1016', cargo: 'API Chemicals', value: 9800000, eta: 'On time – 0h 30m' },
+      { id: 'SHP008', name: 'L&T → Kolkata', from: { lat: 22.57, lng: 88.36 }, to: { lat: 22.56, lng: 88.35 }, status: 'delayed', supplier: 'SUP1010', cargo: 'Construction Materials', value: 6700000, eta: '3h 00m overdue' },
+      { id: 'SHP009', name: 'Wipro Supply → Delhi', from: { lat: 28.47, lng: 77.03 }, to: { lat: 28.64, lng: 77.22 }, status: 'moving', supplier: 'SUP1004', cargo: 'IT Hardware', value: 4200000, eta: 'On time – 0h 45m' },
+      { id: 'SHP010', name: 'ITC Agri → Lucknow Hub', from: { lat: 26.85, lng: 80.94 }, to: { lat: 26.90, lng: 80.90 }, status: 'moving', supplier: 'SUP1006', cargo: 'Agri Products', value: 3100000, eta: 'On time – 1h 10m' },
+    ];
+
+    let mapInstance = null;
+    let mapMarkers = [];
+    let routeLines = [];
+    let movingMarkers = [];
+    let showRoutes = true;
+    let currentMapFilter = 'all';
+    let feedInterval = null;
+    let markerMoveInterval = null;
+
+    const FEED_EVENTS = [
+      { text: '<strong>Hindalco Industries</strong> — Shipment SHP001 delayed by 2h 45m at NH-48 checkpoint', color: '#F97316', region: 'Punjab' },
+      { text: '<strong>BHEL Components</strong> — Carrier stopped at Jaipur depot. Strike action reported.', color: '#EF4444', region: 'Rajasthan' },
+      { text: '<strong>Maruti Vendors</strong> — Route updated: NH-48 → bypass via Toll-7. ETA unchanged.', color: '#22C55E', region: 'Rajasthan' },
+      { text: '<strong>Asian Paints Supply</strong> — Quality check flagged at Chennai inspection point', color: '#F59E0B', region: 'Tamil Nadu' },
+      { text: '<strong>Adani Ports</strong> — Container unloaded at JNPT. Moving to warehouse.', color: '#22C55E', region: 'Gujarat' },
+      { text: '<strong>L&T Procurement</strong> — Weather delay: Cyclone warning issued for Bay of Bengal route', color: '#EF4444', region: 'West Bengal' },
+      { text: '<strong>Tata Steel Ltd</strong> — GPS ping confirmed. Transit nominal at 65 km/h.', color: '#00D4AA', region: 'West Bengal' },
+      { text: '<strong>Cipla Pharma Supply</strong> — Cold chain integrity verified at transit checkpoint.', color: '#22C55E', region: 'Tamil Nadu' },
+      { text: '<strong>Hindalco Industries</strong> — New risk alert: Border checkpoint delay flagged', color: '#EF4444', region: 'Punjab' },
+      { text: '<strong>ITC Agri-Business</strong> — Arrived at distribution centre on schedule', color: '#22C55E', region: 'UP' },
+      { text: '<strong>Wipro Supply Chain</strong> — Delivery confirmed at Delhi data centre', color: '#00D4AA', region: 'Haryana' },
+      { text: '<strong>Sun Pharma Vendors</strong> — Temperature anomaly detected in cargo hold #3', color: '#F97316', region: 'Gujarat' },
+    ];
+
+    function loadTracker() {
+      if (mapInstance) { mapInstance.remove(); mapInstance = null; }
+      mapMarkers = []; routeLines = []; movingMarkers = [];
+      if (feedInterval) clearInterval(feedInterval);
+      if (markerMoveInterval) clearInterval(markerMoveInterval);
+
+      // Update stats
+      const mov = SHIPMENTS.filter(s => s.status === 'moving').length;
+      const del = SHIPMENTS.filter(s => s.status === 'delayed').length;
+      const stp = SHIPMENTS.filter(s => s.status === 'stopped').length;
+      document.getElementById('mt-moving').textContent = mov;
+      document.getElementById('mt-delayed').textContent = del;
+      document.getElementById('mt-stopped').textContent = stp;
+
+      // Init Leaflet
+      mapInstance = L.map('supplyMap', { zoomControl: true, attributionControl: false }).setView([22, 80], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, opacity: 0.5 }).addTo(mapInstance);
+
+      // Custom icon by risk level
+      function makeIcon(color, size = 14, pulse = false) {
+        return L.divIcon({
+          html: `<div style="
+        width:${size}px;height:${size}px;background:${color};border-radius:50%;
+        border:2px solid rgba(255,255,255,0.6);
+        box-shadow:0 0 0 3px ${color}44,0 0 12px ${color}66;
+        ${pulse ? `animation:pulseMap 1.8s infinite;` : ''}
+        position:relative;
+      "></div>
+      <style>@keyframes pulseMap{0%,100%{box-shadow:0 0 0 3px ${color}44,0 0 12px ${color}66}50%{box-shadow:0 0 0 8px ${color}22,0 0 20px ${color}44}}
+    /* AI COPILOT CHAT */
+    .ai-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+    .ai-btn:hover {
+      transform: scale(1.08);
+    }
+    .ai-panel {
+      position: fixed;
+      bottom: 90px;
+      right: 28px;
+      width: 380px;
+      height: 520px;
+      background: rgba(13, 21, 37, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+    }
+    .ai-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .ai-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0,0,0,0.2);
+    }
+    .ai-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-family: 'Syne', sans-serif;
+    }
+    .ai-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .ai-status {
+      font-size: 11px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .ai-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .ai-body {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .ai-msg {
+      max-width: 85%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .ai-msg.bot {
+      background: var(--surface2);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      color: var(--text);
+    }
+    .ai-msg.user {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+      color: #fff;
+    }
+    .ai-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 10px;
+    }
+    .ai-chip {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #A5B4FC;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ai-chip:hover {
+      background: rgba(99, 102, 241, 0.3);
+      color: #fff;
+    }
+    .ai-input-area {
+      padding: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      background: rgba(0,0,0,0.2);
+    }
+    .ai-input {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 20px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      outline: none;
+    }
+    .ai-input:focus {
+      border-color: #6366F1;
+    }
+    .ai-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .ai-send:hover {
+      background: #6366F1;
+      color: #fff;
+    }
+    .typing-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--text-muted);
+      border-radius: 50%;
+      margin: 0 2px;
+      animation: typing 1.4s infinite ease-in-out both;
+    }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+</style>`,
+          className: '', iconSize: [size, size], iconAnchor: [size / 2, size / 2]
+        });
+      }
+
+      // Plot supplier markers
+      SUPPLIERS.forEach(s => {
+        const coord = SUPPLIER_COORDS[s.id];
+        if (!coord) return;
+        const color = ({ 'High': '#F97316', 'Medium': '#F59E0B', 'Low': '#22C55E', 'Critical': '#EF4444' })[s.risk_level];
+        const isHigh = s.risk_level === 'High' || s.risk_level === 'Critical';
+        const marker = L.marker([coord.lat, coord.lng], { icon: makeIcon(color, isHigh ? 16 : 12, isHigh) });
+        const popupHtml = `<div class="popup-inner">
+      <div class="popup-name">${s.name}</div>
+      <div class="popup-meta">${s.id} · ${coord.city} · ${s.category}</div>
+      <div class="popup-metrics">
+        <div class="popup-metric"><div class="pm-val" style="color:${color}">${(s.risk_score * 100).toFixed(0)}%</div><div class="pm-lbl">Risk Score</div></div>
+        <div class="popup-metric"><div class="pm-val" style="color:#6366F1">${(s.reliability_score * 100).toFixed(0)}%</div><div class="pm-lbl">Reliability</div></div>
+        <div class="popup-metric"><div class="pm-val">${(s.financial_health * 100).toFixed(0)}%</div><div class="pm-lbl">Fin. Health</div></div>
+        <div class="popup-metric"><div class="pm-val" style="color:#00D4AA">₹${(s.contract_value_inr / 1e7).toFixed(1)}Cr</div><div class="pm-lbl">Contract</div></div>
+      </div>
+    </div>`;
+        marker.bindPopup(popupHtml, { className: 'map-popup', maxWidth: 240 });
+        marker.addTo(mapInstance);
+        mapMarkers.push({ marker, supplier: s });
+      });
+
+      // Draw shipment routes
+      drawRouteLines();
+
+      // Shipment list
+      renderShipmentList();
+
+      // Live feed
+      renderFeed();
+      let feedIdx = 0;
+      feedInterval = setInterval(() => {
+        feedIdx = (feedIdx + 1) % FEED_EVENTS.length;
+        const f = FEED_EVENTS[feedIdx];
+        const feed = document.getElementById('liveFeed');
+        if (feed) {
+          const div = document.createElement('div');
+          div.className = 'feed-item';
+          div.innerHTML = `<div class="feed-dot" style="background:${f.color}"></div>
+        <div><div class="feed-text">${f.text}</div>
+        <div class="feed-time">${f.region} · ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</div></div>`;
+          feed.insertBefore(div, feed.firstChild);
+          while (feed.children.length > 8) feed.removeChild(feed.lastChild);
+        }
+      }, 3000);
+
+      // Animate moving markers
+      let tick = 0;
+      markerMoveInterval = setInterval(() => {
+        tick++;
+        mapMarkers.forEach(({ marker, supplier }) => {
+          const coord = SUPPLIER_COORDS[supplier.id];
+          if (!coord) return;
+          // Tiny random drift to simulate GPS update
+          const jitter = 0.008;
+          const newLat = coord.lat + (Math.random() - .5) * jitter;
+          const newLng = coord.lng + (Math.random() - .5) * jitter;
+          marker.setLatLng([newLat, newLng]);
+        });
+        // Update shipment ETA display occasionally
+        if (tick % 5 === 0) renderShipmentList();
+      }, 4000);
+
+      // Charts
+      drawHeatChart();
+      drawShipDonut(mov, del, stp);
+    }
+
+
+    // --- ADVANCED VEHICLE ANIMATION LOGIC ---
+    let animationFrameId;
+    let startTime;
+
+    function startSmoothAnimations() {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      startTime = performance.now();
+
+      // Calculate paths
+      SHIPMENTS.forEach(s => {
+        s.startLat = s.from.lat;
+        s.startLng = s.from.lng;
+        s.endLat = s.to.lat;
+        s.endLng = s.to.lng;
+
+        // Random offset so they don't all start linearly
+        s.progressBase = Math.random() * 10000;
+
+        if (s.status === 'stopped') {
+          s.speed = 0;
+        } else if (s.status === 'delayed') {
+          s.speed = 0.0001; // extremely slow
+        } else {
+          s.speed = 0.0003 + (Math.random() * 0.0002); // normal speed
+        }
+      });
+
+      function step(timestamp) {
+        let elapsed = timestamp - startTime;
+
+        routeLines.forEach(item => {
+          if (item.isTruckMarker) {
+            const s = item.shipment;
+            if (s.speed > 0) {
+              let p = ((elapsed + s.progressBase) * s.speed) % 2; // goes 0 to 2
+              let percent = p > 1 ? 2 - p : p; // ping pong 0 to 1 to 0
+
+              // Interpolate position
+              let curLat = s.startLat + (s.endLat - s.startLat) * percent;
+              let curLng = s.startLng + (s.endLng - s.startLng) * percent;
+
+              item.setLatLng([curLat, curLng]);
+            }
+          }
+        });
+        animationFrameId = requestAnimationFrame(step);
+      }
+      animationFrameId = requestAnimationFrame(step);
+    }
+
+    function drawRouteLines() {
+      routeLines.forEach(l => mapInstance.removeLayer(l));
+      routeLines = [];
+      if (!showRoutes) return;
+      SHIPMENTS.forEach(s => {
+        const color = s.status === 'moving' ? '#00D4AA' : s.status === 'delayed' ? '#F97316' : '#EF4444';
+        const opts = { color, weight: s.status === 'stopped' ? 1.5 : 2, opacity: 0.75, dashArray: s.status === 'delayed' ? '6,4' : null };
+        const line = L.polyline([[s.from.lat, s.from.lng], [s.to.lat, s.to.lng]], opts).addTo(mapInstance);
+        // Animated truck icon at midpoint
+        const midLat = (s.from.lat + s.to.lat) / 2;
+        const midLng = (s.from.lng + s.to.lng) / 2;
+        const truckIcon = L.divIcon({
+          html: `<div style="background:${color};border-radius:3px;padding:2px 5px;font-size:9px;color:#000;font-weight:700;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.4)">${s.status === 'stopped' ? '⛔' : '🚛'}</div>`,
+          className: '', iconAnchor: [16, 8]
+        });
+        const tMarker = L.marker([midLat, midLng], { icon: truckIcon }).addTo(mapInstance);
+        tMarker.isTruckMarker = true;
+        tMarker.shipment = s;
+        tMarker.bindTooltip(`<b>${s.name}</b><br>${s.cargo}<br>₹${(s.value / 1e5).toFixed(1)}L<br>${s.eta}`, { direction: 'top', className: '' });
+        routeLines.push(line, tMarker);
+      });
+      startSmoothAnimations();
+    }
+
+    function toggleRoutes(el) {
+      showRoutes = !showRoutes;
+      el.classList.toggle('active', showRoutes);
+      el.textContent = showRoutes ? 'Routes' : 'Routes';
+      drawRouteLines();
+    }
+
+    function mapFilter(level, el) {
+      currentMapFilter = level;
+      document.querySelectorAll('.map-ctrl-btn').forEach(b => { if (['btnAll', 'btnHigh'].includes(b.id)) b.classList.remove('active') });
+      el.classList.add('active');
+      mapMarkers.forEach(({ marker, supplier }) => {
+        if (level === 'all' || supplier.risk_level === level) { marker.setOpacity(1); }
+        else { marker.setOpacity(0.15); }
+      });
+    }
+
+    function renderShipmentList() {
+      const el = document.getElementById('shipmentList');
+      if (!el) return;
+      el.innerHTML = SHIPMENTS.map(s => {
+        const sc = s.status === 'moving' ? 'ss-moving' : s.status === 'delayed' ? 'ss-delayed' : 'ss-stopped';
+        const st = s.status === 'moving' ? 'Moving' : s.status === 'delayed' ? 'Delayed' : 'Stopped';
+        return `<div class="ship-item">
+      <div><div class="ship-name">${s.name}</div><div class="ship-route">${s.cargo} · ₹${(s.value / 1e5).toFixed(1)}L</div></div>
+      <span class="ship-status ${sc}">${st}</span>
+    </div>`;
+      }).join('');
+    }
+
+    function renderFeed() {
+      const feed = document.getElementById('liveFeed');
+      if (!feed) return;
+      feed.innerHTML = FEED_EVENTS.slice(0, 5).map(f => `<div class="feed-item">
+    <div class="feed-dot" style="background:${f.color}"></div>
+    <div><div class="feed-text">${f.text}</div>
+    <div class="feed-time">${f.region} · ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div></div>
+  </div>`).join('');
+    }
+
+    function drawHeatChart() {
+      dc('heat');
+      const ctx = document.getElementById('heatCanvas').getContext('2d');
+      const regions = ['Maharashtra', 'Gujarat', 'Tamil Nadu', 'Karnataka', 'Rajasthan', 'UP', 'West Bengal', 'Telangana', 'Punjab', 'Haryana'];
+      const vals = [35.9, 28.5, 38.9, 24.6, 35.9, 30.9, 31.6, 27.6, 35.9, 25.1];
+      const cols = vals.map(v => v > 35 ? 'rgba(239,68,68,.7)' : v > 30 ? 'rgba(249,115,22,.6)' : v > 25 ? 'rgba(245,158,11,.55)' : 'rgba(34,197,94,.6)');
+      ch['heat'] = new Chart(ctx, {
+        type: 'bar', data: { labels: regions, datasets: [{ data: vals, backgroundColor: cols, borderWidth: 0, borderRadius: 4 }] },
+        options: {
+          indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `Risk: ${c.raw.toFixed(1)}%` } } },
+          scales: { x: { min: 0, max: 55, ticks: { callback: v => v + '%' }, grid: { display: false } }, y: { ticks: { font: { size: 10.5 } }, grid: { display: false } } }
+        }
+      });
+    }
+
+    function drawShipDonut(mov, del, stp) {
+      dc('shipDt');
+      const ctx = document.getElementById('shipDonut').getContext('2d');
+      ch['shipDt'] = new Chart(ctx, {
+        type: 'doughnut', data: { labels: ['Moving', 'Delayed', 'Stopped'], datasets: [{ data: [mov, del, stp], backgroundColor: ['rgba(34,197,94,.7)', 'rgba(249,115,22,.7)', 'rgba(239,68,68,.7)'], borderWidth: 0, hoverOffset: 5 }] },
+        options: {
+          responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: {
+            legend: { position: 'bottom', labels: { color: '#7A8BA8', boxWidth: 10, padding: 14 } },
+            tooltip: { callbacks: { label: c => `${c.label}: ${c.raw} shipments` } }
+          }
+        }
+      });
+    }
+
+
+    // --- AI COPILOT LOGIC ---
+    function toggleAI() {
+      document.getElementById('aiPanel').classList.toggle('open');
+    }
+
+    function appendMsg(text, type = 'bot') {
+      const b = document.getElementById('aiBody');
+      const d = document.createElement('div');
+      d.className = 'ai-msg ' + type;
+      if (text === 'typing') {
+        d.id = 'typingIndicator';
+        d.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+      } else {
+        d.innerHTML = text;
+      }
+      // Insert before chips if they exist
+      const chips = document.querySelector('.ai-chips');
+      if (chips) {
+        b.insertBefore(d, chips);
+      } else {
+        b.appendChild(d);
+      }
+      b.scrollTop = b.scrollHeight;
+    }
+
+    function askCopilot(q) {
+      document.getElementById('aiInput').value = q;
+      sendAI();
+    }
+
+    async function sendAI() {
+      const inp = document.getElementById('aiInput');
+      const q = inp.value.trim();
+      if (!q) return;
+      inp.value = '';
+
+      // Hide chips after first interaction for cleaner look
+      const chips = document.querySelector('.ai-chips');
+      if (chips) chips.style.display = 'none';
+
+      appendMsg(q, 'user');
+      appendMsg('typing', 'bot');
+
+      try {
+        const res = await fetch('/ask_ai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: q })
+        });
+        const data = await res.json();
+        document.getElementById('typingIndicator').remove();
+        appendMsg(data.answer, 'bot');
+      } catch (err) {
+        document.getElementById('typingIndicator').remove();
+        appendMsg('⚠️ Connection to AI engine lost. Local fallback engaged: "I suggest prioritizing local inventory buffering while the network connection is restored."', 'bot');
+      }
+    }
+
+    // INIT
+    loadDashboard();
+    renderST();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,2001 @@
+Supplier_ID,Category,Order_Value_INR,Defect_Rate_Pct,Delay_Rate_Pct,Lead_Time_Days,Weather_Condition,Carrier_Type,Risk_Score,Risk_Level
+SUPP_041,Electronics,3776674.18,14.27,22.23,22,Clear,Sea,56,Medium
+SUPP_016,Raw Materials,4486035.89,1.59,14.32,54,Rain,Road,33,Low
+SUPP_044,Textiles,1471524.84,9.8,2.64,25,Clear,Rail,11,Low
+SUPP_003,Electronics,9388599.45,0.11,29.77,34,Clear,Air,26,Low
+SUPP_015,Textiles,6135948.95,0.21,1.67,28,Clear,Air,0,Low
+SUPP_046,Textiles,514323.35,14.61,7.75,48,Snow,Air,78,High
+SUPP_029,Textiles,3855496.81,14.75,14.54,38,Storm,Road,78,High
+SUPP_049,Raw Materials,6819060.01,6.81,1.38,26,Snow,Sea,53,Medium
+SUPP_018,Raw Materials,8093553.61,4.64,3.83,21,Rain,Sea,24,Low
+SUPP_007,Electronics,6848472.01,9.19,25.16,36,Snow,Road,73,High
+SUPP_023,Packaging,3941053.05,2.82,22.91,7,Storm,Road,71,High
+SUPP_047,Machinery,5489767.28,2.85,29.12,27,Clear,Rail,26,Low
+SUPP_006,Textiles,9398014.47,13.43,18.34,49,Storm,Sea,94,High
+SUPP_037,Raw Materials,930500.4,3.02,2.31,41,Clear,Road,30,Low
+SUPP_043,Raw Materials,3917339.03,4.14,25.03,27,Storm,Road,74,High
+SUPP_015,Electronics,2845298.37,8.19,5.09,16,Snow,Sea,52,Medium
+SUPP_030,Packaging,791778.9,14.8,23.4,45,Rain,Sea,82,High
+SUPP_023,Raw Materials,104945.07,12.25,21.5,36,Storm,Road,77,High
+SUPP_039,Raw Materials,7724139.95,1.2,11.4,42,Rain,Air,31,Low
+SUPP_030,Machinery,8507883.85,6.8,3.77,56,Storm,Air,67,High
+SUPP_044,Packaging,6704970.46,10.02,18.15,23,Clear,Air,27,Low
+SUPP_003,Packaging,4748538.51,1.88,21.68,2,Snow,Sea,59,Medium
+SUPP_005,Raw Materials,5634708.12,11.59,15.32,10,Storm,Air,69,High
+SUPP_042,Machinery,4304033.13,0.48,4.13,33,Snow,Rail,26,Low
+SUPP_010,Packaging,4779933.72,8.49,21.17,38,Rain,Air,57,Medium
+SUPP_048,Textiles,6063952.92,8.14,6.89,14,Storm,Rail,36,Medium
+SUPP_038,Machinery,2933026.96,2.5,27.96,46,Storm,Air,84,High
+SUPP_009,Textiles,1099667.89,6.9,7.33,21,Snow,Road,45,Medium
+SUPP_049,Electronics,3277232.96,1.92,11.33,34,Clear,Air,0,Low
+SUPP_041,Raw Materials,2317954.87,6.46,24.72,42,Snow,Road,77,High
+SUPP_025,Machinery,119173.7,7.71,13.1,38,Snow,Sea,50,Medium
+SUPP_036,Electronics,1242660.4,5.13,28.34,55,Clear,Sea,73,High
+SUPP_050,Packaging,7045038.64,5.52,29.18,53,Clear,Sea,61,Medium
+SUPP_028,Raw Materials,2555233.84,7.51,9.73,50,Snow,Road,73,High
+SUPP_047,Packaging,417025.13,9.18,15.58,55,Rain,Road,62,Medium
+SUPP_041,Packaging,2822532.32,13.63,7.95,3,Rain,Air,45,Medium
+SUPP_024,Raw Materials,4920054.96,14.79,8.02,5,Clear,Sea,47,Medium
+SUPP_032,Electronics,7628115.17,3.64,22.12,25,Clear,Sea,29,Low
+SUPP_020,Raw Materials,6341443.01,9.54,16.54,49,Clear,Air,40,Medium
+SUPP_037,Electronics,8361259.83,4.88,6.41,30,Clear,Rail,0,Low
+SUPP_005,Textiles,5929384.78,10.2,1.48,4,Rain,Air,43,Medium
+SUPP_043,Machinery,3519226.57,1.53,28.28,41,Rain,Sea,56,Medium
+SUPP_034,Textiles,9370463.39,2.15,10.89,26,Snow,Air,47,Medium
+SUPP_035,Raw Materials,9250701.5,13.17,8.48,17,Storm,Rail,60,Medium
+SUPP_043,Packaging,5574248.08,7.99,8.01,49,Snow,Rail,56,Medium
+SUPP_008,Raw Materials,5605019.86,13.25,6.47,42,Rain,Road,47,Medium
+SUPP_022,Electronics,7018560.41,12.72,25.83,55,Rain,Air,88,High
+SUPP_001,Electronics,8883312.48,12.78,28.13,37,Clear,Air,45,Medium
+SUPP_005,Electronics,6706433.13,8.75,11.8,26,Storm,Road,47,Medium
+SUPP_033,Raw Materials,9737955.18,4.33,9.86,3,Storm,Rail,41,Medium
+SUPP_014,Textiles,4511820.22,14.92,6.1,5,Rain,Rail,25,Low
+SUPP_016,Machinery,4964242.47,2.76,11.63,9,Snow,Air,36,Medium
+SUPP_007,Electronics,7223352.25,4.69,16.73,52,Snow,Sea,76,High
+SUPP_028,Machinery,2688763.56,3.74,29.22,46,Snow,Road,83,High
+SUPP_044,Electronics,8925863.22,9.5,24.05,31,Clear,Rail,25,Low
+SUPP_047,Packaging,5790193.65,7.44,6.66,49,Clear,Air,33,Low
+SUPP_013,Raw Materials,5741441.78,11.55,2.26,45,Snow,Air,73,High
+SUPP_028,Raw Materials,9152900.68,5.62,1.45,25,Storm,Rail,46,Medium
+SUPP_016,Electronics,5550011.42,8.63,29.43,53,Snow,Road,95,High
+SUPP_004,Textiles,1949564.76,4.1,15.07,19,Clear,Road,29,Low
+SUPP_049,Raw Materials,3977180.09,12.68,27.97,47,Rain,Rail,88,High
+SUPP_032,Machinery,2128741.24,10.1,11.4,28,Rain,Rail,44,Medium
+SUPP_004,Raw Materials,8779862.07,11.14,21.21,44,Snow,Road,100,High
+SUPP_025,Packaging,3626936.95,4.47,24.47,36,Snow,Sea,72,High
+SUPP_028,Textiles,8677369.57,13.71,15.83,58,Snow,Air,73,High
+SUPP_013,Packaging,7993037.03,9.78,21.36,17,Rain,Road,53,Medium
+SUPP_038,Textiles,8905553.15,5.14,11.89,3,Clear,Sea,42,Medium
+SUPP_004,Electronics,6736660.05,4.99,5.5,23,Snow,Air,41,Medium
+SUPP_004,Textiles,2540001.04,0.68,9.79,44,Clear,Air,9,Low
+SUPP_005,Textiles,5246320.44,11.57,7.26,6,Clear,Air,21,Low
+SUPP_026,Electronics,899207.28,0.87,16.41,48,Rain,Road,32,Low
+SUPP_040,Electronics,6392427.52,10.92,29.3,43,Snow,Sea,100,High
+SUPP_017,Raw Materials,7962102.64,4.14,13.73,56,Storm,Air,49,Medium
+SUPP_017,Machinery,1884120.06,1.31,13.42,13,Rain,Sea,40,Medium
+SUPP_030,Packaging,629026.28,13.74,13.83,33,Clear,Road,51,Medium
+SUPP_030,Textiles,7160229.43,9.94,9.12,17,Clear,Road,11,Low
+SUPP_035,Raw Materials,6588257.72,6.59,22.17,4,Storm,Air,66,High
+SUPP_023,Electronics,5682070.24,2.46,4.48,30,Rain,Sea,23,Low
+SUPP_019,Raw Materials,963400.7,1.5,10.03,53,Snow,Sea,59,Medium
+SUPP_040,Textiles,4768029.6,1.56,15.26,40,Clear,Sea,13,Low
+SUPP_043,Electronics,1773358.61,6.56,12.56,11,Rain,Sea,51,Medium
+SUPP_008,Electronics,6369181.83,0.78,11.86,59,Rain,Sea,53,Medium
+SUPP_019,Textiles,5056205.77,12.86,20.1,5,Rain,Sea,75,High
+SUPP_014,Packaging,752159.04,9.67,1.77,33,Snow,Sea,59,Medium
+SUPP_004,Electronics,5775968.07,5.88,19.66,34,Snow,Sea,68,High
+SUPP_003,Electronics,8215362.78,9.43,24.79,41,Storm,Air,79,High
+SUPP_041,Packaging,2106509.38,4.18,7.22,47,Rain,Rail,16,Low
+SUPP_036,Machinery,437683.17,9.31,10.76,27,Clear,Road,22,Low
+SUPP_005,Raw Materials,3884696.38,10.26,10.88,52,Clear,Sea,58,Medium
+SUPP_038,Textiles,4985572.67,10.42,11.1,12,Rain,Rail,58,Medium
+SUPP_009,Electronics,7363956.89,12.07,9.18,11,Storm,Sea,59,Medium
+SUPP_003,Packaging,7518616.78,12.12,29.72,49,Rain,Air,68,High
+SUPP_043,Electronics,3751579.95,11.67,10.88,33,Storm,Rail,59,Medium
+SUPP_040,Raw Materials,2424038.75,10.23,22.46,36,Rain,Air,58,Medium
+SUPP_012,Machinery,3808402.42,8.06,15.4,26,Clear,Air,31,Low
+SUPP_048,Packaging,3011469.99,1.59,2.55,42,Snow,Air,53,Medium
+SUPP_018,Raw Materials,958302.43,4.86,28.55,53,Clear,Rail,48,Medium
+SUPP_003,Machinery,4955605.29,1.34,3.66,13,Rain,Air,24,Low
+SUPP_030,Packaging,5559345.37,3.27,28.44,17,Storm,Air,69,High
+SUPP_015,Electronics,1178972.79,13.97,29.25,15,Rain,Rail,54,Medium
+SUPP_022,Packaging,7383503.79,8.23,21.47,48,Clear,Sea,61,Medium
+SUPP_023,Textiles,6895898.6,12.57,26.14,39,Snow,Sea,86,High
+SUPP_002,Electronics,4289610.18,3.42,12.5,28,Storm,Air,31,Low
+SUPP_038,Packaging,859420.37,1.36,29.61,49,Clear,Road,47,Medium
+SUPP_039,Machinery,3737889.36,12.21,28.47,26,Storm,Sea,92,High
+SUPP_028,Textiles,7546112.94,5.71,3.42,45,Clear,Rail,36,Medium
+SUPP_037,Raw Materials,7065589.42,3.81,10.58,4,Storm,Road,47,Medium
+SUPP_046,Machinery,162968.77,7.08,2.63,29,Clear,Air,7,Low
+SUPP_024,Machinery,1219386.16,9.77,22.64,14,Clear,Sea,59,Medium
+SUPP_040,Packaging,3779962.27,4.36,26.19,39,Clear,Sea,45,Medium
+SUPP_033,Packaging,9634064.27,0.28,29.13,48,Snow,Sea,90,High
+SUPP_026,Packaging,481837.79,13.88,27.65,37,Rain,Air,52,Medium
+SUPP_027,Machinery,6969340.67,1.22,5.82,50,Rain,Sea,38,Medium
+SUPP_026,Textiles,2980214.77,14.94,21.21,4,Clear,Sea,65,Medium
+SUPP_019,Raw Materials,7384152.02,13.74,28.8,17,Snow,Sea,87,High
+SUPP_030,Machinery,3975491.9,1.69,10.73,59,Snow,Air,48,Medium
+SUPP_033,Machinery,4663799.13,5.36,17.93,29,Rain,Road,29,Low
+SUPP_019,Textiles,9745228.34,14.79,21.25,18,Storm,Road,83,High
+SUPP_049,Raw Materials,3129799.78,12.23,20.86,30,Storm,Air,82,High
+SUPP_013,Raw Materials,9113725.49,12.36,28.54,6,Clear,Road,59,Medium
+SUPP_016,Machinery,9195806.69,1.33,26.42,46,Clear,Rail,34,Low
+SUPP_027,Textiles,312351.4,5.71,24.51,33,Rain,Rail,49,Medium
+SUPP_032,Machinery,1546648.07,8.95,12.05,23,Rain,Air,36,Medium
+SUPP_042,Electronics,8391370.61,7.08,13.03,2,Clear,Rail,30,Low
+SUPP_015,Raw Materials,610936.19,12.98,24.57,32,Snow,Road,79,High
+SUPP_036,Raw Materials,9966536.53,8.38,23.3,38,Clear,Rail,34,Low
+SUPP_009,Machinery,8503991.54,3.79,14.07,47,Storm,Rail,45,Medium
+SUPP_040,Textiles,9542807.72,9.13,7.63,50,Snow,Rail,52,Medium
+SUPP_011,Machinery,6200375.99,5.44,4.29,27,Snow,Sea,41,Medium
+SUPP_049,Raw Materials,4788296.43,12.49,9.93,2,Storm,Rail,66,High
+SUPP_041,Raw Materials,9681338.97,1.42,23.96,18,Storm,Rail,60,Medium
+SUPP_005,Packaging,4826457.37,6.37,23.76,15,Rain,Sea,46,Medium
+SUPP_022,Packaging,8060194.44,13.56,18.9,35,Clear,Air,30,Low
+SUPP_010,Raw Materials,6100474.1,9.59,17.09,52,Snow,Air,56,Medium
+SUPP_046,Raw Materials,3515141.9,7.76,23.73,31,Clear,Rail,47,Medium
+SUPP_027,Packaging,5259842.65,10.49,24.1,11,Snow,Rail,93,High
+SUPP_004,Raw Materials,8428809.58,11.56,2.92,6,Snow,Rail,46,Medium
+SUPP_050,Textiles,6227016.56,5.28,7.06,44,Clear,Rail,30,Low
+SUPP_031,Electronics,3448553.94,8.11,14.34,17,Storm,Sea,60,Medium
+SUPP_049,Machinery,1431330.37,9.65,6.27,57,Snow,Air,69,High
+SUPP_032,Raw Materials,8973044.68,7.16,20.36,51,Storm,Rail,88,High
+SUPP_032,Electronics,456642.73,2.62,9.08,23,Snow,Sea,50,Medium
+SUPP_043,Machinery,5509717.33,8.06,11.32,47,Rain,Rail,36,Medium
+SUPP_009,Textiles,1331046.56,5.02,10.33,27,Clear,Rail,34,Low
+SUPP_038,Textiles,4837396.67,10.35,15.84,44,Clear,Road,60,Medium
+SUPP_042,Machinery,657725.7,4.23,24.38,50,Rain,Rail,42,Medium
+SUPP_012,Electronics,1885984.14,3.22,11.74,23,Storm,Rail,43,Medium
+SUPP_021,Raw Materials,6201634.98,5.6,14.41,46,Snow,Sea,78,High
+SUPP_022,Machinery,1520003.96,2.08,20.93,24,Storm,Rail,58,Medium
+SUPP_017,Electronics,7508681.51,0.55,26.15,39,Snow,Road,52,Medium
+SUPP_048,Textiles,4001780.13,1.66,22.38,29,Clear,Sea,34,Low
+SUPP_015,Electronics,5661452.67,12.63,3.59,45,Clear,Road,59,Medium
+SUPP_016,Raw Materials,8910746.44,8.94,20.69,4,Clear,Air,33,Low
+SUPP_016,Raw Materials,5009499.88,1.4,16.58,35,Snow,Road,49,Medium
+SUPP_037,Raw Materials,7467122.77,6.53,4.7,42,Snow,Sea,59,Medium
+SUPP_050,Packaging,3662668.85,9.72,17.55,57,Rain,Road,52,Medium
+SUPP_050,Raw Materials,3336967.39,14.01,1.22,22,Storm,Road,55,Medium
+SUPP_038,Electronics,3685300.36,7.37,25.67,31,Storm,Rail,78,High
+SUPP_026,Raw Materials,8972815.98,1.3,16.21,41,Clear,Air,19,Low
+SUPP_007,Packaging,9824667.24,1.77,12.54,29,Clear,Road,15,Low
+SUPP_023,Textiles,8661795.9,12.27,8.48,57,Snow,Sea,75,High
+SUPP_005,Textiles,6703000.04,13.95,17.15,9,Storm,Road,78,High
+SUPP_027,Machinery,8393896.46,3.16,29.07,5,Clear,Rail,33,Low
+SUPP_024,Machinery,2035093.93,11.07,16.37,2,Rain,Rail,48,Medium
+SUPP_012,Textiles,2921874.0,8.76,5.48,37,Storm,Rail,42,Medium
+SUPP_030,Machinery,5349264.85,0.87,10.76,11,Storm,Sea,44,Medium
+SUPP_016,Electronics,680580.96,14.85,10.35,3,Storm,Rail,74,High
+SUPP_016,Machinery,2583674.51,10.25,23.05,12,Snow,Sea,94,High
+SUPP_002,Machinery,4742183.08,6.24,11.12,50,Storm,Air,59,Medium
+SUPP_032,Raw Materials,8314663.11,14.48,4.6,57,Storm,Sea,80,High
+SUPP_022,Packaging,9386487.55,2.8,2.93,41,Storm,Road,61,Medium
+SUPP_034,Raw Materials,528541.71,11.74,25.01,38,Clear,Air,53,Medium
+SUPP_047,Machinery,8005394.45,12.39,6.41,20,Snow,Air,58,Medium
+SUPP_045,Machinery,5254500.98,5.45,26.44,26,Snow,Rail,72,High
+SUPP_002,Electronics,8175164.42,6.64,11.93,52,Storm,Air,60,Medium
+SUPP_026,Raw Materials,5420821.57,6.64,17.75,18,Storm,Sea,50,Medium
+SUPP_031,Textiles,3945247.0,8.02,2.93,41,Storm,Rail,63,Medium
+SUPP_048,Textiles,5451350.64,6.53,10.65,52,Storm,Sea,72,High
+SUPP_045,Machinery,6952490.19,2.58,26.48,34,Storm,Sea,74,High
+SUPP_017,Raw Materials,7427536.07,8.64,29.93,58,Clear,Air,40,Medium
+SUPP_021,Electronics,7084455.59,11.7,5.15,5,Rain,Air,46,Medium
+SUPP_014,Machinery,7154937.62,7.46,22.88,55,Storm,Sea,85,High
+SUPP_007,Raw Materials,5387989.45,5.74,14.25,53,Storm,Air,78,High
+SUPP_024,Raw Materials,5047769.06,8.14,15.1,5,Storm,Road,56,Medium
+SUPP_046,Textiles,7730225.71,0.28,18.35,37,Rain,Sea,23,Low
+SUPP_003,Electronics,7175981.79,9.03,24.98,11,Storm,Air,62,Medium
+SUPP_041,Machinery,5854748.36,6.07,14.4,47,Clear,Road,40,Medium
+SUPP_037,Packaging,1575846.46,8.83,15.67,26,Snow,Rail,40,Medium
+SUPP_029,Packaging,230196.33,13.09,28.03,37,Rain,Road,70,High
+SUPP_017,Machinery,6981675.7,13.85,21.51,43,Clear,Road,76,High
+SUPP_026,Machinery,5784069.18,9.14,13.3,30,Clear,Road,28,Low
+SUPP_010,Raw Materials,9346951.8,13.89,14.07,47,Storm,Road,79,High
+SUPP_016,Electronics,9849169.93,12.6,4.62,58,Snow,Air,60,Medium
+SUPP_050,Textiles,8705468.8,7.83,18.15,22,Snow,Rail,54,Medium
+SUPP_029,Packaging,594878.31,5.09,24.28,54,Snow,Sea,88,High
+SUPP_037,Textiles,1186959.64,6.28,26.04,39,Clear,Road,31,Low
+SUPP_049,Raw Materials,4683716.22,7.26,27.64,44,Rain,Sea,71,High
+SUPP_043,Electronics,9131857.16,3.8,17.75,53,Rain,Air,30,Low
+SUPP_012,Textiles,387097.64,4.74,23.63,44,Clear,Air,51,Medium
+SUPP_001,Machinery,2239967.28,3.27,15.94,18,Snow,Rail,49,Medium
+SUPP_019,Electronics,4616940.43,8.4,25.96,41,Rain,Sea,76,High
+SUPP_046,Packaging,3030979.32,4.72,12.52,52,Snow,Road,73,High
+SUPP_044,Raw Materials,8985640.18,3.16,6.53,46,Storm,Air,50,Medium
+SUPP_028,Electronics,5670169.28,1.08,23.49,48,Rain,Air,57,Medium
+SUPP_018,Raw Materials,5267683.18,6.67,12.62,39,Clear,Road,33,Low
+SUPP_011,Packaging,1594640.45,2.81,25.99,40,Storm,Rail,47,Medium
+SUPP_008,Machinery,3764427.7,4.13,19.68,34,Storm,Rail,52,Medium
+SUPP_018,Textiles,9790367.78,12.61,26.14,9,Snow,Rail,70,High
+SUPP_006,Textiles,5539639.82,3.88,6.69,9,Clear,Rail,11,Low
+SUPP_048,Packaging,3425748.9,8.58,26.74,29,Storm,Road,74,High
+SUPP_006,Raw Materials,7222090.31,12.1,29.67,33,Clear,Sea,73,High
+SUPP_037,Electronics,8078158.98,14.44,28.39,55,Rain,Rail,85,High
+SUPP_034,Machinery,4093603.47,4.93,3.52,11,Storm,Air,26,Low
+SUPP_038,Machinery,7372250.9,12.74,4.56,20,Snow,Road,53,Medium
+SUPP_031,Packaging,6447109.36,10.59,27.41,6,Snow,Sea,99,High
+SUPP_021,Electronics,3391865.28,12.39,11.53,56,Rain,Sea,71,High
+SUPP_027,Machinery,8315012.34,5.24,23.44,10,Storm,Rail,56,Medium
+SUPP_049,Textiles,8617626.8,3.37,29.26,45,Clear,Rail,53,Medium
+SUPP_006,Packaging,1186667.36,8.53,29.58,24,Storm,Sea,81,High
+SUPP_008,Machinery,4873544.75,7.74,22.51,3,Clear,Rail,37,Medium
+SUPP_027,Electronics,4055372.93,3.35,19.71,47,Rain,Sea,38,Medium
+SUPP_040,Machinery,1366148.3,13.52,21.05,38,Snow,Road,85,High
+SUPP_014,Packaging,8234709.57,7.99,24.64,42,Rain,Sea,65,Medium
+SUPP_029,Machinery,718395.23,6.14,15.43,13,Clear,Road,37,Medium
+SUPP_041,Textiles,1110458.36,2.19,8.65,32,Rain,Air,5,Low
+SUPP_020,Textiles,7335236.56,3.84,19.36,54,Clear,Rail,21,Low
+SUPP_006,Raw Materials,5754279.06,12.59,12.73,59,Clear,Rail,53,Medium
+SUPP_008,Raw Materials,517311.37,2.58,22.4,52,Snow,Sea,90,High
+SUPP_033,Packaging,6051363.49,3.76,12.29,41,Snow,Rail,55,Medium
+SUPP_031,Raw Materials,3588943.53,10.81,9.62,36,Snow,Air,66,High
+SUPP_025,Raw Materials,4786701.5,9.99,28.17,6,Rain,Road,63,Medium
+SUPP_018,Machinery,2188656.77,0.56,8.61,36,Storm,Sea,49,Medium
+SUPP_001,Packaging,561686.84,7.5,18.31,35,Storm,Rail,48,Medium
+SUPP_010,Machinery,7720576.43,1.69,3.18,18,Snow,Sea,30,Low
+SUPP_022,Textiles,4980138.6,10.36,13.61,40,Snow,Rail,57,Medium
+SUPP_021,Raw Materials,8200068.06,12.01,21.15,31,Rain,Rail,55,Medium
+SUPP_015,Machinery,5922795.14,5.48,3.66,50,Clear,Sea,41,Medium
+SUPP_048,Machinery,9504861.67,6.75,6.37,17,Snow,Rail,53,Medium
+SUPP_043,Raw Materials,7596004.52,9.62,23.01,38,Snow,Road,81,High
+SUPP_009,Textiles,6390454.22,14.71,27.2,13,Storm,Road,89,High
+SUPP_029,Electronics,6947093.35,0.87,20.43,33,Snow,Road,59,Medium
+SUPP_047,Raw Materials,5903224.38,14.99,17.12,23,Snow,Air,61,Medium
+SUPP_005,Machinery,387762.49,10.49,9.62,49,Storm,Sea,77,High
+SUPP_040,Machinery,9712029.54,14.17,14.75,31,Clear,Sea,54,Medium
+SUPP_044,Textiles,8453266.52,4.85,25.04,18,Snow,Sea,68,High
+SUPP_041,Machinery,5982885.29,3.53,4.5,35,Clear,Road,0,Low
+SUPP_016,Packaging,6978073.32,5.16,22.02,45,Rain,Road,61,Medium
+SUPP_028,Electronics,3187138.86,8.14,23.93,26,Clear,Rail,37,Medium
+SUPP_011,Packaging,6277619.2,13.3,18.86,3,Clear,Road,52,Medium
+SUPP_021,Electronics,4646331.36,14.86,1.01,14,Storm,Sea,67,High
+SUPP_024,Machinery,3870440.7,14.0,3.03,47,Rain,Air,59,Medium
+SUPP_034,Machinery,574204.17,1.42,2.09,45,Rain,Air,39,Medium
+SUPP_012,Electronics,5828534.21,4.15,12.55,31,Snow,Air,54,Medium
+SUPP_032,Textiles,3396886.12,7.89,22.24,50,Rain,Air,52,Medium
+SUPP_030,Packaging,4699742.13,4.53,25.73,19,Snow,Sea,59,Medium
+SUPP_043,Electronics,468827.24,0.37,29.64,10,Snow,Sea,69,High
+SUPP_044,Textiles,3874050.14,10.23,7.33,59,Rain,Road,49,Medium
+SUPP_029,Packaging,7874132.89,1.43,13.11,57,Storm,Rail,58,Medium
+SUPP_045,Packaging,6027944.54,13.57,29.69,8,Snow,Sea,99,High
+SUPP_013,Machinery,696614.77,6.08,25.3,55,Snow,Road,95,High
+SUPP_016,Machinery,8314893.05,1.89,2.36,58,Storm,Sea,53,Medium
+SUPP_045,Packaging,1905060.71,11.72,11.15,6,Clear,Rail,46,Medium
+SUPP_018,Electronics,9692571.17,13.27,27.9,59,Clear,Rail,71,High
+SUPP_019,Raw Materials,1780257.73,6.0,22.99,18,Storm,Air,78,High
+SUPP_041,Raw Materials,8979489.67,7.0,19.07,48,Storm,Air,79,High
+SUPP_041,Electronics,5949752.35,8.74,3.65,42,Clear,Sea,48,Medium
+SUPP_029,Electronics,2692720.42,2.03,26.77,26,Storm,Air,46,Medium
+SUPP_006,Packaging,8628169.79,12.16,20.0,6,Storm,Rail,65,Medium
+SUPP_012,Raw Materials,915518.26,6.19,11.81,9,Rain,Sea,34,Low
+SUPP_034,Textiles,535396.64,8.04,28.9,49,Storm,Air,82,High
+SUPP_017,Machinery,8950075.31,14.87,2.78,46,Storm,Sea,88,High
+SUPP_008,Machinery,8255575.61,5.28,20.66,28,Clear,Air,37,Medium
+SUPP_049,Raw Materials,2706931.29,13.19,24.13,41,Snow,Sea,95,High
+SUPP_006,Machinery,1615539.56,2.49,10.69,46,Clear,Sea,49,Medium
+SUPP_035,Electronics,9304398.99,1.68,21.27,8,Snow,Sea,59,Medium
+SUPP_044,Packaging,8814664.05,13.09,1.85,24,Snow,Sea,64,Medium
+SUPP_007,Raw Materials,1332255.18,5.09,22.56,32,Snow,Road,77,High
+SUPP_040,Textiles,8188771.89,12.5,15.72,40,Storm,Air,56,Medium
+SUPP_042,Electronics,2906029.43,9.29,29.45,18,Snow,Sea,72,High
+SUPP_042,Machinery,2635045.63,9.55,16.66,36,Clear,Air,25,Low
+SUPP_003,Electronics,1114457.36,11.44,16.7,33,Storm,Rail,56,Medium
+SUPP_008,Electronics,3451628.05,9.53,28.03,30,Rain,Air,56,Medium
+SUPP_025,Machinery,9375423.45,10.35,2.97,28,Storm,Rail,61,Medium
+SUPP_038,Raw Materials,7721293.71,10.66,14.73,23,Snow,Road,83,High
+SUPP_032,Textiles,505133.24,13.09,29.23,30,Snow,Sea,91,High
+SUPP_003,Packaging,7509035.73,2.04,22.99,8,Rain,Rail,35,Low
+SUPP_029,Raw Materials,8224053.83,5.64,24.74,12,Storm,Road,82,High
+SUPP_044,Packaging,4486731.93,4.18,29.92,18,Storm,Road,52,Medium
+SUPP_026,Packaging,4541300.89,2.54,24.05,30,Rain,Road,40,Medium
+SUPP_030,Electronics,2246657.65,1.33,20.73,23,Rain,Road,40,Medium
+SUPP_004,Packaging,2768932.29,14.27,5.38,29,Rain,Air,45,Medium
+SUPP_037,Raw Materials,9099768.88,12.87,28.97,20,Clear,Air,64,Medium
+SUPP_038,Raw Materials,4450872.69,4.75,10.3,39,Rain,Sea,34,Low
+SUPP_050,Raw Materials,7471078.27,3.09,26.18,25,Clear,Sea,36,Medium
+SUPP_010,Raw Materials,5649365.35,7.13,16.75,47,Storm,Air,79,High
+SUPP_008,Electronics,8692800.52,11.67,23.36,47,Rain,Road,87,High
+SUPP_023,Raw Materials,7622188.71,9.43,4.81,54,Storm,Road,73,High
+SUPP_012,Packaging,9212436.09,9.29,24.1,26,Clear,Air,38,Medium
+SUPP_048,Machinery,6003356.29,9.15,8.18,10,Clear,Road,10,Low
+SUPP_031,Machinery,2294124.42,2.5,19.89,54,Storm,Road,70,High
+SUPP_029,Textiles,5923126.19,6.56,29.55,18,Rain,Road,47,Medium
+SUPP_047,Textiles,4672756.04,10.24,12.47,48,Storm,Rail,75,High
+SUPP_042,Electronics,2952042.66,10.46,25.94,39,Clear,Rail,48,Medium
+SUPP_026,Machinery,444207.31,7.26,4.04,18,Clear,Rail,11,Low
+SUPP_046,Machinery,9867292.8,2.22,15.47,23,Clear,Road,24,Low
+SUPP_021,Textiles,3492864.85,11.66,28.3,34,Rain,Road,56,Medium
+SUPP_009,Packaging,5365709.95,13.25,3.39,14,Storm,Rail,64,Medium
+SUPP_039,Textiles,3610123.44,4.9,29.35,27,Storm,Rail,58,Medium
+SUPP_033,Textiles,6947279.71,12.34,2.19,45,Snow,Road,81,High
+SUPP_045,Electronics,9517922.24,1.95,26.99,10,Rain,Rail,30,Low
+SUPP_029,Raw Materials,6185215.59,9.23,9.67,13,Snow,Sea,47,Medium
+SUPP_030,Machinery,9476137.1,9.42,23.72,48,Snow,Road,81,High
+SUPP_021,Machinery,6625160.18,8.34,18.33,23,Storm,Sea,52,Medium
+SUPP_024,Raw Materials,455503.36,2.54,13.72,19,Snow,Road,56,Medium
+SUPP_006,Electronics,5953122.55,9.79,14.9,52,Clear,Rail,43,Medium
+SUPP_007,Packaging,9759859.3,5.12,6.28,56,Rain,Road,50,Medium
+SUPP_038,Textiles,6604142.37,7.52,17.11,19,Storm,Road,63,Medium
+SUPP_027,Packaging,2323124.68,14.95,29.27,4,Snow,Road,84,High
+SUPP_019,Textiles,4062450.54,3.39,13.13,16,Storm,Sea,40,Medium
+SUPP_007,Textiles,8412501.44,2.7,28.86,59,Rain,Air,63,Medium
+SUPP_043,Machinery,4283658.68,5.25,11.76,21,Rain,Road,48,Medium
+SUPP_023,Textiles,5455840.21,7.76,18.05,59,Storm,Road,80,High
+SUPP_049,Packaging,3985375.94,9.13,18.33,37,Rain,Rail,25,Low
+SUPP_036,Textiles,6567342.92,14.88,9.23,13,Clear,Sea,27,Low
+SUPP_002,Raw Materials,6248517.51,9.51,22.26,36,Storm,Sea,72,High
+SUPP_022,Packaging,4082836.32,9.07,19.34,15,Clear,Air,23,Low
+SUPP_010,Textiles,5150521.29,6.25,3.0,42,Snow,Road,71,High
+SUPP_010,Electronics,8713961.52,6.74,15.93,26,Clear,Air,29,Low
+SUPP_025,Machinery,5949860.97,2.54,12.34,58,Snow,Sea,56,Medium
+SUPP_011,Packaging,8586963.23,0.23,18.06,13,Storm,Sea,63,Medium
+SUPP_050,Textiles,3996764.77,3.63,7.81,11,Clear,Road,0,Low
+SUPP_010,Raw Materials,4448142.52,5.03,14.01,13,Clear,Road,23,Low
+SUPP_018,Machinery,4337330.86,3.81,18.9,2,Snow,Rail,54,Medium
+SUPP_039,Machinery,1712066.98,2.6,2.06,38,Snow,Sea,44,Medium
+SUPP_014,Textiles,6654855.05,7.17,25.48,45,Clear,Sea,73,High
+SUPP_028,Electronics,5874275.93,13.04,6.97,21,Storm,Rail,62,Medium
+SUPP_034,Packaging,9867595.15,1.93,7.7,27,Clear,Air,0,Low
+SUPP_026,Textiles,1264993.64,6.84,28.08,6,Clear,Road,30,Low
+SUPP_014,Packaging,5096986.35,0.72,5.3,54,Rain,Air,32,Low
+SUPP_049,Packaging,9652931.03,0.17,28.6,51,Storm,Sea,94,High
+SUPP_008,Electronics,5822116.69,3.89,16.13,24,Snow,Rail,41,Medium
+SUPP_012,Raw Materials,5345837.64,1.97,4.85,53,Snow,Air,50,Medium
+SUPP_033,Textiles,9401206.93,11.02,5.71,22,Storm,Road,50,Medium
+SUPP_026,Electronics,7321753.27,2.43,7.8,48,Snow,Road,61,Medium
+SUPP_030,Electronics,2590299.92,9.96,29.38,44,Storm,Rail,79,High
+SUPP_037,Machinery,224284.11,3.74,25.1,48,Snow,Sea,77,High
+SUPP_008,Machinery,7696767.68,1.79,24.07,5,Clear,Sea,25,Low
+SUPP_011,Textiles,6026064.95,14.12,24.98,49,Snow,Sea,99,High
+SUPP_006,Machinery,5792993.11,5.29,5.62,7,Clear,Air,8,Low
+SUPP_028,Textiles,8671064.74,14.9,22.82,54,Snow,Road,100,High
+SUPP_026,Packaging,2922421.68,1.73,19.86,39,Storm,Air,43,Medium
+SUPP_022,Raw Materials,9260464.57,6.63,27.14,14,Clear,Road,38,Medium
+SUPP_034,Textiles,3206097.38,13.05,11.89,55,Rain,Sea,66,High
+SUPP_023,Raw Materials,107298.67,4.94,11.63,8,Rain,Road,29,Low
+SUPP_010,Packaging,6969898.71,5.89,14.01,50,Rain,Air,51,Medium
+SUPP_039,Raw Materials,4471973.55,0.32,18.02,9,Clear,Air,13,Low
+SUPP_050,Machinery,6443630.89,11.41,15.51,22,Snow,Rail,62,Medium
+SUPP_044,Textiles,5214863.76,7.24,1.74,27,Storm,Sea,64,Medium
+SUPP_010,Machinery,3832946.41,6.04,17.82,45,Clear,Rail,28,Low
+SUPP_029,Packaging,6098655.67,11.5,24.58,51,Storm,Road,100,High
+SUPP_023,Textiles,9557460.77,0.37,6.68,56,Clear,Sea,30,Low
+SUPP_030,Machinery,6492373.41,13.48,8.06,12,Clear,Road,38,Medium
+SUPP_024,Packaging,649660.53,14.02,11.2,35,Clear,Road,43,Medium
+SUPP_040,Textiles,4884424.0,3.93,9.26,28,Snow,Rail,34,Low
+SUPP_038,Textiles,5345989.12,8.76,3.6,31,Clear,Rail,17,Low
+SUPP_037,Raw Materials,4029056.81,14.65,24.87,31,Storm,Rail,80,High
+SUPP_033,Raw Materials,1276065.41,12.91,24.19,32,Clear,Rail,46,Medium
+SUPP_007,Packaging,2988018.98,11.92,6.37,57,Clear,Air,33,Low
+SUPP_003,Raw Materials,4274047.88,1.4,24.66,45,Snow,Rail,83,High
+SUPP_034,Textiles,5288666.98,1.77,1.07,23,Rain,Sea,31,Low
+SUPP_024,Packaging,5175992.94,8.94,24.02,16,Snow,Rail,64,Medium
+SUPP_050,Packaging,1788995.76,5.48,27.27,25,Clear,Sea,50,Medium
+SUPP_005,Packaging,5588538.73,3.91,9.76,25,Clear,Rail,8,Low
+SUPP_019,Packaging,8519183.9,10.1,24.48,20,Rain,Sea,63,Medium
+SUPP_006,Textiles,1539554.48,6.42,5.44,50,Rain,Sea,37,Medium
+SUPP_020,Machinery,8699133.27,7.15,16.53,23,Rain,Road,40,Medium
+SUPP_020,Textiles,3157104.27,3.53,6.98,12,Snow,Sea,39,Medium
+SUPP_009,Textiles,2605994.28,9.52,2.7,26,Clear,Rail,1,Low
+SUPP_033,Packaging,2781675.53,9.0,20.6,43,Clear,Sea,71,High
+SUPP_020,Raw Materials,4485619.6,10.9,1.46,25,Rain,Sea,48,Medium
+SUPP_050,Machinery,1085891.01,10.89,17.77,40,Rain,Air,47,Medium
+SUPP_009,Raw Materials,840222.72,1.38,26.93,4,Clear,Sea,33,Low
+SUPP_007,Textiles,3267547.04,3.48,11.29,5,Clear,Sea,22,Low
+SUPP_050,Textiles,5214644.92,1.11,24.21,28,Rain,Rail,45,Medium
+SUPP_010,Raw Materials,2747916.99,8.93,20.72,45,Rain,Air,52,Medium
+SUPP_047,Machinery,1943732.39,0.88,11.98,39,Clear,Rail,16,Low
+SUPP_024,Raw Materials,9955030.88,6.75,10.67,23,Snow,Sea,61,Medium
+SUPP_049,Machinery,933235.57,14.43,19.41,48,Rain,Air,74,High
+SUPP_020,Machinery,1746255.48,6.2,13.26,56,Rain,Sea,60,Medium
+SUPP_044,Textiles,62304.96,4.58,29.46,4,Snow,Rail,60,Medium
+SUPP_050,Packaging,3856136.49,1.89,29.25,55,Snow,Rail,64,Medium
+SUPP_011,Raw Materials,7384943.24,11.55,8.07,31,Rain,Sea,55,Medium
+SUPP_004,Machinery,974644.99,3.93,23.85,33,Storm,Road,50,Medium
+SUPP_046,Textiles,6104439.81,7.65,5.62,15,Clear,Sea,13,Low
+SUPP_006,Raw Materials,3066127.14,4.02,11.44,22,Storm,Rail,31,Low
+SUPP_033,Raw Materials,9372730.34,8.35,9.86,53,Snow,Road,72,High
+SUPP_015,Machinery,9426750.84,13.11,5.69,23,Storm,Road,60,Medium
+SUPP_027,Electronics,5767144.45,8.54,12.34,13,Snow,Sea,64,Medium
+SUPP_016,Machinery,4001928.84,8.14,19.21,31,Clear,Sea,43,Medium
+SUPP_015,Electronics,5348187.87,10.85,5.1,8,Storm,Road,69,High
+SUPP_046,Packaging,8196413.29,4.91,1.66,28,Rain,Air,1,Low
+SUPP_003,Packaging,2274963.62,14.36,17.62,11,Snow,Air,79,High
+SUPP_049,Machinery,5772875.34,7.24,10.1,32,Snow,Road,58,Medium
+SUPP_006,Electronics,1435020.34,13.48,25.05,53,Storm,Air,87,High
+SUPP_010,Textiles,9530335.4,12.4,20.32,35,Snow,Road,82,High
+SUPP_050,Packaging,4808428.53,7.64,7.74,46,Rain,Sea,46,Medium
+SUPP_008,Electronics,9659930.5,6.54,10.04,15,Rain,Rail,39,Medium
+SUPP_041,Textiles,4423141.3,1.67,19.58,30,Snow,Road,45,Medium
+SUPP_008,Machinery,6214900.15,9.79,5.41,52,Clear,Air,19,Low
+SUPP_046,Raw Materials,7818577.78,6.95,2.69,12,Storm,Rail,47,Medium
+SUPP_001,Textiles,624916.58,10.46,29.53,20,Storm,Air,78,High
+SUPP_037,Machinery,1465381.22,1.91,9.79,52,Rain,Road,26,Low
+SUPP_034,Packaging,6937005.35,1.03,15.77,40,Clear,Road,12,Low
+SUPP_025,Machinery,8149004.18,9.27,9.88,53,Clear,Rail,18,Low
+SUPP_024,Packaging,5294062.57,6.45,4.79,53,Clear,Sea,27,Low
+SUPP_005,Packaging,3709205.54,6.27,25.0,38,Rain,Road,61,Medium
+SUPP_050,Textiles,9640031.64,3.8,4.88,22,Storm,Air,41,Medium
+SUPP_003,Packaging,7913860.47,8.77,20.75,57,Storm,Air,76,High
+SUPP_050,Machinery,6208534.52,4.92,25.19,46,Snow,Air,80,High
+SUPP_009,Electronics,2028619.96,1.06,2.24,18,Snow,Road,27,Low
+SUPP_019,Raw Materials,2695218.81,9.73,15.48,56,Clear,Air,45,Medium
+SUPP_003,Packaging,4907999.31,2.34,10.42,19,Storm,Rail,37,Medium
+SUPP_035,Machinery,8116324.98,9.25,25.93,43,Storm,Road,95,High
+SUPP_049,Raw Materials,9564410.8,2.08,3.96,57,Storm,Sea,53,Medium
+SUPP_050,Electronics,9431169.86,12.15,3.22,34,Storm,Sea,64,Medium
+SUPP_008,Packaging,9306672.9,3.87,23.65,29,Snow,Rail,55,Medium
+SUPP_048,Machinery,4979748.43,5.86,14.05,50,Snow,Sea,79,High
+SUPP_012,Machinery,8899439.62,6.81,26.59,6,Snow,Sea,76,High
+SUPP_034,Packaging,5146608.11,10.24,2.21,58,Clear,Rail,52,Medium
+SUPP_006,Machinery,7177417.71,1.17,3.07,25,Rain,Sea,26,Low
+SUPP_021,Electronics,9567188.91,11.09,11.24,47,Clear,Sea,53,Medium
+SUPP_043,Packaging,3529547.14,11.64,20.18,29,Storm,Rail,88,High
+SUPP_039,Machinery,1782387.89,1.57,20.15,33,Rain,Rail,32,Low
+SUPP_023,Machinery,2687211.96,0.41,3.38,29,Clear,Sea,16,Low
+SUPP_040,Machinery,2989675.54,11.56,19.12,3,Storm,Road,74,High
+SUPP_005,Machinery,2096588.26,1.91,18.84,15,Storm,Air,38,Medium
+SUPP_002,Raw Materials,6456847.32,8.0,2.22,51,Snow,Road,59,Medium
+SUPP_009,Electronics,7997206.21,4.46,29.42,55,Rain,Sea,62,Medium
+SUPP_024,Machinery,5845105.45,11.25,24.54,35,Clear,Air,50,Medium
+SUPP_044,Machinery,485169.48,1.75,18.36,10,Storm,Sea,64,Medium
+SUPP_029,Electronics,3791129.25,8.3,12.27,51,Rain,Sea,66,High
+SUPP_026,Packaging,2774223.51,13.93,20.6,52,Storm,Air,98,High
+SUPP_008,Electronics,176513.16,14.89,20.47,31,Rain,Rail,72,High
+SUPP_034,Machinery,8798723.17,3.95,16.78,22,Clear,Sea,22,Low
+SUPP_050,Packaging,2249580.55,14.68,22.7,47,Snow,Air,91,High
+SUPP_040,Packaging,1846916.25,0.9,10.28,23,Snow,Air,40,Medium
+SUPP_008,Raw Materials,2729846.42,8.14,22.11,3,Clear,Rail,45,Medium
+SUPP_012,Machinery,7273500.1,12.29,7.19,52,Clear,Sea,62,Medium
+SUPP_043,Packaging,8414995.13,11.02,16.72,34,Clear,Sea,58,Medium
+SUPP_020,Raw Materials,6138808.03,1.68,5.4,31,Rain,Sea,16,Low
+SUPP_033,Raw Materials,5792869.19,13.17,13.58,9,Clear,Air,34,Low
+SUPP_009,Raw Materials,5602521.14,12.2,22.51,4,Snow,Road,75,High
+SUPP_024,Textiles,2815125.87,2.99,26.51,35,Storm,Rail,55,Medium
+SUPP_036,Raw Materials,3143742.85,11.16,24.64,28,Clear,Road,46,Medium
+SUPP_020,Machinery,3586076.46,11.78,17.07,23,Snow,Rail,64,Medium
+SUPP_050,Machinery,7621858.06,0.63,22.63,15,Clear,Air,39,Medium
+SUPP_021,Electronics,9582831.13,5.58,10.48,52,Snow,Rail,77,High
+SUPP_044,Textiles,4729674.59,7.58,4.62,48,Storm,Air,48,Medium
+SUPP_050,Textiles,7234605.84,13.3,18.2,38,Rain,Air,40,Medium
+SUPP_028,Textiles,4155587.32,10.46,1.09,39,Clear,Road,33,Low
+SUPP_034,Raw Materials,3587155.45,11.93,3.7,56,Storm,Air,66,High
+SUPP_011,Packaging,4835680.25,9.67,2.88,17,Rain,Sea,42,Medium
+SUPP_034,Packaging,7044287.24,0.89,15.11,31,Clear,Sea,27,Low
+SUPP_013,Textiles,6041349.16,0.44,10.34,47,Storm,Air,63,Medium
+SUPP_041,Packaging,632581.75,5.08,23.76,39,Clear,Air,45,Medium
+SUPP_038,Textiles,7896718.9,7.81,13.77,37,Rain,Air,42,Medium
+SUPP_043,Textiles,7368280.78,3.61,11.77,50,Storm,Road,64,Medium
+SUPP_002,Electronics,9983557.74,14.0,19.63,18,Clear,Sea,40,Medium
+SUPP_042,Raw Materials,6379964.78,11.81,4.43,7,Snow,Road,64,Medium
+SUPP_032,Textiles,8406032.74,5.82,17.58,17,Storm,Sea,54,Medium
+SUPP_031,Raw Materials,1885538.72,5.5,10.7,14,Snow,Sea,60,Medium
+SUPP_030,Electronics,290708.05,12.49,8.92,18,Clear,Air,27,Low
+SUPP_029,Machinery,7836690.3,0.94,25.73,27,Snow,Rail,63,Medium
+SUPP_014,Packaging,3800295.94,6.98,14.95,22,Rain,Sea,39,Medium
+SUPP_046,Packaging,9376665.28,10.62,19.3,40,Storm,Rail,61,Medium
+SUPP_009,Packaging,4989788.47,6.61,22.16,7,Clear,Sea,43,Medium
+SUPP_016,Machinery,1631136.27,9.19,4.93,32,Clear,Sea,29,Low
+SUPP_029,Raw Materials,6586703.8,14.35,3.0,45,Rain,Road,54,Medium
+SUPP_004,Packaging,2857761.39,4.0,8.16,29,Snow,Rail,33,Low
+SUPP_016,Raw Materials,2532984.69,4.15,23.02,43,Storm,Sea,94,High
+SUPP_013,Raw Materials,7778270.04,1.07,15.14,57,Snow,Rail,55,Medium
+SUPP_032,Packaging,673399.37,13.61,5.04,5,Snow,Road,67,High
+SUPP_006,Machinery,4140401.25,5.28,27.1,19,Snow,Air,78,High
+SUPP_014,Textiles,5505789.81,2.01,26.58,22,Storm,Road,59,Medium
+SUPP_004,Packaging,8287290.33,11.84,19.11,38,Snow,Rail,75,High
+SUPP_019,Textiles,2602474.12,9.85,6.74,25,Clear,Road,21,Low
+SUPP_028,Raw Materials,4666128.24,14.58,18.65,58,Storm,Sea,88,High
+SUPP_049,Machinery,269249.84,10.83,13.12,58,Storm,Road,81,High
+SUPP_026,Electronics,6853353.35,8.22,29.43,35,Rain,Sea,55,Medium
+SUPP_036,Packaging,723300.2,10.65,16.76,7,Clear,Rail,38,Medium
+SUPP_033,Machinery,4610091.38,7.32,5.81,3,Storm,Road,56,Medium
+SUPP_009,Electronics,8507254.95,10.07,14.41,49,Snow,Sea,98,High
+SUPP_022,Textiles,6527186.0,8.23,2.81,41,Storm,Air,50,Medium
+SUPP_013,Textiles,8073715.99,6.94,2.51,50,Snow,Road,56,Medium
+SUPP_003,Electronics,8727750.22,8.22,22.99,53,Rain,Sea,81,High
+SUPP_031,Textiles,228559.5,1.98,20.13,53,Snow,Air,73,High
+SUPP_039,Textiles,2426022.3,6.82,29.56,27,Rain,Sea,61,Medium
+SUPP_040,Packaging,320315.84,1.07,14.45,9,Rain,Rail,21,Low
+SUPP_040,Packaging,5410082.89,7.52,4.06,53,Storm,Rail,67,High
+SUPP_046,Textiles,8229926.45,5.77,23.49,52,Storm,Rail,80,High
+SUPP_002,Packaging,2077476.27,7.9,9.33,29,Storm,Road,43,Medium
+SUPP_027,Textiles,5797053.99,9.56,24.14,48,Storm,Road,89,High
+SUPP_039,Machinery,9155146.18,8.04,5.58,21,Storm,Air,35,Low
+SUPP_047,Electronics,7942950.44,4.82,25.86,4,Snow,Air,62,Medium
+SUPP_034,Textiles,1730099.36,7.66,18.35,56,Snow,Air,62,Medium
+SUPP_044,Raw Materials,8945197.61,9.85,5.41,5,Clear,Road,10,Low
+SUPP_013,Electronics,9679170.98,12.87,4.41,12,Snow,Sea,68,High
+SUPP_027,Raw Materials,3230684.98,14.83,15.08,54,Snow,Air,90,High
+SUPP_027,Textiles,7265596.2,4.91,29.92,59,Snow,Road,87,High
+SUPP_046,Raw Materials,1341773.17,10.33,3.7,5,Rain,Sea,59,Medium
+SUPP_043,Machinery,8238436.54,3.23,11.99,36,Snow,Sea,48,Medium
+SUPP_012,Machinery,8199681.96,8.16,21.6,45,Storm,Sea,100,High
+SUPP_044,Packaging,4738120.59,12.34,14.32,22,Snow,Air,78,High
+SUPP_016,Packaging,4967413.85,12.44,10.72,27,Storm,Air,70,High
+SUPP_020,Packaging,7134539.5,12.41,3.92,22,Rain,Rail,27,Low
+SUPP_021,Machinery,1462621.3,5.28,14.06,59,Storm,Sea,75,High
+SUPP_019,Electronics,6528918.47,9.35,11.22,6,Snow,Rail,51,Medium
+SUPP_023,Raw Materials,4739307.32,14.69,19.39,21,Storm,Road,75,High
+SUPP_019,Electronics,1108120.08,4.79,1.11,48,Storm,Rail,41,Medium
+SUPP_042,Packaging,1712963.51,9.86,29.76,56,Snow,Air,92,High
+SUPP_013,Textiles,816926.22,5.17,26.13,48,Storm,Sea,85,High
+SUPP_009,Electronics,3635759.31,1.12,23.13,54,Rain,Air,53,Medium
+SUPP_004,Textiles,7604524.89,13.56,7.75,10,Rain,Air,27,Low
+SUPP_004,Electronics,637984.21,13.49,19.87,7,Snow,Sea,87,High
+SUPP_046,Machinery,1732356.65,5.91,12.01,15,Clear,Air,13,Low
+SUPP_001,Textiles,3847038.8,2.02,12.97,15,Rain,Rail,29,Low
+SUPP_042,Machinery,229100.89,6.38,1.79,39,Snow,Air,52,Medium
+SUPP_049,Packaging,1318166.9,10.64,29.21,4,Storm,Sea,89,High
+SUPP_042,Electronics,7008187.98,12.61,29.47,15,Clear,Air,48,Medium
+SUPP_035,Electronics,3082273.4,12.46,9.16,48,Rain,Rail,59,Medium
+SUPP_012,Electronics,1170174.88,10.58,16.68,41,Snow,Rail,86,High
+SUPP_012,Packaging,2456843.59,0.28,14.59,26,Clear,Road,18,Low
+SUPP_020,Textiles,6003656.97,4.53,9.7,31,Clear,Sea,8,Low
+SUPP_019,Machinery,529021.22,13.55,25.72,42,Snow,Air,98,High
+SUPP_033,Machinery,3437038.14,14.84,19.16,17,Storm,Air,71,High
+SUPP_008,Packaging,2888638.87,6.49,8.77,47,Rain,Rail,42,Medium
+SUPP_042,Packaging,5754825.99,9.92,8.32,38,Rain,Road,17,Low
+SUPP_048,Packaging,4909327.56,11.09,16.23,10,Storm,Air,58,Medium
+SUPP_012,Textiles,8692087.49,1.06,28.72,9,Snow,Rail,57,Medium
+SUPP_033,Packaging,6959782.04,1.32,27.41,47,Clear,Rail,44,Medium
+SUPP_043,Electronics,1418361.56,5.18,5.78,23,Rain,Air,17,Low
+SUPP_031,Packaging,9483677.79,6.73,23.88,52,Rain,Road,58,Medium
+SUPP_017,Machinery,6780442.31,2.06,7.79,13,Rain,Rail,12,Low
+SUPP_049,Packaging,9709123.75,4.01,8.88,28,Storm,Sea,52,Medium
+SUPP_038,Textiles,9839211.11,4.11,12.8,23,Clear,Sea,34,Low
+SUPP_042,Packaging,79064.27,0.69,18.52,28,Rain,Road,22,Low
+SUPP_043,Electronics,2426623.77,7.1,14.06,46,Snow,Sea,81,High
+SUPP_011,Machinery,6244070.97,7.1,13.98,21,Storm,Road,68,High
+SUPP_041,Packaging,5929131.04,8.1,25.77,50,Storm,Air,77,High
+SUPP_015,Raw Materials,415377.56,1.71,10.83,22,Snow,Air,50,Medium
+SUPP_030,Textiles,5741884.0,7.74,9.51,42,Storm,Rail,53,Medium
+SUPP_045,Textiles,8175987.65,4.34,24.73,22,Snow,Air,63,Medium
+SUPP_049,Raw Materials,8804633.64,8.66,1.86,12,Clear,Rail,13,Low
+SUPP_034,Packaging,9928527.55,2.06,8.97,2,Clear,Road,2,Low
+SUPP_004,Textiles,4247190.38,6.22,27.32,54,Rain,Air,62,Medium
+SUPP_011,Packaging,6098656.88,4.71,24.89,40,Snow,Road,54,Medium
+SUPP_044,Raw Materials,65572.8,9.58,2.48,46,Snow,Road,64,Medium
+SUPP_033,Machinery,642270.77,9.1,20.91,3,Clear,Rail,28,Low
+SUPP_009,Textiles,3869196.89,6.9,11.7,20,Snow,Rail,54,Medium
+SUPP_037,Electronics,4218530.51,11.29,3.06,59,Snow,Sea,88,High
+SUPP_047,Electronics,3579974.35,14.13,20.39,42,Snow,Sea,100,High
+SUPP_001,Raw Materials,3651103.91,8.95,1.29,19,Clear,Road,23,Low
+SUPP_028,Packaging,9137205.13,9.23,26.34,21,Clear,Road,35,Low
+SUPP_005,Machinery,1249556.24,13.55,2.93,17,Clear,Sea,32,Low
+SUPP_027,Raw Materials,8209125.66,10.45,16.44,44,Rain,Rail,50,Medium
+SUPP_024,Machinery,889704.19,6.05,27.39,50,Snow,Rail,94,High
+SUPP_025,Electronics,7305276.2,9.82,25.52,55,Rain,Sea,70,High
+SUPP_008,Raw Materials,4327814.22,10.13,8.99,54,Snow,Air,65,Medium
+SUPP_047,Raw Materials,7900402.34,6.75,24.15,4,Clear,Road,32,Low
+SUPP_020,Machinery,8582745.26,13.76,13.5,41,Snow,Rail,80,High
+SUPP_015,Raw Materials,5842877.53,5.63,18.43,37,Snow,Sea,50,Medium
+SUPP_010,Packaging,5281835.36,7.72,5.8,8,Rain,Road,18,Low
+SUPP_003,Machinery,495545.58,11.45,28.45,20,Clear,Air,49,Medium
+SUPP_014,Electronics,6475932.74,9.59,10.88,32,Clear,Road,25,Low
+SUPP_029,Textiles,3146614.08,10.19,18.57,35,Clear,Air,40,Medium
+SUPP_048,Electronics,2218030.91,14.82,14.17,5,Snow,Rail,71,High
+SUPP_015,Textiles,1448502.03,7.34,1.8,4,Rain,Road,25,Low
+SUPP_009,Textiles,1401101.02,1.58,7.06,44,Storm,Air,44,Medium
+SUPP_047,Textiles,3984570.97,4.77,5.26,54,Storm,Sea,54,Medium
+SUPP_016,Packaging,9005827.67,1.83,28.72,38,Rain,Air,27,Low
+SUPP_027,Packaging,8889616.54,9.08,24.97,50,Storm,Road,87,High
+SUPP_036,Textiles,6088429.55,2.36,1.9,33,Rain,Rail,15,Low
+SUPP_036,Machinery,7746711.97,14.7,14.86,14,Clear,Sea,36,Medium
+SUPP_042,Machinery,1724952.71,3.78,25.32,4,Storm,Rail,54,Medium
+SUPP_027,Raw Materials,8276808.99,10.66,6.14,22,Storm,Rail,58,Medium
+SUPP_012,Textiles,6790003.85,3.6,25.09,5,Snow,Air,63,Medium
+SUPP_015,Packaging,1694158.4,8.79,29.99,14,Rain,Rail,49,Medium
+SUPP_004,Textiles,8176731.45,3.19,23.69,36,Snow,Rail,62,Medium
+SUPP_036,Textiles,6252889.28,8.58,19.0,38,Rain,Rail,26,Low
+SUPP_016,Packaging,3981620.55,0.69,14.79,37,Rain,Sea,41,Medium
+SUPP_042,Electronics,2316109.87,14.46,27.37,12,Snow,Sea,100,High
+SUPP_006,Textiles,5357196.96,13.06,4.79,12,Rain,Road,36,Medium
+SUPP_018,Machinery,1291967.1,11.93,9.0,47,Clear,Road,46,Medium
+SUPP_013,Textiles,9697596.88,14.24,15.87,45,Rain,Rail,61,Medium
+SUPP_014,Packaging,7558481.15,7.43,9.77,37,Storm,Road,40,Medium
+SUPP_014,Raw Materials,5248319.25,8.48,13.8,28,Clear,Rail,20,Low
+SUPP_016,Textiles,9191410.37,5.5,22.05,54,Rain,Rail,63,Medium
+SUPP_016,Textiles,4586993.79,6.71,18.46,48,Storm,Sea,68,High
+SUPP_025,Machinery,8075563.96,7.2,29.89,9,Storm,Sea,84,High
+SUPP_017,Packaging,81520.09,9.64,9.65,9,Snow,Rail,48,Medium
+SUPP_007,Machinery,3153395.85,3.92,1.89,48,Storm,Air,48,Medium
+SUPP_024,Packaging,2246417.61,11.04,23.12,23,Snow,Road,96,High
+SUPP_037,Raw Materials,7240934.23,10.42,4.9,22,Rain,Road,45,Medium
+SUPP_017,Textiles,8206988.16,5.07,22.26,31,Snow,Sea,89,High
+SUPP_010,Raw Materials,7944270.44,14.86,6.82,27,Storm,Air,61,Medium
+SUPP_025,Textiles,943630.94,0.13,2.28,37,Rain,Rail,24,Low
+SUPP_036,Packaging,6347417.99,1.13,1.16,9,Storm,Rail,24,Low
+SUPP_047,Machinery,8228170.03,12.16,26.65,36,Snow,Air,71,High
+SUPP_047,Packaging,1088821.09,6.05,21.97,15,Rain,Air,38,Medium
+SUPP_047,Textiles,4100709.57,1.08,11.12,4,Snow,Air,43,Medium
+SUPP_035,Electronics,8091940.34,14.22,3.1,20,Clear,Road,25,Low
+SUPP_043,Electronics,3030678.5,1.25,15.52,43,Clear,Rail,30,Low
+SUPP_009,Raw Materials,4808685.85,2.26,21.59,57,Clear,Air,44,Medium
+SUPP_001,Raw Materials,2150569.09,12.96,12.64,24,Snow,Sea,78,High
+SUPP_004,Textiles,1565679.42,4.07,1.64,40,Snow,Rail,40,Medium
+SUPP_002,Electronics,8430195.93,8.28,7.36,14,Snow,Road,55,Medium
+SUPP_002,Textiles,2185549.33,6.3,23.03,32,Storm,Sea,81,High
+SUPP_002,Textiles,7211924.96,13.02,14.16,37,Snow,Air,62,Medium
+SUPP_007,Electronics,5568840.61,9.59,16.26,51,Rain,Air,48,Medium
+SUPP_013,Textiles,8234221.2,12.08,17.02,5,Storm,Sea,77,High
+SUPP_018,Machinery,9172077.32,10.84,12.64,32,Clear,Sea,48,Medium
+SUPP_026,Machinery,8825822.09,12.37,21.93,42,Rain,Air,76,High
+SUPP_020,Electronics,4054344.04,1.63,6.48,30,Clear,Road,12,Low
+SUPP_026,Machinery,2797887.1,10.63,2.82,51,Snow,Rail,67,High
+SUPP_004,Electronics,88008.23,3.78,22.49,30,Rain,Road,40,Medium
+SUPP_032,Machinery,8275810.87,2.04,17.38,35,Storm,Road,46,Medium
+SUPP_034,Electronics,5739501.18,13.62,28.35,20,Rain,Air,66,High
+SUPP_045,Textiles,3804270.93,14.05,20.58,18,Snow,Sea,100,High
+SUPP_003,Electronics,4963449.7,5.88,19.35,57,Storm,Road,82,High
+SUPP_012,Packaging,93414.53,2.59,21.68,14,Clear,Air,19,Low
+SUPP_038,Raw Materials,9662172.68,11.44,28.57,48,Snow,Road,100,High
+SUPP_020,Raw Materials,3015619.48,1.67,23.67,13,Rain,Rail,29,Low
+SUPP_044,Textiles,529450.82,5.46,28.75,29,Storm,Rail,63,Medium
+SUPP_049,Raw Materials,4785878.92,1.75,19.4,36,Clear,Sea,21,Low
+SUPP_004,Electronics,78668.45,12.9,6.39,38,Snow,Air,57,Medium
+SUPP_005,Packaging,4187185.13,10.82,11.76,39,Snow,Sea,75,High
+SUPP_002,Packaging,7318438.79,9.75,24.09,24,Snow,Rail,67,High
+SUPP_015,Packaging,407589.82,5.98,27.99,37,Snow,Rail,72,High
+SUPP_012,Textiles,7384110.68,14.62,2.51,29,Snow,Road,57,Medium
+SUPP_050,Textiles,4708133.71,8.73,3.47,44,Storm,Air,47,Medium
+SUPP_046,Electronics,6685323.27,12.37,23.68,54,Clear,Sea,76,High
+SUPP_010,Machinery,1043674.87,10.35,8.01,39,Rain,Rail,48,Medium
+SUPP_021,Packaging,8390740.33,10.67,28.52,36,Clear,Road,69,High
+SUPP_001,Packaging,7375194.23,5.02,27.28,53,Snow,Sea,100,High
+SUPP_049,Packaging,7262322.17,13.18,2.21,27,Clear,Air,20,Low
+SUPP_006,Raw Materials,7634974.87,6.88,8.75,18,Snow,Rail,37,Medium
+SUPP_036,Textiles,1358606.76,12.87,17.69,43,Snow,Road,89,High
+SUPP_002,Electronics,8081197.6,1.89,8.7,33,Storm,Road,45,Medium
+SUPP_039,Textiles,3450946.87,11.11,7.47,58,Storm,Rail,71,High
+SUPP_001,Packaging,63468.58,4.57,19.75,8,Snow,Rail,33,Low
+SUPP_050,Electronics,8478255.23,0.45,27.06,34,Rain,Air,47,Medium
+SUPP_044,Machinery,7814742.43,6.92,12.54,5,Rain,Air,27,Low
+SUPP_018,Packaging,703663.85,3.5,8.15,29,Storm,Rail,32,Low
+SUPP_010,Electronics,7487071.85,7.16,2.68,27,Rain,Rail,17,Low
+SUPP_018,Machinery,9430106.97,11.8,29.75,51,Storm,Rail,95,High
+SUPP_005,Packaging,9629545.09,1.23,11.6,27,Storm,Air,41,Medium
+SUPP_047,Machinery,6216358.99,13.45,25.57,46,Rain,Rail,83,High
+SUPP_007,Raw Materials,1512278.96,12.19,19.44,48,Storm,Road,85,High
+SUPP_026,Packaging,2636054.54,5.24,27.61,25,Snow,Sea,86,High
+SUPP_029,Packaging,4726383.27,13.36,21.52,51,Snow,Air,100,High
+SUPP_020,Packaging,9309537.71,7.51,7.68,57,Rain,Rail,46,Medium
+SUPP_021,Raw Materials,4185639.76,4.6,23.07,33,Snow,Sea,75,High
+SUPP_019,Machinery,9624986.52,9.35,27.93,19,Rain,Sea,58,Medium
+SUPP_025,Packaging,5488442.56,6.55,2.27,31,Snow,Sea,45,Medium
+SUPP_008,Textiles,4483139.31,3.22,2.45,34,Rain,Air,16,Low
+SUPP_044,Textiles,9812865.67,11.92,25.76,29,Clear,Rail,51,Medium
+SUPP_046,Raw Materials,9608238.41,3.03,28.59,49,Snow,Sea,93,High
+SUPP_045,Electronics,7131641.92,14.72,17.52,12,Snow,Rail,59,Medium
+SUPP_009,Packaging,4398109.06,8.94,3.12,55,Rain,Sea,52,Medium
+SUPP_043,Raw Materials,9812719.48,2.93,23.99,35,Snow,Rail,61,Medium
+SUPP_005,Machinery,9603349.26,7.87,29.34,56,Snow,Rail,77,High
+SUPP_035,Textiles,1658630.79,7.21,21.83,48,Snow,Road,75,High
+SUPP_024,Textiles,4609434.77,11.74,28.84,51,Clear,Road,81,High
+SUPP_050,Raw Materials,8559309.5,9.09,25.23,37,Storm,Air,59,Medium
+SUPP_042,Textiles,3801006.14,8.32,24.34,22,Clear,Rail,48,Medium
+SUPP_049,Packaging,8090388.86,2.75,15.93,49,Snow,Road,71,High
+SUPP_001,Electronics,4315585.11,0.53,14.95,14,Storm,Air,42,Medium
+SUPP_033,Textiles,1229101.1,4.4,12.54,28,Rain,Rail,11,Low
+SUPP_024,Machinery,9932887.4,0.77,23.07,50,Snow,Air,62,Medium
+SUPP_023,Electronics,3954958.95,11.34,27.63,50,Snow,Road,96,High
+SUPP_019,Machinery,5792369.73,5.42,23.84,53,Clear,Road,64,Medium
+SUPP_047,Raw Materials,5759720.48,6.29,25.57,2,Storm,Sea,77,High
+SUPP_022,Machinery,9745003.77,0.51,25.35,42,Rain,Rail,48,Medium
+SUPP_023,Machinery,2325509.37,14.35,5.3,57,Clear,Rail,42,Medium
+SUPP_047,Machinery,2287657.66,6.53,21.86,57,Storm,Road,93,High
+SUPP_020,Electronics,4303643.22,4.96,25.35,46,Clear,Road,41,Medium
+SUPP_022,Electronics,8946238.31,14.2,26.88,22,Rain,Air,63,Medium
+SUPP_034,Raw Materials,7814636.75,7.2,15.43,53,Rain,Sea,57,Medium
+SUPP_036,Machinery,5931746.52,2.87,10.62,40,Snow,Air,43,Medium
+SUPP_026,Raw Materials,2110404.3,1.16,3.0,16,Rain,Rail,2,Low
+SUPP_026,Electronics,5093858.36,6.2,24.52,41,Rain,Rail,53,Medium
+SUPP_038,Machinery,6951499.67,11.59,19.98,4,Snow,Road,61,Medium
+SUPP_046,Raw Materials,8765036.68,8.13,9.19,24,Rain,Sea,32,Low
+SUPP_049,Electronics,423832.35,2.01,23.2,58,Clear,Air,54,Medium
+SUPP_024,Packaging,660243.01,5.5,21.97,41,Rain,Rail,56,Medium
+SUPP_008,Packaging,2075604.86,0.25,13.69,52,Snow,Sea,76,High
+SUPP_039,Machinery,7306980.7,14.51,7.5,37,Snow,Road,64,Medium
+SUPP_023,Packaging,4188641.85,11.41,18.68,31,Snow,Air,59,Medium
+SUPP_044,Packaging,7140582.26,12.27,6.27,49,Clear,Air,44,Medium
+SUPP_021,Electronics,8076600.52,14.77,22.87,22,Rain,Sea,81,High
+SUPP_008,Raw Materials,5926846.45,9.95,3.28,32,Storm,Air,39,Medium
+SUPP_033,Machinery,7107742.24,2.59,23.64,10,Snow,Air,61,Medium
+SUPP_037,Machinery,9524606.77,0.73,8.69,5,Snow,Air,35,Low
+SUPP_032,Textiles,3000771.13,10.74,23.01,39,Rain,Air,66,High
+SUPP_032,Packaging,5162851.92,7.68,11.71,42,Rain,Air,58,Medium
+SUPP_021,Machinery,1632298.79,2.78,3.85,7,Clear,Sea,0,Low
+SUPP_001,Machinery,1264203.42,1.96,25.66,58,Rain,Air,56,Medium
+SUPP_025,Textiles,357036.15,0.87,5.12,7,Snow,Rail,25,Low
+SUPP_044,Machinery,6668204.63,2.44,4.45,50,Snow,Rail,46,Medium
+SUPP_032,Raw Materials,6727000.07,6.59,16.93,18,Clear,Road,17,Low
+SUPP_049,Raw Materials,4850879.18,7.65,12.23,5,Storm,Road,62,Medium
+SUPP_018,Raw Materials,209815.56,11.75,4.61,15,Storm,Air,45,Medium
+SUPP_050,Machinery,9704058.24,6.62,7.81,30,Snow,Road,53,Medium
+SUPP_037,Electronics,7076622.17,8.06,16.68,54,Storm,Sea,65,Medium
+SUPP_035,Electronics,3122902.52,7.29,4.44,49,Snow,Air,47,Medium
+SUPP_028,Electronics,9527047.81,3.48,26.5,26,Rain,Sea,54,Medium
+SUPP_003,Machinery,6787666.5,9.41,10.18,23,Storm,Sea,68,High
+SUPP_006,Machinery,5040078.84,1.16,10.07,56,Clear,Air,17,Low
+SUPP_014,Textiles,8514268.59,14.73,19.21,53,Storm,Rail,85,High
+SUPP_011,Textiles,1670009.74,2.89,1.57,54,Rain,Air,25,Low
+SUPP_014,Electronics,1954705.42,6.23,28.11,6,Storm,Sea,89,High
+SUPP_039,Textiles,8785945.74,9.12,8.17,34,Rain,Sea,37,Medium
+SUPP_046,Packaging,4356030.45,10.31,10.64,3,Storm,Sea,79,High
+SUPP_033,Electronics,3845338.36,14.73,23.76,8,Rain,Rail,64,Medium
+SUPP_004,Packaging,1206100.02,11.74,23.77,30,Rain,Air,73,High
+SUPP_016,Raw Materials,9904099.73,4.95,28.3,42,Storm,Air,84,High
+SUPP_049,Machinery,164232.56,6.81,29.34,3,Snow,Air,60,Medium
+SUPP_037,Packaging,5500457.71,14.69,17.11,19,Snow,Rail,74,High
+SUPP_029,Electronics,4256149.94,5.26,12.53,4,Clear,Rail,19,Low
+SUPP_033,Packaging,5192059.89,11.13,19.29,25,Storm,Rail,64,Medium
+SUPP_032,Packaging,6913299.55,2.24,18.27,28,Clear,Road,19,Low
+SUPP_047,Machinery,9516661.05,4.53,3.67,45,Storm,Road,58,Medium
+SUPP_035,Machinery,6255305.34,9.76,8.75,35,Rain,Rail,31,Low
+SUPP_014,Machinery,9651902.93,3.84,20.6,34,Storm,Sea,70,High
+SUPP_019,Packaging,5856391.82,7.93,8.24,3,Rain,Rail,13,Low
+SUPP_022,Electronics,9470000.6,1.68,5.49,16,Clear,Road,16,Low
+SUPP_041,Machinery,9393618.1,0.2,23.4,37,Clear,Road,21,Low
+SUPP_011,Machinery,3766870.27,0.85,19.2,46,Snow,Road,53,Medium
+SUPP_028,Raw Materials,9365858.04,8.18,28.25,11,Rain,Sea,48,Medium
+SUPP_011,Packaging,7270972.81,9.3,22.44,7,Clear,Sea,50,Medium
+SUPP_017,Electronics,6666695.44,7.52,22.54,51,Storm,Air,72,High
+SUPP_004,Machinery,8906067.4,1.36,24.41,48,Storm,Air,74,High
+SUPP_028,Electronics,8181660.5,7.74,13.71,20,Clear,Road,38,Medium
+SUPP_014,Machinery,2330260.91,8.25,20.45,51,Clear,Air,59,Medium
+SUPP_038,Raw Materials,2080045.42,9.84,24.73,48,Snow,Road,94,High
+SUPP_001,Packaging,186768.26,3.8,7.22,6,Clear,Rail,0,Low
+SUPP_045,Raw Materials,2513219.71,1.03,14.31,4,Snow,Road,35,Low
+SUPP_015,Machinery,6745073.1,1.31,28.59,11,Clear,Road,37,Medium
+SUPP_007,Packaging,8060648.67,12.36,28.05,14,Storm,Sea,100,High
+SUPP_009,Machinery,2042806.08,9.29,22.54,57,Rain,Air,63,Medium
+SUPP_005,Textiles,2950382.62,11.58,13.4,7,Clear,Air,35,Low
+SUPP_029,Packaging,5406402.84,4.11,11.69,55,Rain,Air,29,Low
+SUPP_027,Textiles,6681307.32,11.83,14.18,59,Snow,Air,80,High
+SUPP_006,Electronics,6397644.91,12.52,15.48,51,Rain,Road,65,Medium
+SUPP_038,Machinery,9365992.18,1.05,24.92,23,Storm,Rail,55,Medium
+SUPP_021,Raw Materials,6008511.73,3.1,18.12,8,Rain,Sea,30,Low
+SUPP_042,Electronics,4936402.51,13.91,4.06,56,Rain,Sea,52,Medium
+SUPP_050,Electronics,4126226.98,9.86,8.55,39,Storm,Air,50,Medium
+SUPP_034,Textiles,1646603.01,1.15,6.38,22,Rain,Rail,17,Low
+SUPP_019,Electronics,8822821.59,12.23,20.87,36,Rain,Rail,53,Medium
+SUPP_025,Electronics,2927415.09,4.72,8.25,57,Rain,Rail,24,Low
+SUPP_041,Textiles,5378760.46,5.42,11.26,53,Clear,Road,53,Medium
+SUPP_024,Packaging,7903463.84,4.69,27.5,33,Rain,Rail,29,Low
+SUPP_037,Machinery,3301088.29,5.38,15.66,40,Storm,Air,55,Medium
+SUPP_049,Machinery,8769378.36,1.63,12.39,52,Clear,Road,32,Low
+SUPP_038,Electronics,5056168.1,2.99,25.91,43,Clear,Sea,62,Medium
+SUPP_014,Electronics,8387188.33,12.9,22.7,58,Clear,Rail,76,High
+SUPP_033,Packaging,2994631.74,6.94,12.92,33,Snow,Rail,53,Medium
+SUPP_045,Machinery,3878795.99,7.39,13.46,56,Clear,Air,32,Low
+SUPP_018,Electronics,8636575.37,8.03,23.89,31,Storm,Road,81,High
+SUPP_033,Raw Materials,5436627.62,5.24,13.01,33,Rain,Sea,39,Medium
+SUPP_026,Textiles,8822541.7,1.91,19.4,52,Clear,Sea,28,Low
+SUPP_045,Machinery,1228229.64,3.26,10.02,40,Rain,Road,37,Medium
+SUPP_016,Electronics,2475108.35,4.09,10.73,29,Snow,Road,58,Medium
+SUPP_030,Textiles,6182189.83,8.4,13.06,34,Clear,Sea,38,Medium
+SUPP_043,Raw Materials,6805836.01,6.24,22.85,30,Clear,Road,47,Medium
+SUPP_046,Raw Materials,3309144.04,8.25,17.69,30,Clear,Air,25,Low
+SUPP_032,Packaging,9453886.18,10.48,15.38,30,Storm,Air,61,Medium
+SUPP_024,Raw Materials,1471277.55,10.41,6.98,6,Storm,Road,66,High
+SUPP_050,Electronics,6805032.36,11.62,28.59,2,Storm,Rail,86,High
+SUPP_018,Textiles,6132799.19,12.87,20.52,4,Clear,Sea,64,Medium
+SUPP_046,Textiles,8861916.65,3.41,21.72,17,Clear,Rail,39,Medium
+SUPP_030,Textiles,7326599.37,10.49,22.83,30,Storm,Road,99,High
+SUPP_032,Textiles,8747998.29,3.13,4.69,55,Rain,Sea,33,Low
+SUPP_011,Packaging,5339195.1,7.71,24.8,42,Clear,Road,57,Medium
+SUPP_015,Textiles,4869227.04,0.3,12.88,58,Clear,Road,27,Low
+SUPP_001,Raw Materials,204307.89,4.29,7.03,9,Clear,Rail,11,Low
+SUPP_024,Machinery,4818637.89,2.81,22.55,16,Rain,Air,44,Medium
+SUPP_003,Textiles,6500764.17,1.2,11.89,46,Snow,Air,66,High
+SUPP_021,Raw Materials,4363048.72,14.96,17.21,30,Snow,Sea,67,High
+SUPP_018,Electronics,2240107.69,5.32,11.8,56,Storm,Road,63,Medium
+SUPP_033,Electronics,4669173.27,10.87,20.05,44,Rain,Air,75,High
+SUPP_034,Electronics,8322108.68,12.65,11.82,32,Snow,Road,61,Medium
+SUPP_030,Packaging,7739455.25,8.27,2.93,9,Storm,Sea,48,Medium
+SUPP_006,Textiles,5857950.2,11.75,22.8,40,Snow,Road,94,High
+SUPP_024,Raw Materials,1446228.96,10.1,18.99,30,Storm,Sea,71,High
+SUPP_048,Textiles,6641715.27,5.27,12.33,59,Rain,Rail,51,Medium
+SUPP_024,Textiles,2619398.65,9.12,13.56,27,Snow,Air,43,Medium
+SUPP_047,Textiles,8533220.3,8.17,22.99,13,Rain,Air,44,Medium
+SUPP_001,Machinery,4178963.59,10.72,12.2,41,Clear,Air,64,Medium
+SUPP_035,Packaging,2452931.25,3.3,13.32,13,Clear,Sea,19,Low
+SUPP_001,Machinery,5095243.49,2.9,3.23,3,Storm,Road,42,Medium
+SUPP_014,Textiles,3858847.71,12.35,20.13,33,Rain,Rail,66,High
+SUPP_032,Electronics,2755863.09,10.42,8.66,39,Rain,Sea,37,Medium
+SUPP_006,Electronics,6381924.1,4.94,8.82,29,Rain,Rail,20,Low
+SUPP_045,Packaging,6961677.54,3.36,18.26,23,Snow,Road,44,Medium
+SUPP_038,Electronics,6636591.0,12.24,23.56,24,Rain,Rail,72,High
+SUPP_005,Textiles,1917837.94,1.42,21.27,13,Clear,Rail,15,Low
+SUPP_043,Raw Materials,4351844.95,0.56,8.53,7,Rain,Sea,30,Low
+SUPP_017,Packaging,8890217.89,12.38,19.27,47,Snow,Sea,97,High
+SUPP_021,Machinery,7848535.27,6.49,6.83,57,Storm,Air,52,Medium
+SUPP_005,Raw Materials,7375477.38,6.6,20.34,19,Rain,Road,41,Medium
+SUPP_010,Electronics,7492647.13,12.21,21.5,39,Rain,Rail,65,Medium
+SUPP_030,Packaging,8275187.97,13.56,28.07,28,Snow,Road,84,High
+SUPP_035,Packaging,106899.88,7.04,17.56,17,Rain,Rail,32,Low
+SUPP_020,Machinery,1344302.66,0.43,11.45,52,Storm,Road,71,High
+SUPP_006,Raw Materials,5683497.88,4.76,19.98,36,Storm,Road,56,Medium
+SUPP_014,Packaging,193095.39,11.49,19.09,33,Rain,Road,43,Medium
+SUPP_046,Raw Materials,437433.27,12.57,18.97,36,Storm,Rail,57,Medium
+SUPP_033,Electronics,6264909.78,12.98,18.02,26,Storm,Sea,68,High
+SUPP_012,Electronics,9907257.61,11.38,13.83,11,Snow,Rail,65,Medium
+SUPP_036,Textiles,5809459.67,8.59,26.18,12,Rain,Road,53,Medium
+SUPP_030,Electronics,3746285.14,9.32,19.36,6,Rain,Road,43,Medium
+SUPP_001,Electronics,4458440.66,7.46,25.97,43,Rain,Air,69,High
+SUPP_013,Machinery,9402321.33,7.61,28.53,19,Storm,Road,82,High
+SUPP_038,Textiles,8643232.14,1.74,27.83,45,Storm,Road,69,High
+SUPP_002,Electronics,591187.95,9.7,29.25,55,Rain,Rail,59,Medium
+SUPP_009,Electronics,5569142.71,11.24,24.5,2,Storm,Road,89,High
+SUPP_003,Machinery,2081457.26,0.73,17.81,18,Clear,Air,13,Low
+SUPP_037,Machinery,1738797.86,0.39,23.59,56,Snow,Rail,70,High
+SUPP_002,Machinery,4563111.05,6.88,20.89,39,Snow,Air,57,Medium
+SUPP_023,Raw Materials,6408369.98,14.31,26.57,3,Rain,Sea,64,Medium
+SUPP_018,Machinery,8346229.91,9.67,3.28,12,Rain,Road,22,Low
+SUPP_040,Textiles,994338.99,8.95,21.38,30,Rain,Sea,52,Medium
+SUPP_032,Machinery,2346406.81,13.74,18.87,56,Snow,Road,90,High
+SUPP_006,Packaging,6922263.72,8.99,15.55,48,Snow,Air,78,High
+SUPP_027,Raw Materials,2006703.17,11.09,9.31,10,Rain,Road,32,Low
+SUPP_025,Packaging,2045502.13,3.32,21.05,32,Snow,Rail,67,High
+SUPP_023,Textiles,6208966.07,14.12,23.5,47,Storm,Rail,100,High
+SUPP_018,Raw Materials,3507695.47,6.59,12.48,18,Clear,Sea,29,Low
+SUPP_039,Raw Materials,9382754.05,1.37,12.18,51,Clear,Sea,31,Low
+SUPP_004,Machinery,2147391.36,3.52,14.6,39,Storm,Air,53,Medium
+SUPP_011,Electronics,1054732.16,2.6,5.27,4,Rain,Air,4,Low
+SUPP_018,Textiles,7604960.44,14.52,13.75,57,Clear,Air,62,Medium
+SUPP_037,Machinery,7993017.31,4.96,9.68,31,Storm,Air,43,Medium
+SUPP_012,Raw Materials,1340305.83,3.92,11.3,14,Storm,Sea,43,Medium
+SUPP_038,Electronics,2144544.05,12.15,5.26,39,Storm,Air,68,High
+SUPP_037,Raw Materials,1591506.85,1.33,15.05,56,Snow,Sea,65,Medium
+SUPP_012,Machinery,5655913.23,12.08,4.98,39,Clear,Road,29,Low
+SUPP_004,Raw Materials,5079812.17,2.25,19.1,49,Rain,Road,52,Medium
+SUPP_034,Machinery,868609.63,6.95,9.89,58,Clear,Sea,47,Medium
+SUPP_040,Raw Materials,616938.33,6.34,14.29,14,Rain,Sea,54,Medium
+SUPP_046,Raw Materials,5764161.37,10.04,23.53,16,Storm,Road,84,High
+SUPP_002,Raw Materials,3173061.19,8.12,25.36,18,Rain,Road,48,Medium
+SUPP_034,Packaging,9407171.11,0.34,16.16,14,Clear,Sea,25,Low
+SUPP_046,Machinery,6577747.47,8.44,20.92,8,Clear,Sea,59,Medium
+SUPP_020,Packaging,8604957.01,6.16,10.52,5,Rain,Air,44,Medium
+SUPP_047,Machinery,5162814.81,13.56,26.81,50,Snow,Sea,99,High
+SUPP_012,Textiles,5125976.39,11.07,15.87,15,Storm,Air,76,High
+SUPP_043,Textiles,2336775.92,8.33,11.79,33,Rain,Rail,25,Low
+SUPP_020,Packaging,1359953.21,12.84,5.79,4,Rain,Air,27,Low
+SUPP_047,Electronics,1869235.91,12.4,9.29,39,Snow,Road,57,Medium
+SUPP_012,Textiles,5609721.15,5.63,23.78,33,Storm,Air,57,Medium
+SUPP_041,Textiles,9392004.85,13.42,10.79,32,Clear,Rail,29,Low
+SUPP_010,Packaging,1792475.24,10.12,7.39,22,Clear,Air,34,Low
+SUPP_023,Packaging,2534206.08,4.02,1.02,43,Rain,Road,37,Medium
+SUPP_046,Packaging,582468.91,5.71,7.73,37,Snow,Road,35,Low
+SUPP_017,Raw Materials,5565657.87,3.07,9.52,9,Rain,Road,22,Low
+SUPP_023,Packaging,9487604.29,14.18,18.69,27,Clear,Road,44,Medium
+SUPP_004,Machinery,9088923.79,7.07,14.52,26,Snow,Rail,55,Medium
+SUPP_011,Machinery,6171773.85,11.43,15.87,31,Snow,Rail,61,Medium
+SUPP_023,Textiles,9354962.26,5.7,21.54,19,Snow,Road,72,High
+SUPP_031,Textiles,6760276.54,11.47,2.32,18,Rain,Air,32,Low
+SUPP_029,Electronics,2306074.78,10.08,14.58,45,Clear,Sea,70,High
+SUPP_002,Packaging,549917.95,0.62,16.98,53,Storm,Road,58,Medium
+SUPP_005,Packaging,8399844.93,2.49,1.72,35,Rain,Rail,15,Low
+SUPP_011,Electronics,2412911.64,0.84,22.01,15,Clear,Sea,49,Medium
+SUPP_039,Textiles,6102779.03,4.29,6.03,2,Snow,Road,35,Low
+SUPP_028,Raw Materials,8024385.47,5.94,22.77,44,Snow,Air,86,High
+SUPP_004,Electronics,2147275.42,8.39,25.84,41,Storm,Air,92,High
+SUPP_013,Machinery,9277184.05,5.55,10.22,46,Storm,Sea,83,High
+SUPP_020,Raw Materials,5271119.59,11.65,7.8,12,Clear,Road,43,Medium
+SUPP_026,Textiles,349533.53,14.43,20.37,20,Snow,Air,76,High
+SUPP_004,Packaging,2691689.25,9.21,20.68,39,Clear,Rail,26,Low
+SUPP_006,Packaging,6215178.47,9.03,15.68,23,Snow,Air,56,Medium
+SUPP_007,Electronics,2852079.62,14.45,1.3,33,Rain,Air,41,Medium
+SUPP_041,Packaging,7077149.32,9.38,29.71,59,Clear,Rail,42,Medium
+SUPP_008,Packaging,1465439.64,4.77,25.64,43,Snow,Rail,77,High
+SUPP_032,Packaging,9917375.93,8.16,29.56,25,Clear,Rail,40,Medium
+SUPP_012,Packaging,4555496.46,3.06,5.78,48,Snow,Sea,60,Medium
+SUPP_012,Machinery,7115819.77,4.17,10.9,46,Clear,Sea,49,Medium
+SUPP_029,Machinery,9136665.17,2.92,1.15,55,Storm,Air,44,Medium
+SUPP_018,Textiles,9052425.1,9.75,8.92,20,Clear,Air,2,Low
+SUPP_049,Electronics,2977954.03,1.81,28.3,50,Clear,Sea,54,Medium
+SUPP_035,Machinery,4650792.21,12.99,8.23,48,Rain,Road,46,Medium
+SUPP_025,Textiles,8568518.37,5.42,22.97,5,Snow,Rail,77,High
+SUPP_037,Raw Materials,3023628.5,1.7,13.76,3,Snow,Sea,42,Medium
+SUPP_006,Machinery,3453970.83,6.51,25.1,23,Clear,Air,45,Medium
+SUPP_008,Machinery,7362512.18,8.02,9.35,16,Rain,Air,23,Low
+SUPP_014,Raw Materials,5981015.45,6.56,5.77,58,Rain,Road,34,Low
+SUPP_028,Electronics,3583559.9,0.77,7.32,24,Snow,Air,23,Low
+SUPP_041,Raw Materials,5835100.2,1.68,26.32,41,Storm,Sea,92,High
+SUPP_047,Electronics,7011914.6,6.22,17.26,53,Clear,Rail,41,Medium
+SUPP_036,Machinery,873203.69,3.88,23.62,59,Storm,Sea,82,High
+SUPP_034,Machinery,802827.98,5.49,3.67,39,Clear,Rail,4,Low
+SUPP_008,Machinery,718980.09,8.96,22.43,52,Rain,Air,60,Medium
+SUPP_037,Textiles,5346304.17,1.64,6.0,9,Clear,Road,16,Low
+SUPP_037,Electronics,4264301.76,11.92,1.92,59,Storm,Sea,90,High
+SUPP_027,Packaging,2438703.87,2.25,4.36,26,Snow,Rail,31,Low
+SUPP_037,Textiles,5259685.53,3.35,29.69,2,Snow,Road,50,Medium
+SUPP_012,Packaging,1421958.43,10.36,27.03,16,Snow,Air,86,High
+SUPP_040,Textiles,810576.62,13.45,24.02,48,Snow,Road,100,High
+SUPP_026,Packaging,3315385.85,3.21,3.46,18,Rain,Road,20,Low
+SUPP_048,Machinery,4847214.38,12.63,7.42,48,Storm,Sea,77,High
+SUPP_002,Packaging,8093637.1,12.37,12.15,50,Storm,Sea,100,High
+SUPP_018,Machinery,2082255.25,0.35,20.7,59,Clear,Air,46,Medium
+SUPP_009,Packaging,4236573.96,9.07,28.18,27,Snow,Sea,84,High
+SUPP_018,Machinery,2535233.02,9.85,18.96,5,Clear,Air,26,Low
+SUPP_029,Raw Materials,9284613.26,12.69,7.5,45,Snow,Rail,82,High
+SUPP_049,Textiles,5147388.45,11.63,2.28,36,Storm,Road,66,High
+SUPP_033,Raw Materials,6499947.18,3.55,20.76,59,Clear,Sea,55,Medium
+SUPP_046,Textiles,515519.16,4.86,13.71,8,Snow,Air,40,Medium
+SUPP_050,Textiles,9624501.39,6.72,22.75,7,Clear,Air,38,Medium
+SUPP_013,Raw Materials,2817090.17,3.33,9.35,41,Clear,Air,20,Low
+SUPP_003,Machinery,8281656.39,0.72,13.16,29,Clear,Sea,22,Low
+SUPP_046,Raw Materials,7115641.93,1.53,10.21,16,Storm,Sea,50,Medium
+SUPP_030,Textiles,2660312.52,4.76,25.26,8,Snow,Road,73,High
+SUPP_044,Electronics,4672901.03,5.76,10.18,17,Rain,Sea,32,Low
+SUPP_032,Textiles,959172.34,4.79,2.25,54,Snow,Air,41,Medium
+SUPP_031,Textiles,7328389.82,12.38,5.25,6,Storm,Sea,60,Medium
+SUPP_011,Packaging,9434589.49,3.63,4.12,30,Clear,Sea,22,Low
+SUPP_002,Machinery,5029749.29,6.56,8.24,59,Clear,Air,23,Low
+SUPP_037,Raw Materials,3119259.4,8.64,10.43,4,Rain,Air,29,Low
+SUPP_044,Raw Materials,113471.48,14.68,29.01,5,Storm,Rail,86,High
+SUPP_033,Electronics,7297290.0,5.25,20.46,7,Clear,Rail,27,Low
+SUPP_009,Raw Materials,9470224.63,6.06,23.72,12,Clear,Air,37,Medium
+SUPP_017,Textiles,9903806.42,0.48,18.5,24,Storm,Sea,53,Medium
+SUPP_028,Machinery,6896053.29,1.89,28.22,24,Storm,Rail,54,Medium
+SUPP_017,Raw Materials,6246396.36,3.42,9.91,24,Snow,Sea,54,Medium
+SUPP_044,Textiles,1644244.73,2.65,13.13,26,Snow,Road,44,Medium
+SUPP_001,Textiles,8984748.24,1.35,12.4,56,Storm,Sea,63,Medium
+SUPP_020,Electronics,571293.39,2.48,10.73,11,Snow,Road,37,Medium
+SUPP_022,Packaging,2388193.06,12.47,28.5,8,Storm,Sea,100,High
+SUPP_017,Packaging,2681932.25,4.27,9.05,58,Rain,Air,24,Low
+SUPP_034,Raw Materials,9272817.65,3.28,13.18,52,Clear,Rail,32,Low
+SUPP_043,Packaging,8586653.15,10.99,28.46,58,Rain,Road,81,High
+SUPP_042,Machinery,3171379.79,3.79,21.23,14,Storm,Sea,58,Medium
+SUPP_027,Machinery,9739314.11,8.21,8.98,28,Snow,Road,49,Medium
+SUPP_038,Textiles,2751345.43,13.57,11.87,47,Rain,Sea,67,High
+SUPP_047,Raw Materials,977301.39,6.22,5.74,18,Snow,Sea,63,Medium
+SUPP_033,Packaging,2630914.59,1.41,3.61,37,Rain,Air,21,Low
+SUPP_019,Electronics,3407670.08,13.07,3.42,17,Snow,Air,58,Medium
+SUPP_048,Packaging,7537059.96,0.86,15.28,38,Rain,Sea,22,Low
+SUPP_042,Electronics,4869692.3,10.44,17.03,14,Rain,Sea,54,Medium
+SUPP_015,Packaging,2125454.26,4.52,27.41,30,Snow,Sea,74,High
+SUPP_024,Packaging,7352358.5,5.26,12.82,33,Storm,Rail,55,Medium
+SUPP_008,Machinery,1754384.83,12.43,17.96,20,Clear,Road,52,Medium
+SUPP_031,Raw Materials,8038369.53,3.77,29.3,37,Clear,Rail,36,Medium
+SUPP_034,Packaging,3406243.99,4.75,4.54,52,Snow,Road,58,Medium
+SUPP_010,Raw Materials,6498645.09,13.14,23.93,21,Rain,Sea,68,High
+SUPP_027,Textiles,5478542.11,1.67,2.31,24,Snow,Air,30,Low
+SUPP_021,Raw Materials,3636721.33,10.1,8.85,35,Clear,Rail,27,Low
+SUPP_022,Raw Materials,9926188.87,2.43,29.66,20,Storm,Road,59,Medium
+SUPP_001,Machinery,7948490.13,9.93,17.76,32,Storm,Air,58,Medium
+SUPP_049,Raw Materials,9852486.82,11.54,13.6,11,Rain,Rail,36,Medium
+SUPP_049,Electronics,6206782.17,10.01,15.52,17,Rain,Rail,48,Medium
+SUPP_041,Machinery,284148.32,6.5,9.09,12,Snow,Rail,52,Medium
+SUPP_031,Machinery,1040487.8,9.09,16.18,13,Clear,Road,31,Low
+SUPP_035,Raw Materials,8904638.09,14.88,9.53,29,Storm,Road,70,High
+SUPP_021,Textiles,7665365.47,3.87,26.1,45,Rain,Road,63,Medium
+SUPP_044,Electronics,1303254.2,14.69,20.54,46,Rain,Air,67,High
+SUPP_045,Packaging,3277077.3,10.18,18.23,3,Storm,Air,71,High
+SUPP_007,Machinery,6841197.97,8.67,13.44,39,Storm,Air,64,Medium
+SUPP_005,Electronics,232942.11,7.01,28.35,34,Storm,Sea,77,High
+SUPP_030,Textiles,6628349.75,9.82,8.28,55,Storm,Rail,60,Medium
+SUPP_044,Raw Materials,2162723.04,1.92,21.34,28,Storm,Rail,53,Medium
+SUPP_023,Raw Materials,9969246.72,2.83,18.23,13,Rain,Rail,17,Low
+SUPP_002,Raw Materials,1307544.9,0.51,19.06,58,Rain,Air,26,Low
+SUPP_014,Electronics,8428055.83,7.29,23.55,52,Rain,Road,58,Medium
+SUPP_024,Electronics,1787739.5,4.51,20.25,15,Snow,Sea,56,Medium
+SUPP_050,Textiles,551646.9,13.37,17.73,40,Clear,Road,53,Medium
+SUPP_043,Electronics,3659398.32,8.25,25.35,25,Clear,Road,43,Medium
+SUPP_045,Electronics,8012053.16,12.96,5.37,7,Snow,Rail,48,Medium
+SUPP_025,Electronics,9914963.0,10.93,23.76,37,Storm,Rail,93,High
+SUPP_045,Raw Materials,7932302.39,10.18,20.71,19,Rain,Road,60,Medium
+SUPP_020,Machinery,2993449.77,0.12,8.89,6,Clear,Sea,3,Low
+SUPP_040,Textiles,3291943.43,2.0,13.83,15,Rain,Rail,15,Low
+SUPP_007,Textiles,6862030.63,13.55,25.28,8,Clear,Sea,63,Medium
+SUPP_008,Electronics,1389033.86,1.51,25.11,48,Snow,Air,71,High
+SUPP_039,Raw Materials,6515391.07,1.64,12.66,41,Storm,Air,58,Medium
+SUPP_023,Machinery,1226275.29,0.1,21.65,18,Storm,Air,63,Medium
+SUPP_003,Textiles,1524763.75,1.47,24.64,14,Snow,Air,64,Medium
+SUPP_045,Machinery,5679162.26,7.77,3.47,26,Storm,Air,51,Medium
+SUPP_001,Electronics,6679365.22,14.83,7.55,9,Clear,Road,42,Medium
+SUPP_037,Machinery,4826471.4,2.16,3.35,40,Rain,Road,19,Low
+SUPP_050,Textiles,9769104.01,6.13,3.54,17,Clear,Road,7,Low
+SUPP_017,Raw Materials,8918616.15,7.01,10.28,54,Snow,Sea,79,High
+SUPP_017,Machinery,3217125.74,7.39,25.93,9,Clear,Road,45,Medium
+SUPP_012,Electronics,1375438.75,9.52,4.72,28,Storm,Sea,51,Medium
+SUPP_044,Packaging,6949550.17,10.54,22.85,5,Snow,Road,93,High
+SUPP_007,Electronics,5024591.97,10.98,18.96,14,Clear,Air,37,Medium
+SUPP_043,Raw Materials,305611.97,4.34,13.85,54,Storm,Sea,67,High
+SUPP_029,Textiles,8507095.34,3.02,4.64,43,Storm,Road,55,Medium
+SUPP_024,Packaging,2858511.58,4.54,9.06,10,Rain,Road,24,Low
+SUPP_026,Machinery,6536413.61,12.5,29.29,16,Snow,Sea,100,High
+SUPP_025,Machinery,2375720.88,9.6,24.78,39,Snow,Air,56,Medium
+SUPP_008,Raw Materials,5006392.94,10.37,8.32,39,Clear,Air,31,Low
+SUPP_007,Machinery,6155697.13,13.48,24.49,53,Snow,Rail,100,High
+SUPP_012,Textiles,8941670.77,1.21,27.32,5,Snow,Sea,79,High
+SUPP_040,Electronics,7019296.4,11.58,10.78,52,Rain,Rail,70,High
+SUPP_032,Electronics,5320653.96,11.01,27.8,14,Snow,Rail,94,High
+SUPP_003,Electronics,8340383.35,4.61,29.03,5,Storm,Sea,65,Medium
+SUPP_001,Textiles,9309892.64,10.17,9.91,29,Rain,Sea,56,Medium
+SUPP_034,Textiles,5527194.18,11.87,10.22,44,Clear,Rail,54,Medium
+SUPP_043,Raw Materials,3488968.69,12.25,14.54,34,Snow,Sea,68,High
+SUPP_043,Machinery,1702222.59,1.01,15.48,4,Rain,Road,30,Low
+SUPP_001,Raw Materials,1185692.69,14.12,26.31,47,Snow,Rail,100,High
+SUPP_011,Electronics,9858762.94,0.1,18.81,54,Snow,Sea,76,High
+SUPP_016,Packaging,6499923.01,1.02,24.6,43,Storm,Road,71,High
+SUPP_033,Raw Materials,6505215.59,14.32,5.39,11,Snow,Rail,69,High
+SUPP_016,Electronics,6037977.0,8.77,12.64,53,Snow,Rail,55,Medium
+SUPP_037,Machinery,1311899.02,5.94,5.72,18,Clear,Rail,3,Low
+SUPP_029,Packaging,2127867.81,0.97,17.02,31,Clear,Rail,17,Low
+SUPP_048,Electronics,8725534.96,8.7,11.02,20,Clear,Rail,13,Low
+SUPP_027,Electronics,5425774.99,1.28,17.41,15,Clear,Road,29,Low
+SUPP_039,Textiles,3993310.62,4.52,5.16,48,Storm,Air,38,Medium
+SUPP_042,Machinery,6163280.07,7.9,10.25,49,Storm,Sea,71,High
+SUPP_004,Raw Materials,5049784.22,3.09,10.14,3,Snow,Sea,51,Medium
+SUPP_036,Textiles,9162092.98,5.46,9.9,8,Snow,Sea,40,Medium
+SUPP_046,Machinery,3264842.03,14.82,10.44,7,Clear,Road,35,Low
+SUPP_049,Raw Materials,6053175.25,12.05,14.62,19,Clear,Sea,39,Medium
+SUPP_023,Packaging,154411.73,13.44,5.33,13,Storm,Road,71,High
+SUPP_003,Raw Materials,6198419.02,5.19,26.34,13,Snow,Air,77,High
+SUPP_046,Machinery,2305571.99,8.55,11.19,3,Clear,Sea,39,Medium
+SUPP_040,Raw Materials,289896.42,1.84,4.69,8,Rain,Road,15,Low
+SUPP_026,Raw Materials,4620347.84,11.31,27.26,45,Snow,Air,95,High
+SUPP_046,Packaging,8272091.07,8.86,11.24,30,Clear,Rail,33,Low
+SUPP_003,Textiles,5569135.9,12.41,19.31,26,Clear,Rail,47,Medium
+SUPP_030,Textiles,6005701.78,6.27,28.78,15,Rain,Rail,41,Medium
+SUPP_001,Textiles,6070640.71,3.39,19.14,10,Clear,Rail,12,Low
+SUPP_038,Machinery,8205115.05,12.39,23.84,54,Rain,Air,74,High
+SUPP_047,Raw Materials,5452831.42,5.67,19.13,48,Clear,Rail,27,Low
+SUPP_043,Textiles,1885367.56,3.11,12.21,7,Storm,Rail,41,Medium
+SUPP_027,Textiles,4008044.74,7.72,15.02,9,Rain,Sea,37,Medium
+SUPP_026,Packaging,8399508.75,2.27,15.67,22,Storm,Rail,32,Low
+SUPP_009,Raw Materials,757999.0,8.65,17.41,49,Snow,Sea,73,High
+SUPP_045,Textiles,5600843.07,14.4,2.41,16,Storm,Air,51,Medium
+SUPP_013,Raw Materials,488455.32,2.86,16.7,38,Storm,Sea,51,Medium
+SUPP_044,Raw Materials,503572.32,14.19,25.42,57,Rain,Sea,91,High
+SUPP_046,Electronics,818015.93,2.63,4.68,27,Storm,Rail,33,Low
+SUPP_038,Textiles,5209688.8,3.76,11.39,44,Snow,Sea,60,Medium
+SUPP_028,Electronics,6858926.78,14.24,5.13,14,Clear,Road,30,Low
+SUPP_025,Raw Materials,5569581.44,1.24,1.12,58,Clear,Road,28,Low
+SUPP_013,Packaging,3344907.57,11.51,13.0,33,Rain,Sea,64,Medium
+SUPP_044,Packaging,5817210.02,0.43,29.67,49,Rain,Road,47,Medium
+SUPP_045,Packaging,9679637.24,8.29,28.93,40,Rain,Road,52,Medium
+SUPP_023,Machinery,2407393.74,1.54,6.19,48,Clear,Air,22,Low
+SUPP_048,Textiles,6791580.76,8.25,14.78,13,Snow,Air,54,Medium
+SUPP_033,Packaging,4398662.64,9.45,19.78,20,Clear,Rail,12,Low
+SUPP_025,Machinery,3282981.8,10.34,28.89,46,Storm,Road,100,High
+SUPP_001,Packaging,4924211.24,9.5,22.45,23,Rain,Rail,57,Medium
+SUPP_015,Packaging,215924.34,3.0,24.5,29,Rain,Air,25,Low
+SUPP_019,Machinery,8334487.14,12.08,26.13,50,Rain,Road,74,High
+SUPP_012,Raw Materials,6935903.0,2.19,13.06,17,Clear,Rail,5,Low
+SUPP_003,Machinery,4057257.87,7.84,29.9,17,Storm,Sea,80,High
+SUPP_009,Raw Materials,7700754.44,14.91,1.32,56,Storm,Road,87,High
+SUPP_022,Machinery,5739303.69,6.57,4.7,42,Rain,Road,30,Low
+SUPP_010,Packaging,3576052.97,4.61,22.2,44,Clear,Sea,62,Medium
+SUPP_032,Textiles,5910749.91,14.09,11.15,16,Storm,Road,60,Medium
+SUPP_046,Packaging,6576237.97,3.06,10.14,45,Rain,Air,42,Medium
+SUPP_034,Electronics,738078.0,12.43,8.38,8,Rain,Rail,42,Medium
+SUPP_035,Textiles,480986.97,10.52,10.59,54,Snow,Road,87,High
+SUPP_023,Raw Materials,4153410.45,3.02,15.88,46,Rain,Sea,47,Medium
+SUPP_022,Packaging,4433364.64,4.83,27.45,29,Storm,Air,61,Medium
+SUPP_049,Textiles,6955473.27,2.82,10.25,42,Snow,Road,55,Medium
+SUPP_008,Packaging,9084750.14,3.71,3.65,12,Snow,Air,33,Low
+SUPP_042,Textiles,1091525.91,2.02,17.64,34,Rain,Road,38,Medium
+SUPP_044,Packaging,357762.27,10.74,11.49,25,Snow,Road,72,High
+SUPP_025,Packaging,2573447.07,9.67,8.99,50,Storm,Road,60,Medium
+SUPP_034,Packaging,5901531.69,4.81,19.18,24,Snow,Rail,48,Medium
+SUPP_003,Packaging,6135881.87,4.51,8.42,43,Rain,Sea,43,Medium
+SUPP_033,Electronics,1687974.11,2.8,23.93,19,Clear,Air,16,Low
+SUPP_050,Textiles,4388152.05,8.95,18.1,7,Clear,Road,23,Low
+SUPP_014,Raw Materials,861670.51,1.41,5.98,31,Snow,Road,49,Medium
+SUPP_014,Textiles,2179247.05,4.32,12.61,10,Snow,Road,49,Medium
+SUPP_048,Raw Materials,3905140.39,12.97,9.96,27,Clear,Rail,18,Low
+SUPP_046,Packaging,2696677.05,5.06,17.16,6,Clear,Road,37,Medium
+SUPP_005,Electronics,6642550.78,12.13,26.69,30,Rain,Sea,72,High
+SUPP_036,Electronics,238506.76,11.07,7.04,42,Rain,Sea,57,Medium
+SUPP_027,Machinery,6402963.41,4.86,2.66,31,Snow,Rail,40,Medium
+SUPP_028,Packaging,59247.7,13.56,1.71,37,Clear,Rail,38,Medium
+SUPP_044,Electronics,4191814.67,5.41,27.44,10,Clear,Road,49,Medium
+SUPP_049,Textiles,5146536.34,10.24,28.02,40,Clear,Road,52,Medium
+SUPP_023,Textiles,8047364.6,1.35,12.19,27,Clear,Sea,28,Low
+SUPP_044,Packaging,8868567.75,2.36,5.4,21,Clear,Sea,11,Low
+SUPP_049,Machinery,591937.17,2.82,28.99,59,Snow,Rail,66,High
+SUPP_043,Electronics,6338591.12,10.92,11.64,36,Snow,Air,72,High
+SUPP_035,Raw Materials,2105481.11,4.77,19.45,23,Rain,Rail,28,Low
+SUPP_035,Packaging,5257901.49,13.83,24.55,42,Rain,Sea,78,High
+SUPP_044,Packaging,7960827.28,4.92,23.19,15,Clear,Air,31,Low
+SUPP_008,Electronics,6594275.67,9.66,1.74,50,Clear,Rail,39,Medium
+SUPP_035,Textiles,9037318.65,4.08,24.56,19,Clear,Sea,40,Medium
+SUPP_014,Packaging,8097821.92,13.14,9.77,14,Rain,Rail,31,Low
+SUPP_042,Textiles,8579447.83,11.49,5.25,25,Rain,Air,42,Medium
+SUPP_012,Raw Materials,9452989.44,10.27,10.62,18,Storm,Air,68,High
+SUPP_008,Raw Materials,6474964.18,7.71,4.48,35,Clear,Rail,2,Low
+SUPP_042,Textiles,1812415.08,0.18,13.92,49,Clear,Sea,45,Medium
+SUPP_043,Electronics,6842393.42,3.61,28.36,52,Storm,Road,84,High
+SUPP_013,Textiles,2929936.9,11.77,24.29,46,Snow,Sea,95,High
+SUPP_023,Raw Materials,5998507.87,1.32,19.76,36,Rain,Road,17,Low
+SUPP_019,Textiles,1730141.71,0.9,21.81,28,Clear,Air,30,Low
+SUPP_021,Machinery,8498525.3,5.81,5.88,12,Snow,Sea,49,Medium
+SUPP_040,Packaging,5511650.83,2.92,21.89,42,Rain,Sea,66,High
+SUPP_021,Machinery,4635938.47,12.45,25.06,53,Rain,Road,84,High
+SUPP_021,Raw Materials,1098743.71,12.6,20.46,32,Rain,Rail,66,High
+SUPP_018,Packaging,3077206.55,2.17,18.75,55,Rain,Sea,48,Medium
+SUPP_031,Machinery,3294773.13,1.16,11.14,51,Snow,Sea,58,Medium
+SUPP_050,Packaging,2369074.48,10.46,19.26,14,Snow,Road,68,High
+SUPP_012,Textiles,1366265.08,14.67,17.9,31,Clear,Sea,54,Medium
+SUPP_009,Textiles,5465360.5,14.64,11.7,45,Rain,Sea,73,High
+SUPP_047,Electronics,3473711.6,7.86,13.78,30,Clear,Road,37,Medium
+SUPP_033,Electronics,5079931.88,7.67,5.01,9,Snow,Air,51,Medium
+SUPP_003,Textiles,4766362.35,6.82,26.21,31,Storm,Rail,74,High
+SUPP_042,Raw Materials,4250812.73,11.8,6.68,17,Storm,Rail,62,Medium
+SUPP_015,Textiles,6505033.78,6.34,14.28,59,Storm,Air,77,High
+SUPP_030,Textiles,7533537.61,7.74,10.3,7,Clear,Rail,26,Low
+SUPP_024,Textiles,9957557.8,6.59,27.7,17,Clear,Air,43,Medium
+SUPP_040,Raw Materials,594590.43,3.14,13.14,58,Rain,Rail,26,Low
+SUPP_011,Raw Materials,52259.03,13.73,25.47,23,Rain,Rail,51,Medium
+SUPP_023,Electronics,1719755.23,1.89,2.96,19,Rain,Rail,6,Low
+SUPP_015,Electronics,9291639.21,6.51,4.46,5,Storm,Sea,57,Medium
+SUPP_015,Electronics,776385.75,11.19,21.62,43,Rain,Sea,83,High
+SUPP_025,Machinery,7506321.22,13.78,4.13,35,Snow,Road,72,High
+SUPP_003,Packaging,7515094.9,4.19,19.12,57,Clear,Sea,42,Medium
+SUPP_048,Packaging,4549414.67,11.11,20.91,43,Rain,Rail,81,High
+SUPP_042,Machinery,8621384.58,13.0,1.29,59,Storm,Road,66,High
+SUPP_034,Packaging,4634299.32,14.83,15.01,43,Snow,Air,76,High
+SUPP_034,Machinery,7557965.14,3.8,16.61,47,Storm,Sea,71,High
+SUPP_032,Machinery,8582429.55,1.55,21.48,15,Clear,Air,23,Low
+SUPP_029,Raw Materials,119473.51,6.11,7.81,52,Rain,Road,35,Low
+SUPP_033,Packaging,3406439.56,12.43,1.02,2,Rain,Air,46,Medium
+SUPP_012,Raw Materials,2449593.88,3.58,2.98,20,Storm,Road,46,Medium
+SUPP_043,Raw Materials,5577718.22,4.44,13.1,31,Snow,Sea,61,Medium
+SUPP_047,Electronics,9776087.77,12.14,22.38,43,Snow,Rail,86,High
+SUPP_031,Raw Materials,8407977.72,5.16,21.56,59,Rain,Rail,66,High
+SUPP_002,Raw Materials,3180557.64,10.14,25.49,57,Clear,Air,76,High
+SUPP_037,Textiles,7193430.27,4.33,10.46,35,Rain,Air,12,Low
+SUPP_041,Textiles,7620815.48,0.74,26.07,7,Clear,Air,19,Low
+SUPP_004,Raw Materials,1760171.3,7.2,22.4,17,Storm,Air,66,High
+SUPP_034,Machinery,4428707.2,7.29,7.16,29,Clear,Sea,10,Low
+SUPP_006,Raw Materials,8372388.18,7.59,1.42,24,Snow,Rail,36,Medium
+SUPP_031,Raw Materials,2032235.87,4.33,9.38,47,Rain,Rail,27,Low
+SUPP_039,Raw Materials,3963540.67,8.21,5.64,20,Rain,Sea,21,Low
+SUPP_011,Packaging,1717287.07,4.72,15.6,7,Snow,Road,56,Medium
+SUPP_015,Machinery,7407718.87,9.72,5.52,54,Snow,Air,50,Medium
+SUPP_007,Electronics,7941628.95,3.39,6.39,24,Rain,Rail,12,Low
+SUPP_010,Textiles,9558712.2,14.31,11.22,16,Clear,Air,28,Low
+SUPP_031,Textiles,1831994.65,5.94,28.49,3,Clear,Road,52,Medium
+SUPP_006,Machinery,8300048.87,7.67,18.99,17,Rain,Road,38,Medium
+SUPP_050,Machinery,4807681.29,11.54,19.23,30,Snow,Sea,66,High
+SUPP_003,Textiles,4530310.71,8.01,22.63,59,Snow,Air,87,High
+SUPP_031,Machinery,9244526.24,12.32,17.29,53,Storm,Road,80,High
+SUPP_028,Raw Materials,3591779.85,2.31,18.3,37,Storm,Rail,50,Medium
+SUPP_050,Raw Materials,3852128.77,2.07,6.7,48,Clear,Sea,24,Low
+SUPP_039,Textiles,5665734.03,14.0,18.01,33,Snow,Sea,79,High
+SUPP_013,Electronics,7605143.01,10.72,6.6,51,Clear,Road,36,Medium
+SUPP_034,Electronics,3813333.93,7.81,12.98,26,Snow,Air,62,Medium
+SUPP_045,Packaging,4153046.55,1.18,17.7,12,Snow,Sea,49,Medium
+SUPP_007,Raw Materials,7266606.49,5.47,3.53,42,Snow,Sea,67,High
+SUPP_017,Textiles,5477628.89,3.19,16.78,25,Snow,Sea,44,Medium
+SUPP_040,Packaging,8496792.5,6.02,8.12,25,Snow,Air,38,Medium
+SUPP_027,Textiles,3461247.7,1.76,17.54,31,Snow,Air,37,Medium
+SUPP_024,Textiles,7161221.97,3.68,13.87,30,Snow,Sea,63,Medium
+SUPP_020,Textiles,855489.67,13.16,22.14,21,Storm,Rail,74,High
+SUPP_048,Raw Materials,6013761.28,3.1,26.82,30,Clear,Air,18,Low
+SUPP_029,Raw Materials,9523021.34,11.1,18.33,44,Clear,Air,51,Medium
+SUPP_033,Machinery,543578.79,3.93,14.49,38,Storm,Road,57,Medium
+SUPP_011,Machinery,7451856.61,13.8,13.29,27,Clear,Road,43,Medium
+SUPP_010,Machinery,9617429.78,6.73,15.18,3,Snow,Road,45,Medium
+SUPP_005,Packaging,9100007.31,8.58,23.1,50,Rain,Sea,83,High
+SUPP_006,Textiles,3451397.97,6.56,25.61,36,Clear,Rail,32,Low
+SUPP_026,Textiles,7949654.58,14.12,19.07,47,Storm,Road,78,High
+SUPP_050,Raw Materials,8060718.25,12.69,12.46,50,Snow,Rail,94,High
+SUPP_001,Raw Materials,4048668.9,10.14,14.06,30,Storm,Air,61,Medium
+SUPP_003,Textiles,3601975.17,9.56,6.41,42,Rain,Air,38,Medium
+SUPP_044,Electronics,5479674.89,3.14,9.47,27,Storm,Air,44,Medium
+SUPP_042,Electronics,4851882.29,3.32,29.05,27,Rain,Road,40,Medium
+SUPP_018,Machinery,6150861.52,12.1,9.69,27,Storm,Rail,56,Medium
+SUPP_026,Textiles,5379563.28,9.31,20.74,45,Rain,Road,75,High
+SUPP_048,Electronics,2099501.36,0.11,2.14,10,Clear,Sea,22,Low
+SUPP_047,Textiles,2461419.27,9.98,25.33,3,Storm,Sea,84,High
+SUPP_018,Raw Materials,8576795.93,14.09,15.28,41,Rain,Rail,51,Medium
+SUPP_026,Textiles,8562733.68,6.33,9.97,45,Clear,Sea,38,Medium
+SUPP_012,Machinery,730985.06,13.47,4.46,13,Clear,Road,39,Medium
+SUPP_033,Packaging,8166666.54,9.0,12.42,8,Storm,Road,60,Medium
+SUPP_033,Packaging,5859996.93,3.18,25.69,38,Storm,Rail,60,Medium
+SUPP_025,Textiles,3593126.2,10.24,8.95,4,Snow,Air,49,Medium
+SUPP_049,Packaging,7080711.08,8.08,19.42,30,Snow,Rail,45,Medium
+SUPP_038,Electronics,2156871.33,0.72,10.34,12,Snow,Road,40,Medium
+SUPP_017,Electronics,8586452.39,10.04,13.63,15,Snow,Air,77,High
+SUPP_044,Raw Materials,7206489.75,13.96,16.3,47,Storm,Rail,71,High
+SUPP_023,Textiles,575625.53,10.92,4.52,32,Clear,Sea,43,Medium
+SUPP_016,Packaging,4848626.3,0.95,6.06,35,Clear,Rail,0,Low
+SUPP_044,Packaging,7132190.55,13.49,17.9,20,Clear,Air,26,Low
+SUPP_031,Packaging,1258078.31,10.84,6.33,52,Storm,Air,70,High
+SUPP_037,Packaging,6252626.68,9.08,15.2,9,Rain,Air,30,Low
+SUPP_032,Raw Materials,1406884.76,10.95,24.58,49,Rain,Air,72,High
+SUPP_017,Raw Materials,7755473.97,5.84,15.69,49,Rain,Air,56,Medium
+SUPP_016,Textiles,7512039.13,12.1,4.97,31,Storm,Air,51,Medium
+SUPP_050,Electronics,8939377.05,5.88,9.35,27,Clear,Road,10,Low
+SUPP_044,Machinery,8372335.19,12.95,10.16,11,Clear,Road,52,Medium
+SUPP_031,Packaging,457292.75,0.84,19.08,39,Storm,Rail,53,Medium
+SUPP_037,Packaging,3279861.23,10.12,10.78,7,Snow,Air,75,High
+SUPP_049,Textiles,2849438.69,6.92,14.79,19,Storm,Rail,63,Medium
+SUPP_015,Textiles,7514024.63,6.91,25.52,43,Rain,Road,64,Medium
+SUPP_034,Machinery,5073868.94,11.55,2.8,27,Snow,Road,74,High
+SUPP_033,Packaging,1236143.91,0.64,2.53,24,Snow,Air,26,Low
+SUPP_030,Electronics,4407103.88,12.68,8.61,34,Snow,Sea,59,Medium
+SUPP_045,Electronics,447229.2,6.79,17.75,55,Clear,Air,42,Medium
+SUPP_025,Textiles,3357645.59,4.8,4.09,45,Clear,Sea,35,Low
+SUPP_024,Textiles,1039971.96,11.52,29.02,59,Storm,Air,88,High
+SUPP_036,Packaging,5190444.54,4.34,16.0,43,Rain,Sea,53,Medium
+SUPP_031,Textiles,6867486.41,4.42,6.84,55,Storm,Sea,60,Medium
+SUPP_012,Machinery,3214494.14,13.88,2.63,9,Snow,Air,62,Medium
+SUPP_027,Packaging,9132367.96,9.19,16.85,14,Storm,Rail,58,Medium
+SUPP_018,Machinery,3465591.12,12.8,17.22,59,Rain,Air,61,Medium
+SUPP_037,Raw Materials,9067023.52,11.18,16.45,38,Clear,Sea,56,Medium
+SUPP_016,Textiles,6964437.88,0.26,12.43,27,Snow,Rail,53,Medium
+SUPP_013,Raw Materials,3491295.64,0.62,22.64,10,Rain,Rail,39,Medium
+SUPP_001,Raw Materials,8804385.59,9.77,27.08,14,Snow,Rail,63,Medium
+SUPP_009,Textiles,1356315.32,4.71,6.85,8,Storm,Rail,27,Low
+SUPP_020,Packaging,4053611.85,4.54,19.14,37,Clear,Rail,20,Low
+SUPP_007,Raw Materials,3761348.36,3.21,21.18,38,Clear,Air,37,Medium
+SUPP_017,Machinery,3295394.03,7.08,5.29,28,Clear,Rail,6,Low
+SUPP_048,Packaging,2130518.78,2.04,6.9,5,Storm,Sea,37,Medium
+SUPP_024,Textiles,5675888.6,0.41,2.0,13,Storm,Sea,34,Low
+SUPP_002,Machinery,3053003.23,0.66,15.66,6,Clear,Sea,31,Low
+SUPP_044,Textiles,6363836.85,9.36,4.5,35,Rain,Air,23,Low
+SUPP_050,Packaging,1909967.72,6.73,15.16,59,Storm,Sea,78,High
+SUPP_044,Textiles,1037334.48,6.49,19.23,8,Snow,Rail,63,Medium
+SUPP_006,Machinery,6293305.59,13.86,29.93,44,Storm,Rail,100,High
+SUPP_041,Raw Materials,2394102.87,4.72,12.57,55,Rain,Sea,53,Medium
+SUPP_027,Textiles,2074705.55,14.32,27.64,17,Snow,Road,82,High
+SUPP_006,Raw Materials,3421189.56,6.14,7.93,38,Storm,Air,32,Low
+SUPP_021,Packaging,6421788.43,12.77,22.49,58,Storm,Sea,100,High
+SUPP_039,Machinery,2776188.38,8.94,15.19,46,Storm,Rail,72,High
+SUPP_050,Packaging,7436580.87,3.5,2.7,6,Snow,Rail,21,Low
+SUPP_011,Raw Materials,4769371.22,2.6,11.29,49,Clear,Air,38,Medium
+SUPP_047,Raw Materials,5853907.12,13.28,5.4,50,Storm,Road,70,High
+SUPP_014,Raw Materials,7966819.3,1.25,9.19,5,Snow,Road,31,Low
+SUPP_007,Electronics,2601309.63,14.02,4.8,32,Snow,Road,64,Medium
+SUPP_002,Machinery,3714088.57,14.69,13.2,35,Clear,Road,52,Medium
+SUPP_017,Textiles,9103805.07,10.79,17.88,48,Rain,Road,67,High
+SUPP_042,Machinery,8650444.35,6.91,14.78,45,Storm,Air,58,Medium
+SUPP_016,Packaging,7581430.21,10.37,26.05,51,Snow,Air,100,High
+SUPP_009,Textiles,4297240.37,1.76,1.88,5,Rain,Road,16,Low
+SUPP_003,Packaging,2079746.31,12.41,17.17,16,Storm,Rail,77,High
+SUPP_030,Textiles,9719860.75,7.74,9.44,51,Storm,Rail,49,Medium
+SUPP_009,Textiles,8585684.95,4.64,6.59,37,Rain,Rail,3,Low
+SUPP_041,Textiles,7168041.12,14.6,6.84,58,Snow,Sea,81,High
+SUPP_023,Machinery,799249.26,5.7,24.8,56,Rain,Road,64,Medium
+SUPP_029,Packaging,4594469.4,5.01,2.52,59,Storm,Rail,54,Medium
+SUPP_017,Raw Materials,2584749.64,5.34,21.46,22,Storm,Road,67,High
+SUPP_001,Textiles,1290241.92,14.43,19.44,31,Rain,Sea,65,Medium
+SUPP_019,Machinery,838170.84,0.8,1.56,32,Clear,Rail,9,Low
+SUPP_049,Machinery,6078673.31,6.48,1.79,37,Storm,Road,52,Medium
+SUPP_050,Machinery,154606.58,11.45,26.91,30,Storm,Air,80,High
+SUPP_001,Textiles,5378647.61,7.21,12.29,7,Storm,Air,64,Medium
+SUPP_027,Textiles,8944638.43,5.1,18.84,17,Snow,Rail,63,Medium
+SUPP_016,Raw Materials,9313436.27,0.85,16.87,26,Snow,Rail,34,Low
+SUPP_015,Packaging,1471002.33,8.74,9.19,30,Clear,Rail,18,Low
+SUPP_041,Raw Materials,4079437.44,14.98,2.59,22,Storm,Sea,57,Medium
+SUPP_042,Textiles,871592.97,2.4,13.75,39,Storm,Rail,42,Medium
+SUPP_013,Electronics,2624984.46,4.82,3.52,22,Rain,Air,23,Low
+SUPP_019,Electronics,9667256.47,14.18,10.71,14,Snow,Rail,71,High
+SUPP_018,Textiles,9100474.14,0.19,24.51,20,Snow,Air,68,High
+SUPP_021,Electronics,958691.06,2.51,28.86,21,Rain,Road,38,Medium
+SUPP_035,Electronics,191256.51,3.94,14.05,37,Rain,Road,33,Low
+SUPP_019,Packaging,7344945.76,14.93,9.34,8,Rain,Rail,41,Medium
+SUPP_047,Electronics,8832023.8,1.54,2.62,26,Rain,Road,9,Low
+SUPP_010,Electronics,624523.74,12.69,2.71,5,Snow,Air,63,Medium
+SUPP_022,Machinery,1082375.62,4.5,3.63,20,Storm,Rail,31,Low
+SUPP_024,Machinery,1376601.82,12.79,24.7,24,Clear,Sea,66,High
+SUPP_006,Raw Materials,8962477.24,0.53,7.95,29,Clear,Sea,23,Low
+SUPP_050,Machinery,3391642.7,7.76,24.1,46,Clear,Rail,51,Medium
+SUPP_012,Raw Materials,7069625.75,2.89,22.77,11,Storm,Rail,59,Medium
+SUPP_001,Electronics,1478270.32,2.86,6.28,23,Rain,Rail,17,Low
+SUPP_050,Machinery,8455735.93,1.29,21.5,40,Rain,Road,46,Medium
+SUPP_013,Machinery,5713604.31,13.03,17.91,35,Clear,Air,31,Low
+SUPP_031,Machinery,3918245.71,2.06,8.61,10,Storm,Sea,38,Medium
+SUPP_011,Electronics,2477753.26,14.5,28.79,6,Clear,Sea,63,Medium
+SUPP_031,Packaging,3513116.96,13.44,29.03,26,Rain,Sea,71,High
+SUPP_004,Raw Materials,1648304.45,2.68,8.74,49,Clear,Air,24,Low
+SUPP_041,Machinery,2341676.29,1.69,24.83,26,Storm,Road,50,Medium
+SUPP_011,Packaging,7485610.7,0.81,28.51,45,Clear,Rail,47,Medium
+SUPP_016,Electronics,117625.66,11.48,15.91,3,Clear,Rail,34,Low
+SUPP_045,Textiles,5248843.25,9.65,23.8,8,Rain,Sea,53,Medium
+SUPP_050,Electronics,7174047.7,9.15,3.57,56,Rain,Air,26,Low
+SUPP_032,Electronics,687742.37,8.98,22.45,35,Storm,Road,71,High
+SUPP_004,Packaging,6887540.46,12.24,13.1,33,Rain,Road,42,Medium
+SUPP_009,Machinery,9381366.71,10.19,4.45,13,Rain,Sea,50,Medium
+SUPP_036,Packaging,2239896.16,3.88,26.45,11,Snow,Air,51,Medium
+SUPP_002,Machinery,7167872.95,4.14,23.05,33,Storm,Air,54,Medium
+SUPP_017,Electronics,123549.42,7.69,5.04,39,Snow,Rail,33,Low
+SUPP_036,Packaging,8722279.53,6.33,13.89,38,Snow,Air,47,Medium
+SUPP_037,Raw Materials,7180232.67,5.44,8.77,26,Storm,Sea,47,Medium
+SUPP_047,Machinery,960300.81,11.22,1.37,7,Storm,Air,61,Medium
+SUPP_005,Textiles,1869502.04,3.56,19.43,3,Rain,Rail,34,Low
+SUPP_019,Packaging,7788289.02,3.47,6.1,27,Storm,Rail,41,Medium
+SUPP_001,Textiles,3075741.63,12.19,9.52,59,Snow,Air,71,High
+SUPP_002,Textiles,7283834.34,10.42,29.63,42,Storm,Air,100,High
+SUPP_021,Electronics,6640063.24,9.18,27.54,34,Snow,Air,79,High
+SUPP_034,Machinery,7530391.73,8.57,8.97,4,Rain,Sea,43,Medium
+SUPP_021,Machinery,3371077.14,8.73,26.78,57,Storm,Road,84,High
+SUPP_007,Textiles,6335638.06,7.83,2.48,12,Clear,Road,17,Low
+SUPP_009,Raw Materials,4945417.21,4.72,6.27,33,Clear,Air,9,Low
+SUPP_007,Machinery,3261957.44,3.95,14.46,8,Rain,Road,21,Low
+SUPP_003,Textiles,9281070.04,13.03,21.52,28,Snow,Rail,83,High
+SUPP_034,Textiles,7769978.68,12.14,23.27,26,Storm,Road,89,High
+SUPP_024,Raw Materials,6456884.17,12.53,17.74,53,Clear,Road,45,Medium
+SUPP_014,Machinery,4610716.62,7.98,2.0,39,Clear,Rail,21,Low
+SUPP_041,Electronics,860399.77,6.58,9.49,11,Storm,Rail,44,Medium
+SUPP_024,Electronics,1377492.54,10.41,24.06,34,Storm,Road,90,High
+SUPP_047,Electronics,1087915.22,2.27,26.44,31,Storm,Road,62,Medium
+SUPP_014,Textiles,4699246.91,1.69,19.84,54,Clear,Road,26,Low
+SUPP_047,Raw Materials,8290449.4,9.43,3.18,59,Snow,Air,57,Medium
+SUPP_013,Textiles,540624.42,3.94,4.93,54,Rain,Air,20,Low
+SUPP_036,Textiles,3897629.68,12.34,29.12,33,Snow,Road,90,High
+SUPP_050,Textiles,1169406.15,11.07,8.98,59,Storm,Rail,78,High
+SUPP_045,Machinery,4395740.29,7.01,23.88,30,Clear,Air,44,Medium
+SUPP_012,Textiles,6559493.6,14.97,3.17,34,Snow,Sea,75,High
+SUPP_043,Raw Materials,4108564.58,5.28,1.63,37,Snow,Sea,50,Medium
+SUPP_021,Textiles,6825485.25,13.2,15.91,36,Storm,Sea,71,High
+SUPP_027,Machinery,7690369.82,11.3,18.06,52,Storm,Air,71,High
+SUPP_037,Textiles,8272583.6,10.55,14.32,6,Rain,Rail,43,Medium
+SUPP_050,Textiles,4297602.54,7.09,27.93,11,Storm,Sea,82,High
+SUPP_029,Machinery,3150946.52,7.93,2.92,7,Snow,Road,50,Medium
+SUPP_047,Electronics,3632596.02,7.22,11.3,22,Storm,Road,57,Medium
+SUPP_034,Raw Materials,7010365.86,4.67,2.66,6,Storm,Road,39,Medium
+SUPP_020,Raw Materials,6572324.22,0.69,18.33,53,Rain,Sea,49,Medium
+SUPP_002,Packaging,8913779.88,6.79,14.32,22,Rain,Road,26,Low
+SUPP_003,Machinery,6724112.0,12.34,8.09,39,Storm,Air,58,Medium
+SUPP_009,Packaging,9379731.53,5.34,13.94,8,Storm,Air,45,Medium
+SUPP_015,Packaging,1063693.7,13.68,24.79,57,Storm,Road,100,High
+SUPP_037,Machinery,5164532.53,9.13,19.32,30,Rain,Road,40,Medium
+SUPP_047,Packaging,5846211.09,10.29,22.84,55,Snow,Air,100,High
+SUPP_032,Textiles,8702683.75,2.92,12.63,8,Clear,Sea,32,Low
+SUPP_003,Textiles,3996076.22,1.96,16.24,49,Snow,Road,55,Medium
+SUPP_050,Electronics,2068389.73,14.97,16.7,58,Storm,Sea,100,High
+SUPP_028,Machinery,9667261.24,6.67,8.55,29,Clear,Air,7,Low
+SUPP_048,Textiles,7429757.08,10.16,6.97,37,Clear,Rail,23,Low
+SUPP_004,Packaging,1304795.91,2.03,20.61,54,Clear,Sea,40,Medium
+SUPP_035,Textiles,820244.94,7.74,10.96,4,Rain,Sea,35,Low
+SUPP_033,Raw Materials,5808626.94,9.31,23.66,59,Rain,Road,72,High
+SUPP_044,Machinery,8352859.62,0.94,22.68,40,Snow,Road,73,High
+SUPP_015,Machinery,2897043.67,9.64,10.11,2,Storm,Rail,60,Medium
+SUPP_010,Raw Materials,382564.55,8.74,5.83,47,Storm,Road,72,High
+SUPP_031,Textiles,1800108.32,3.61,15.34,27,Clear,Rail,12,Low
+SUPP_017,Electronics,2156558.0,2.25,23.01,29,Snow,Rail,48,Medium
+SUPP_050,Raw Materials,9122261.87,2.28,19.73,55,Rain,Rail,39,Medium
+SUPP_036,Raw Materials,1609766.27,10.28,18.22,16,Snow,Rail,73,High
+SUPP_042,Textiles,9120747.49,13.93,5.8,12,Rain,Air,42,Medium
+SUPP_016,Electronics,9840112.85,13.6,2.61,8,Storm,Rail,51,Medium
+SUPP_021,Textiles,9157134.91,4.06,26.98,38,Clear,Road,35,Low
+SUPP_043,Machinery,6582798.89,13.61,5.89,5,Snow,Sea,74,High
+SUPP_023,Raw Materials,4556189.44,14.19,20.63,2,Storm,Sea,100,High
+SUPP_039,Electronics,756822.34,12.29,10.73,56,Storm,Air,94,High
+SUPP_023,Textiles,5172103.14,7.75,4.11,52,Snow,Air,66,High
+SUPP_029,Electronics,4551049.25,11.03,25.36,37,Rain,Air,53,Medium
+SUPP_044,Packaging,913490.39,3.63,5.78,17,Rain,Road,13,Low
+SUPP_008,Electronics,3690698.02,3.52,7.33,45,Rain,Air,21,Low
+SUPP_019,Electronics,225816.95,1.63,5.99,18,Storm,Road,40,Medium
+SUPP_020,Machinery,5129676.6,2.19,13.32,50,Snow,Road,54,Medium
+SUPP_022,Raw Materials,1875065.25,0.2,14.54,34,Rain,Air,12,Low
+SUPP_035,Textiles,2301459.47,2.06,26.72,3,Storm,Rail,63,Medium
+SUPP_040,Raw Materials,2274945.57,12.87,24.7,5,Clear,Rail,51,Medium
+SUPP_038,Textiles,4917926.67,3.34,3.27,6,Clear,Sea,16,Low
+SUPP_011,Electronics,1028531.97,6.79,28.27,6,Storm,Air,67,High
+SUPP_045,Textiles,2431356.25,9.4,14.75,19,Storm,Road,53,Medium
+SUPP_030,Electronics,2750737.1,0.16,5.71,26,Clear,Rail,4,Low
+SUPP_043,Packaging,3191425.24,11.89,20.74,5,Storm,Road,92,High
+SUPP_002,Packaging,4604550.98,1.52,27.05,12,Snow,Air,58,Medium
+SUPP_025,Textiles,9799045.18,13.04,6.04,39,Clear,Sea,37,Medium
+SUPP_032,Textiles,5816987.44,13.7,6.14,49,Clear,Air,54,Medium
+SUPP_013,Textiles,8064685.66,1.24,13.0,34,Snow,Road,54,Medium
+SUPP_003,Raw Materials,9162352.76,7.59,24.06,55,Storm,Sea,84,High
+SUPP_032,Machinery,9775509.93,14.47,5.75,4,Rain,Road,47,Medium
+SUPP_023,Packaging,2753590.11,12.26,11.97,31,Storm,Sea,73,High
+SUPP_016,Textiles,3455143.97,14.72,19.26,26,Storm,Road,78,High
+SUPP_041,Packaging,1707058.21,14.79,24.8,10,Snow,Road,76,High
+SUPP_036,Packaging,747183.52,0.94,4.49,45,Rain,Air,29,Low
+SUPP_022,Machinery,9291196.04,7.5,25.45,59,Rain,Road,64,Medium
+SUPP_047,Machinery,7100406.28,11.0,6.04,26,Rain,Rail,26,Low
+SUPP_016,Textiles,6391156.46,1.15,11.48,56,Rain,Rail,27,Low
+SUPP_020,Textiles,9962433.71,7.17,24.67,54,Storm,Rail,75,High
+SUPP_035,Raw Materials,7974087.69,8.97,26.71,50,Rain,Air,53,Medium
+SUPP_038,Textiles,6062828.98,9.49,13.1,22,Rain,Air,23,Low
+SUPP_020,Textiles,980916.1,0.35,26.33,31,Rain,Rail,42,Medium
+SUPP_050,Raw Materials,3485382.29,2.67,19.04,35,Rain,Sea,44,Medium
+SUPP_005,Textiles,9592888.21,2.97,21.8,20,Clear,Air,19,Low
+SUPP_021,Raw Materials,3466609.01,0.38,21.0,28,Clear,Sea,32,Low
+SUPP_027,Machinery,6339595.21,6.59,16.23,51,Storm,Rail,64,Medium
+SUPP_048,Packaging,7517914.43,11.22,5.22,38,Rain,Air,43,Medium
+SUPP_007,Raw Materials,2728437.91,14.74,12.1,33,Rain,Road,51,Medium
+SUPP_049,Textiles,3549615.11,6.66,3.01,50,Storm,Air,49,Medium
+SUPP_039,Raw Materials,2620089.27,13.02,20.41,24,Rain,Road,55,Medium
+SUPP_023,Electronics,4904606.94,3.14,19.18,17,Snow,Air,42,Medium
+SUPP_033,Textiles,9956669.51,7.25,15.09,39,Snow,Sea,51,Medium
+SUPP_012,Machinery,9171722.23,12.03,14.08,25,Snow,Rail,72,High
+SUPP_009,Raw Materials,5883043.21,7.44,6.58,56,Rain,Air,30,Low
+SUPP_003,Machinery,8325660.08,7.0,15.12,13,Clear,Sea,22,Low
+SUPP_027,Raw Materials,6389004.59,13.49,14.24,41,Rain,Air,67,High
+SUPP_005,Raw Materials,9302859.16,6.93,6.27,56,Snow,Rail,53,Medium
+SUPP_045,Packaging,1687432.28,6.15,27.87,52,Snow,Air,71,High
+SUPP_028,Machinery,1296038.76,5.79,1.82,7,Clear,Rail,22,Low
+SUPP_047,Packaging,2889770.48,8.83,4.17,40,Snow,Road,43,Medium
+SUPP_034,Electronics,1789110.63,9.76,8.12,31,Snow,Rail,33,Low
+SUPP_003,Raw Materials,7779372.6,10.13,18.82,19,Snow,Road,71,High
+SUPP_036,Machinery,832335.77,5.03,8.2,49,Clear,Air,38,Medium
+SUPP_019,Machinery,3924428.31,11.02,20.86,47,Snow,Sea,97,High
+SUPP_050,Packaging,6370886.62,0.72,7.0,42,Snow,Air,45,Medium
+SUPP_028,Packaging,3692825.52,1.64,21.37,52,Clear,Air,31,Low
+SUPP_030,Machinery,2725126.28,14.97,25.89,41,Clear,Road,62,Medium
+SUPP_012,Textiles,6518626.57,11.16,1.91,54,Rain,Rail,42,Medium
+SUPP_027,Packaging,6349197.01,13.5,19.09,22,Snow,Road,84,High
+SUPP_012,Machinery,1201812.46,12.68,5.04,56,Rain,Rail,51,Medium
+SUPP_006,Packaging,4864578.78,13.47,27.33,41,Storm,Air,100,High
+SUPP_046,Electronics,2195317.16,12.22,7.3,47,Clear,Road,56,Medium
+SUPP_046,Machinery,9683677.97,2.3,28.29,6,Storm,Road,52,Medium
+SUPP_034,Machinery,5696059.92,5.72,28.98,40,Rain,Rail,48,Medium
+SUPP_036,Machinery,218842.84,14.41,2.29,24,Clear,Air,39,Medium
+SUPP_022,Textiles,189444.45,8.55,28.04,40,Rain,Air,39,Medium
+SUPP_010,Raw Materials,8235441.81,0.3,16.72,30,Clear,Rail,19,Low
+SUPP_020,Packaging,5014731.04,1.18,20.85,3,Snow,Sea,79,High
+SUPP_041,Raw Materials,7663231.06,7.33,5.33,34,Clear,Air,0,Low
+SUPP_013,Electronics,1765244.3,13.1,18.78,26,Storm,Road,84,High
+SUPP_030,Machinery,9625263.67,7.82,3.11,23,Snow,Road,41,Medium
+SUPP_039,Machinery,2569329.12,12.08,24.72,54,Rain,Air,84,High
+SUPP_038,Machinery,5043601.83,6.88,22.85,9,Snow,Rail,78,High
+SUPP_029,Electronics,5491809.36,8.24,3.59,13,Clear,Air,12,Low
+SUPP_036,Packaging,8540183.75,12.86,3.88,33,Rain,Road,53,Medium
+SUPP_012,Raw Materials,836806.41,6.77,3.95,24,Clear,Sea,27,Low
+SUPP_003,Raw Materials,6250221.64,5.41,23.88,37,Clear,Sea,51,Medium
+SUPP_022,Electronics,6410058.2,3.61,21.7,25,Clear,Road,37,Medium
+SUPP_027,Raw Materials,1311677.9,13.01,18.21,56,Rain,Sea,75,High
+SUPP_040,Textiles,4540287.51,1.84,14.14,54,Rain,Rail,38,Medium
+SUPP_048,Textiles,5834144.15,1.28,6.56,24,Storm,Road,49,Medium
+SUPP_006,Packaging,3646797.14,5.45,16.35,31,Storm,Sea,68,High
+SUPP_025,Electronics,7978772.62,5.18,24.36,47,Snow,Road,75,High
+SUPP_019,Machinery,8327818.34,6.11,10.67,55,Rain,Road,56,Medium
+SUPP_045,Packaging,9181837.89,13.63,18.53,35,Storm,Rail,74,High
+SUPP_034,Raw Materials,5596537.62,14.68,23.42,12,Rain,Road,70,High
+SUPP_007,Textiles,1730149.93,6.96,9.91,17,Clear,Rail,6,Low
+SUPP_047,Textiles,3265294.91,8.21,17.0,13,Storm,Rail,42,Medium
+SUPP_039,Packaging,4500662.42,14.49,11.94,18,Storm,Sea,73,High
+SUPP_009,Textiles,5000288.45,4.21,22.2,10,Snow,Rail,65,Medium
+SUPP_032,Raw Materials,260440.74,6.34,23.5,34,Rain,Sea,67,High
+SUPP_013,Electronics,5659184.16,3.15,22.52,16,Clear,Road,32,Low
+SUPP_030,Electronics,8532799.32,3.05,26.36,47,Rain,Rail,63,Medium
+SUPP_027,Electronics,1930407.32,4.3,8.76,15,Storm,Sea,37,Medium
+SUPP_036,Raw Materials,2381982.4,1.94,4.59,55,Clear,Air,29,Low
+SUPP_045,Packaging,3249253.44,0.62,4.69,38,Storm,Road,33,Low
+SUPP_020,Packaging,6606072.98,14.84,8.69,43,Storm,Road,86,High
+SUPP_008,Packaging,567636.36,1.79,1.11,12,Storm,Rail,36,Medium
+SUPP_047,Textiles,7877894.0,7.69,9.7,13,Clear,Air,14,Low
+SUPP_013,Packaging,2882513.65,5.7,22.93,51,Storm,Rail,80,High
+SUPP_031,Electronics,820962.08,0.37,3.97,5,Rain,Rail,21,Low
+SUPP_010,Machinery,9335269.52,9.6,24.25,12,Storm,Rail,78,High
+SUPP_027,Electronics,9811921.36,11.13,4.42,19,Storm,Sea,77,High
+SUPP_036,Textiles,997726.89,0.51,12.71,10,Clear,Air,2,Low
+SUPP_037,Packaging,1790095.17,10.12,6.03,40,Storm,Road,63,Medium
+SUPP_010,Packaging,5078269.0,10.23,6.88,11,Clear,Sea,35,Low
+SUPP_025,Textiles,9956409.64,10.02,15.31,53,Rain,Rail,61,Medium
+SUPP_012,Textiles,207725.83,10.98,26.77,29,Clear,Sea,63,Medium
+SUPP_046,Packaging,4528138.5,3.15,17.43,22,Clear,Sea,27,Low
+SUPP_027,Electronics,575617.64,9.43,2.58,44,Snow,Air,46,Medium
+SUPP_024,Machinery,8861316.46,0.25,26.59,13,Storm,Air,57,Medium
+SUPP_034,Packaging,3349995.55,10.87,15.72,33,Rain,Road,46,Medium
+SUPP_024,Electronics,1145915.72,5.9,7.99,33,Rain,Road,28,Low
+SUPP_029,Textiles,3632991.33,1.44,8.45,25,Clear,Rail,0,Low
+SUPP_033,Raw Materials,1054369.17,3.07,30.0,16,Rain,Sea,45,Medium
+SUPP_031,Textiles,6404792.73,2.2,27.7,13,Storm,Sea,79,High
+SUPP_010,Electronics,9552878.71,9.2,1.04,22,Rain,Air,11,Low
+SUPP_047,Electronics,5241032.42,4.01,23.25,43,Snow,Rail,77,High
+SUPP_046,Textiles,3189757.07,11.86,20.77,55,Clear,Road,72,High
+SUPP_020,Electronics,6940514.43,3.73,28.02,34,Clear,Sea,41,Medium
+SUPP_030,Electronics,2716030.36,7.85,17.41,27,Clear,Sea,44,Medium
+SUPP_002,Textiles,7816698.62,5.49,12.79,40,Storm,Air,46,Medium
+SUPP_021,Raw Materials,1102760.0,9.46,4.52,5,Rain,Sea,29,Low
+SUPP_018,Textiles,7817786.64,5.91,17.78,29,Storm,Rail,44,Medium
+SUPP_043,Electronics,5563287.84,2.7,11.98,21,Storm,Air,48,Medium
+SUPP_011,Packaging,6459919.51,9.8,26.14,8,Clear,Road,52,Medium
+SUPP_040,Textiles,9201936.09,1.51,16.78,59,Clear,Air,23,Low
+SUPP_035,Packaging,7581422.11,9.14,5.84,43,Storm,Sea,79,High
+SUPP_010,Packaging,7215107.77,1.38,14.45,56,Rain,Air,39,Medium
+SUPP_005,Packaging,3407896.6,0.37,12.61,52,Storm,Rail,63,Medium
+SUPP_004,Raw Materials,6214846.8,9.99,25.25,34,Clear,Rail,40,Medium
+SUPP_044,Electronics,1248794.13,12.79,5.54,42,Clear,Rail,47,Medium
+SUPP_004,Electronics,8433255.38,7.56,29.46,44,Snow,Rail,77,High
+SUPP_012,Textiles,9000152.01,14.12,20.46,48,Snow,Sea,96,High
+SUPP_020,Packaging,4554905.66,12.55,28.89,9,Rain,Road,59,Medium
+SUPP_049,Machinery,6238270.5,9.14,25.63,41,Rain,Road,67,High
+SUPP_045,Machinery,5648421.46,11.46,21.69,34,Clear,Rail,47,Medium
+SUPP_020,Machinery,1459091.59,1.63,16.53,43,Snow,Air,46,Medium
+SUPP_015,Raw Materials,3064304.42,11.19,28.97,16,Storm,Sea,100,High
+SUPP_026,Raw Materials,9926624.21,10.51,9.52,56,Storm,Sea,83,High
+SUPP_030,Machinery,7259351.2,4.74,23.7,9,Clear,Road,26,Low
+SUPP_031,Electronics,4878404.09,11.69,12.09,55,Storm,Rail,74,High
+SUPP_030,Raw Materials,3793095.16,5.57,16.25,45,Storm,Sea,81,High
+SUPP_039,Textiles,8891989.03,7.31,22.12,30,Rain,Road,48,Medium
+SUPP_026,Electronics,3454754.74,3.0,17.3,59,Storm,Road,70,High
+SUPP_020,Textiles,889490.42,10.31,21.52,14,Snow,Rail,70,High
+SUPP_038,Machinery,813397.82,6.45,13.83,10,Rain,Air,36,Medium
+SUPP_036,Raw Materials,3188393.09,10.27,26.27,50,Snow,Rail,100,High
+SUPP_005,Packaging,9790249.58,5.86,8.75,54,Rain,Rail,38,Medium
+SUPP_028,Textiles,7460269.78,2.61,6.51,5,Storm,Air,31,Low
+SUPP_012,Electronics,2512256.66,9.71,19.88,44,Snow,Road,82,High
+SUPP_038,Textiles,4206200.24,1.19,8.94,12,Snow,Sea,53,Medium
+SUPP_036,Electronics,5982772.82,10.68,1.21,13,Snow,Air,51,Medium
+SUPP_020,Machinery,423410.14,8.58,27.7,49,Clear,Road,52,Medium
+SUPP_044,Textiles,9552478.05,13.8,10.02,56,Snow,Sea,83,High
+SUPP_032,Electronics,8492397.99,13.6,16.71,32,Clear,Air,42,Medium
+SUPP_009,Textiles,5842340.79,5.42,5.76,16,Clear,Air,0,Low
+SUPP_043,Raw Materials,8310518.7,9.99,10.81,9,Snow,Sea,65,Medium
+SUPP_025,Textiles,6790760.37,7.93,21.82,46,Snow,Air,74,High
+SUPP_014,Packaging,9680252.43,13.36,18.42,29,Storm,Sea,75,High
+SUPP_028,Packaging,327018.46,3.78,14.33,39,Clear,Road,7,Low
+SUPP_040,Textiles,9918726.34,4.07,25.16,23,Snow,Air,52,Medium
+SUPP_019,Electronics,4165971.96,11.28,21.11,43,Storm,Road,100,High
+SUPP_001,Textiles,2815016.7,7.52,10.56,24,Storm,Road,54,Medium
+SUPP_019,Electronics,4431723.52,8.28,24.09,51,Rain,Rail,69,High
+SUPP_045,Textiles,9604169.82,9.94,16.16,9,Snow,Sea,55,Medium
+SUPP_046,Machinery,4166642.33,4.56,22.7,32,Snow,Rail,56,Medium
+SUPP_028,Textiles,2091939.87,2.92,4.64,40,Rain,Air,9,Low
+SUPP_031,Raw Materials,8864925.04,11.65,22.32,16,Rain,Rail,55,Medium
+SUPP_024,Machinery,9884287.14,7.03,2.69,39,Rain,Sea,43,Medium
+SUPP_043,Raw Materials,4388901.28,2.44,28.48,9,Rain,Road,54,Medium
+SUPP_005,Electronics,2719457.64,8.9,21.92,44,Rain,Rail,59,Medium
+SUPP_043,Machinery,8822271.72,7.78,23.46,21,Rain,Road,44,Medium
+SUPP_009,Machinery,3817808.39,14.32,26.35,55,Snow,Rail,98,High
+SUPP_040,Raw Materials,7150838.14,3.86,20.05,15,Snow,Rail,51,Medium
+SUPP_036,Machinery,1482832.08,14.99,19.05,34,Snow,Sea,86,High
+SUPP_015,Raw Materials,6059008.41,0.84,3.75,55,Snow,Road,62,Medium
+SUPP_037,Machinery,9071200.3,2.95,18.85,4,Rain,Sea,25,Low
+SUPP_027,Textiles,6867754.47,14.73,21.04,31,Storm,Road,91,High
+SUPP_003,Textiles,9484575.14,7.35,21.37,46,Snow,Sea,91,High
+SUPP_008,Textiles,3598258.68,3.99,28.45,24,Snow,Road,59,Medium
+SUPP_010,Textiles,4518379.76,11.97,16.86,48,Storm,Rail,71,High
+SUPP_034,Electronics,7549993.61,9.37,16.66,13,Clear,Air,30,Low
+SUPP_031,Electronics,7289252.2,9.49,11.43,20,Storm,Road,59,Medium
+SUPP_022,Textiles,1988662.89,7.42,28.56,49,Clear,Rail,50,Medium
+SUPP_030,Textiles,4272501.66,10.75,18.51,11,Snow,Sea,71,High
+SUPP_027,Packaging,4137623.14,3.34,29.01,38,Storm,Sea,74,High
+SUPP_011,Electronics,3749776.01,0.49,7.43,18,Storm,Sea,36,Medium
+SUPP_004,Machinery,846630.86,7.17,1.29,13,Rain,Road,17,Low
+SUPP_043,Packaging,8085877.4,11.59,27.54,24,Clear,Sea,68,High
+SUPP_032,Electronics,6847596.85,0.88,23.7,13,Rain,Road,31,Low
+SUPP_018,Packaging,8000867.35,7.68,7.75,14,Rain,Sea,21,Low
+SUPP_018,Packaging,2133705.82,8.1,22.38,5,Clear,Road,40,Medium
+SUPP_039,Raw Materials,4743402.73,14.4,20.61,38,Rain,Rail,66,High
+SUPP_024,Raw Materials,7311216.59,11.06,3.32,9,Storm,Air,57,Medium
+SUPP_032,Raw Materials,8590775.6,3.57,4.35,7,Clear,Sea,6,Low
+SUPP_006,Raw Materials,9256617.54,13.03,15.49,44,Rain,Rail,56,Medium
+SUPP_049,Machinery,7159895.34,9.39,29.15,58,Snow,Air,74,High
+SUPP_043,Machinery,3397117.55,7.83,29.4,34,Rain,Air,35,Low
+SUPP_037,Packaging,5052695.25,2.25,13.82,34,Clear,Sea,10,Low
+SUPP_049,Electronics,5242217.21,8.83,1.25,19,Clear,Air,8,Low
+SUPP_030,Machinery,7144492.2,5.56,2.54,30,Snow,Sea,43,Medium
+SUPP_031,Textiles,9553992.85,3.68,10.38,26,Rain,Rail,11,Low
+SUPP_044,Machinery,5790514.43,2.41,11.33,53,Snow,Sea,75,High
+SUPP_010,Textiles,5623154.03,5.86,13.19,56,Snow,Road,66,High
+SUPP_019,Machinery,108354.04,1.27,26.56,22,Snow,Sea,68,High
+SUPP_034,Electronics,7082695.78,13.81,8.85,29,Clear,Sea,32,Low
+SUPP_028,Textiles,5710767.99,13.24,28.32,16,Storm,Sea,100,High
+SUPP_018,Packaging,911866.62,10.07,12.9,28,Clear,Sea,47,Medium
+SUPP_042,Textiles,539026.48,2.95,23.92,15,Snow,Rail,68,High
+SUPP_050,Raw Materials,6966442.17,9.28,15.0,36,Rain,Sea,45,Medium
+SUPP_044,Raw Materials,9095172.3,0.53,23.3,44,Storm,Road,81,High
+SUPP_044,Electronics,4491228.07,8.31,28.39,12,Clear,Road,54,Medium
+SUPP_027,Electronics,5256698.18,1.84,4.74,7,Clear,Rail,0,Low
+SUPP_023,Raw Materials,9368873.67,4.69,26.22,59,Storm,Sea,94,High
+SUPP_013,Electronics,2515733.81,0.64,3.95,23,Clear,Road,3,Low
+SUPP_004,Textiles,2036713.89,5.63,15.55,52,Rain,Road,63,Medium
+SUPP_046,Electronics,1176650.67,6.15,15.07,43,Clear,Air,25,Low
+SUPP_025,Textiles,8192688.38,2.66,24.43,12,Rain,Road,41,Medium
+SUPP_045,Raw Materials,5580914.6,10.52,12.95,53,Storm,Sea,80,High
+SUPP_030,Electronics,9301427.64,14.22,3.01,10,Snow,Sea,77,High
+SUPP_050,Machinery,2595931.78,6.17,20.65,16,Storm,Sea,67,High
+SUPP_011,Electronics,6039714.46,10.49,3.62,12,Storm,Road,64,Medium
+SUPP_025,Machinery,2667646.3,10.89,6.5,58,Storm,Road,82,High
+SUPP_017,Packaging,4337866.3,3.05,13.7,42,Rain,Rail,48,Medium
+SUPP_005,Machinery,4317743.65,8.82,16.11,8,Rain,Rail,25,Low
+SUPP_012,Machinery,702511.77,10.97,17.23,57,Clear,Air,40,Medium
+SUPP_035,Machinery,8093160.33,5.88,24.08,22,Rain,Road,63,Medium
+SUPP_029,Packaging,774810.71,14.0,12.44,2,Clear,Road,30,Low
+SUPP_005,Electronics,6481332.87,13.11,2.21,32,Storm,Rail,67,High
+SUPP_002,Machinery,8594512.44,9.54,8.34,27,Rain,Road,16,Low
+SUPP_003,Machinery,5299417.24,9.87,7.76,52,Storm,Air,47,Medium
+SUPP_045,Packaging,3128217.19,10.44,1.47,40,Snow,Road,59,Medium
+SUPP_033,Machinery,3549512.69,8.2,3.11,43,Snow,Rail,58,Medium
+SUPP_026,Electronics,4181851.3,4.32,9.23,43,Rain,Road,38,Medium
+SUPP_025,Machinery,3620743.48,9.19,12.09,18,Clear,Sea,43,Medium
+SUPP_022,Packaging,7466707.5,5.75,9.78,35,Snow,Road,48,Medium
+SUPP_041,Electronics,8188736.77,13.96,16.81,37,Storm,Sea,72,High
+SUPP_006,Machinery,3425411.54,7.52,13.72,19,Storm,Air,51,Medium
+SUPP_012,Textiles,1347991.53,0.29,5.46,49,Clear,Rail,19,Low
+SUPP_043,Raw Materials,2345809.17,4.44,23.4,38,Storm,Rail,51,Medium
+SUPP_007,Packaging,8284433.11,6.47,18.29,27,Snow,Road,66,High
+SUPP_041,Machinery,3406722.83,1.44,28.88,31,Rain,Air,39,Medium
+SUPP_003,Raw Materials,4623345.91,3.43,28.07,25,Clear,Air,38,Medium
+SUPP_032,Machinery,1651795.1,8.49,28.37,19,Clear,Sea,58,Medium
+SUPP_032,Textiles,9387554.02,2.65,4.28,29,Snow,Road,27,Low
+SUPP_003,Packaging,8625346.04,7.21,29.84,22,Clear,Sea,43,Medium
+SUPP_047,Electronics,787045.33,14.89,12.83,42,Snow,Road,96,High
+SUPP_014,Textiles,5207271.29,8.85,6.05,45,Snow,Air,69,High
+SUPP_048,Textiles,1797018.79,2.75,27.54,10,Rain,Road,46,Medium
+SUPP_003,Raw Materials,6001965.62,9.07,2.87,35,Snow,Road,43,Medium
+SUPP_031,Textiles,5463098.15,8.44,16.08,54,Clear,Air,39,Medium
+SUPP_045,Raw Materials,2679782.54,4.38,15.83,5,Clear,Air,15,Low
+SUPP_041,Electronics,1689072.42,6.5,9.33,43,Storm,Road,54,Medium
+SUPP_030,Textiles,4561491.49,14.84,2.59,19,Rain,Road,30,Low
+SUPP_007,Electronics,4844906.66,7.6,10.16,21,Snow,Air,49,Medium
+SUPP_005,Raw Materials,7794475.33,14.12,25.99,34,Snow,Sea,81,High
+SUPP_048,Machinery,4132413.39,5.06,4.62,14,Storm,Road,35,Low
+SUPP_044,Textiles,6899158.37,3.97,8.39,24,Rain,Sea,25,Low
+SUPP_014,Electronics,1919863.28,2.31,3.86,15,Rain,Sea,20,Low
+SUPP_005,Electronics,6297245.07,5.54,16.53,32,Storm,Air,56,Medium
+SUPP_049,Machinery,7407772.81,6.45,10.68,51,Rain,Sea,49,Medium
+SUPP_036,Raw Materials,1042647.4,0.91,20.33,49,Snow,Air,68,High
+SUPP_038,Electronics,5111405.31,0.92,16.53,59,Rain,Road,54,Medium
+SUPP_041,Textiles,5996251.25,12.16,24.2,35,Snow,Air,80,High
+SUPP_002,Machinery,7713776.22,11.24,7.79,31,Clear,Road,21,Low
+SUPP_001,Raw Materials,5200114.68,1.95,28.9,9,Clear,Sea,40,Medium
+SUPP_027,Machinery,8536794.82,5.88,10.37,11,Rain,Air,33,Low
+SUPP_010,Packaging,3665059.59,5.92,4.08,12,Snow,Rail,50,Medium
+SUPP_016,Raw Materials,2923952.17,8.83,18.15,51,Clear,Air,34,Low
+SUPP_046,Machinery,7465152.79,7.77,10.6,32,Clear,Sea,29,Low
+SUPP_023,Machinery,3133163.21,7.66,12.64,5,Clear,Air,24,Low
+SUPP_013,Electronics,9318329.35,13.64,23.66,50,Clear,Sea,70,High
+SUPP_049,Textiles,3303717.35,9.46,8.98,41,Rain,Rail,35,Low
+SUPP_050,Raw Materials,6357200.15,1.17,27.36,20,Storm,Road,59,Medium
+SUPP_013,Electronics,5346984.34,4.62,12.39,3,Rain,Rail,11,Low
+SUPP_032,Raw Materials,5801817.42,14.37,15.59,14,Rain,Road,60,Medium
+SUPP_004,Packaging,3396265.54,5.0,9.26,49,Storm,Air,36,Medium
+SUPP_028,Packaging,1847335.14,7.34,21.42,38,Storm,Rail,63,Medium
+SUPP_003,Electronics,147304.83,1.22,16.53,11,Clear,Air,14,Low
+SUPP_011,Electronics,9320727.68,3.18,11.39,17,Snow,Road,37,Medium
+SUPP_005,Raw Materials,5124351.54,6.96,27.12,19,Snow,Sea,84,High
+SUPP_027,Raw Materials,3866495.54,7.43,26.99,59,Storm,Air,77,High
+SUPP_050,Electronics,86380.3,4.87,13.23,20,Storm,Air,37,Medium
+SUPP_007,Raw Materials,425955.84,9.69,8.61,23,Snow,Air,46,Medium
+SUPP_025,Raw Materials,2777127.8,12.04,11.94,31,Clear,Rail,45,Medium
+SUPP_038,Machinery,743422.43,0.97,27.88,54,Clear,Rail,44,Medium
+SUPP_010,Raw Materials,3827013.6,11.35,20.5,45,Snow,Air,92,High
+SUPP_025,Packaging,1033789.76,12.2,26.11,28,Rain,Rail,70,High
+SUPP_047,Raw Materials,8512590.94,13.18,16.93,10,Storm,Sea,68,High
+SUPP_013,Packaging,6509081.95,10.5,19.51,39,Rain,Road,49,Medium
+SUPP_045,Textiles,980525.23,6.46,4.73,20,Clear,Sea,26,Low
+SUPP_009,Electronics,4777950.12,4.83,23.22,11,Snow,Rail,66,High
+SUPP_027,Raw Materials,3091202.54,8.94,16.59,49,Storm,Air,74,High
+SUPP_019,Textiles,770274.51,4.43,26.58,14,Rain,Air,39,Medium
+SUPP_037,Textiles,250211.13,11.32,14.74,9,Rain,Road,59,Medium
+SUPP_027,Textiles,120610.5,12.31,11.43,17,Snow,Air,75,High
+SUPP_038,Machinery,2963488.02,5.69,15.76,55,Snow,Sea,65,Medium
+SUPP_001,Machinery,9691230.23,14.0,26.25,29,Rain,Air,72,High
+SUPP_021,Machinery,8433417.29,5.5,20.15,8,Rain,Air,49,Medium
+SUPP_037,Electronics,2029351.31,9.07,2.76,57,Snow,Road,74,High
+SUPP_003,Machinery,5488818.65,6.6,22.71,26,Clear,Rail,44,Medium
+SUPP_034,Machinery,7723868.59,0.68,6.63,21,Snow,Road,25,Low
+SUPP_029,Machinery,9351479.3,12.54,25.43,24,Rain,Road,59,Medium
+SUPP_036,Electronics,4323006.58,7.11,5.56,49,Snow,Air,57,Medium
+SUPP_009,Packaging,9471683.85,3.69,7.96,39,Storm,Air,41,Medium
+SUPP_042,Electronics,9288652.13,8.74,20.34,4,Clear,Rail,34,Low
+SUPP_043,Packaging,3488920.68,9.36,2.13,28,Rain,Rail,20,Low
+SUPP_037,Textiles,8320895.76,11.52,11.17,30,Clear,Rail,39,Medium
+SUPP_030,Raw Materials,5358866.61,0.1,8.0,21,Snow,Air,24,Low
+SUPP_024,Machinery,2542305.32,12.11,9.11,3,Clear,Road,42,Medium
+SUPP_025,Packaging,5067421.43,13.0,8.0,29,Clear,Sea,43,Medium
+SUPP_028,Packaging,8947112.48,3.5,22.46,19,Rain,Road,48,Medium
+SUPP_040,Packaging,7936991.64,9.1,15.31,44,Clear,Sea,46,Medium
+SUPP_004,Electronics,9844003.69,5.81,5.41,42,Snow,Sea,64,Medium
+SUPP_030,Textiles,2631027.4,9.58,14.17,12,Clear,Sea,31,Low
+SUPP_024,Raw Materials,9173763.08,14.95,5.46,21,Clear,Air,39,Medium
+SUPP_009,Packaging,7850519.91,5.98,19.74,51,Rain,Road,64,Medium
+SUPP_042,Machinery,6897778.25,11.8,24.06,18,Rain,Air,74,High
+SUPP_021,Packaging,4503321.01,12.46,9.78,20,Storm,Rail,67,High
+SUPP_018,Electronics,2764299.23,7.01,26.75,3,Clear,Sea,48,Medium
+SUPP_023,Machinery,5581324.57,6.12,14.34,16,Snow,Road,59,Medium
+SUPP_031,Textiles,6787083.16,11.7,4.8,56,Storm,Rail,74,High
+SUPP_040,Packaging,391264.12,7.51,5.49,36,Clear,Air,22,Low
+SUPP_030,Electronics,3682223.29,6.54,19.07,54,Clear,Rail,34,Low
+SUPP_012,Packaging,8065802.47,0.97,27.71,34,Clear,Road,36,Medium
+SUPP_011,Packaging,5732376.97,0.23,8.48,53,Clear,Air,19,Low
+SUPP_032,Raw Materials,4627637.96,4.54,1.96,46,Rain,Road,43,Medium
+SUPP_019,Machinery,5265338.94,4.32,2.1,28,Rain,Rail,8,Low
+SUPP_023,Machinery,9236076.28,10.37,4.69,45,Snow,Road,74,High
+SUPP_019,Raw Materials,5945205.79,12.55,2.27,39,Clear,Road,26,Low
+SUPP_015,Textiles,8903002.45,0.24,6.84,45,Storm,Rail,57,Medium
+SUPP_038,Packaging,6153348.37,4.0,2.94,59,Storm,Rail,43,Medium
+SUPP_038,Textiles,2485213.54,13.23,13.06,31,Snow,Rail,59,Medium
+SUPP_020,Textiles,9186936.1,6.18,6.55,53,Rain,Sea,39,Medium
+SUPP_011,Packaging,9085432.69,12.09,2.91,43,Rain,Rail,62,Medium
+SUPP_024,Packaging,9079258.6,1.92,16.49,25,Clear,Air,18,Low
+SUPP_023,Packaging,4129736.68,7.28,3.04,50,Snow,Air,69,High
+SUPP_040,Raw Materials,3278841.16,14.18,9.2,27,Storm,Air,52,Medium
+SUPP_012,Raw Materials,6729479.01,2.52,15.11,43,Rain,Air,35,Low
+SUPP_008,Electronics,8675209.37,9.43,20.4,14,Storm,Air,57,Medium
+SUPP_029,Packaging,6579219.65,7.13,17.58,35,Storm,Air,64,Medium
+SUPP_014,Textiles,7213597.42,11.33,7.35,46,Clear,Sea,60,Medium
+SUPP_023,Raw Materials,6197241.29,11.57,4.01,32,Storm,Rail,65,Medium
+SUPP_035,Raw Materials,8907695.67,4.13,24.86,44,Storm,Road,79,High
+SUPP_002,Machinery,7322733.96,4.39,22.37,39,Snow,Air,62,Medium
+SUPP_030,Packaging,6310730.97,10.52,21.62,54,Rain,Road,93,High
+SUPP_048,Textiles,1363750.01,11.37,9.0,14,Storm,Sea,65,Medium
+SUPP_031,Packaging,8873973.82,5.74,22.74,20,Rain,Rail,58,Medium
+SUPP_022,Electronics,4786764.19,14.88,23.34,45,Snow,Road,93,High
+SUPP_009,Textiles,5039342.66,3.58,12.88,30,Clear,Sea,13,Low
+SUPP_002,Machinery,2319598.76,13.84,18.18,58,Rain,Rail,74,High
+SUPP_023,Electronics,5044259.03,9.12,17.24,26,Storm,Road,62,Medium
+SUPP_039,Raw Materials,5074081.4,2.73,24.57,56,Rain,Sea,53,Medium
+SUPP_013,Electronics,1354244.62,11.52,28.04,51,Clear,Rail,73,High
+SUPP_044,Electronics,3721726.44,2.12,16.03,15,Snow,Air,46,Medium
+SUPP_032,Packaging,9343174.81,2.84,8.33,8,Clear,Sea,18,Low
+SUPP_026,Raw Materials,3862486.46,11.94,14.23,58,Snow,Sea,100,High
+SUPP_025,Packaging,2708738.46,7.69,5.28,37,Clear,Sea,20,Low
+SUPP_023,Packaging,1118772.54,1.61,1.33,48,Storm,Rail,59,Medium
+SUPP_036,Electronics,9735273.2,6.64,16.68,27,Rain,Rail,41,Medium
+SUPP_048,Machinery,2589063.18,12.89,16.85,50,Snow,Sea,93,High
+SUPP_011,Machinery,3464579.88,8.47,3.12,40,Snow,Air,39,Medium
+SUPP_038,Textiles,5461585.32,5.14,14.73,4,Clear,Air,31,Low
+SUPP_014,Packaging,8694570.9,9.96,13.59,25,Snow,Sea,63,Medium
+SUPP_005,Textiles,9060542.27,1.88,16.43,28,Snow,Road,39,Medium
+SUPP_001,Machinery,518258.92,10.06,26.02,27,Storm,Rail,70,High
+SUPP_012,Textiles,8133515.89,12.82,27.52,51,Snow,Air,98,High
+SUPP_013,Raw Materials,9044333.0,4.88,17.02,37,Snow,Sea,63,Medium
+SUPP_036,Machinery,486616.83,10.83,13.89,12,Clear,Sea,45,Medium
+SUPP_038,Packaging,1944614.29,10.08,1.01,57,Snow,Rail,81,High
+SUPP_015,Electronics,842556.58,0.82,13.99,48,Clear,Air,19,Low
+SUPP_017,Packaging,1305223.31,1.94,5.28,43,Snow,Road,55,Medium
+SUPP_042,Packaging,763730.79,9.93,13.52,14,Snow,Air,40,Medium
+SUPP_032,Raw Materials,9926347.3,9.92,2.46,14,Clear,Road,5,Low
+SUPP_049,Packaging,5298584.65,12.39,25.84,49,Snow,Road,97,High
+SUPP_039,Packaging,9500800.59,8.37,10.89,25,Snow,Rail,45,Medium
+SUPP_017,Machinery,1105993.69,7.44,5.66,43,Clear,Sea,27,Low
+SUPP_033,Textiles,1627276.33,7.36,11.56,3,Clear,Sea,28,Low
+SUPP_011,Textiles,1333912.27,6.51,8.97,18,Clear,Air,16,Low
+SUPP_021,Machinery,453827.84,13.71,25.16,58,Rain,Sea,92,High
+SUPP_011,Electronics,7903442.01,0.57,29.04,16,Storm,Sea,55,Medium
+SUPP_027,Packaging,3067646.21,5.5,2.93,55,Clear,Sea,40,Medium
+SUPP_019,Textiles,6566325.88,6.7,28.52,23,Clear,Air,36,Medium
+SUPP_050,Raw Materials,5344263.9,7.29,21.38,31,Clear,Air,43,Medium
+SUPP_035,Packaging,1978201.84,3.3,22.41,28,Storm,Sea,66,High
+SUPP_018,Packaging,5756243.05,3.31,25.99,46,Clear,Sea,42,Medium
+SUPP_010,Electronics,5209005.1,5.35,7.79,8,Rain,Sea,23,Low
+SUPP_024,Machinery,2721575.76,9.85,16.47,49,Snow,Sea,84,High
+SUPP_011,Electronics,3992958.76,10.44,15.19,46,Rain,Air,60,Medium
+SUPP_033,Raw Materials,2714354.43,6.88,14.65,44,Rain,Road,55,Medium
+SUPP_027,Machinery,9409367.99,5.01,2.22,5,Clear,Road,20,Low
+SUPP_009,Electronics,5467390.25,2.61,23.05,59,Snow,Sea,86,High
+SUPP_020,Packaging,9460458.43,3.04,26.39,57,Rain,Rail,40,Medium
+SUPP_039,Textiles,6564968.6,5.91,6.64,41,Storm,Air,50,Medium
+SUPP_046,Packaging,1583767.87,12.85,15.93,17,Clear,Road,45,Medium
+SUPP_015,Raw Materials,6956019.72,7.84,9.64,43,Rain,Air,37,Medium
+SUPP_020,Raw Materials,1253558.59,1.27,16.29,53,Rain,Air,37,Medium
+SUPP_006,Machinery,5908662.19,1.43,13.5,41,Clear,Road,41,Medium
+SUPP_002,Machinery,9871645.85,8.46,20.94,12,Snow,Road,60,Medium
+SUPP_013,Electronics,8953948.55,0.46,11.11,8,Clear,Road,20,Low
+SUPP_031,Electronics,8112078.35,8.1,9.07,44,Storm,Road,65,Medium
+SUPP_005,Packaging,1666859.23,13.44,20.89,50,Clear,Road,68,High
+SUPP_008,Textiles,702727.61,10.39,17.6,55,Rain,Air,54,Medium
+SUPP_012,Packaging,5871524.27,7.75,15.38,25,Clear,Road,37,Medium
+SUPP_010,Packaging,758243.35,1.43,13.58,46,Storm,Sea,66,High
+SUPP_011,Textiles,5185541.31,4.64,20.95,44,Rain,Road,64,Medium
+SUPP_007,Textiles,3023688.73,2.98,4.37,41,Clear,Air,19,Low
+SUPP_046,Raw Materials,6916249.77,5.92,13.06,52,Storm,Air,75,High
+SUPP_049,Textiles,3708699.66,1.6,9.98,48,Clear,Road,19,Low
+SUPP_014,Textiles,6674554.79,4.36,14.34,54,Snow,Sea,66,High
+SUPP_045,Textiles,8437352.43,7.85,25.96,26,Rain,Rail,35,Low
+SUPP_044,Electronics,399987.58,13.69,23.48,50,Rain,Sea,88,High
+SUPP_025,Machinery,7548420.81,14.34,23.39,24,Rain,Air,70,High
+SUPP_027,Electronics,7618035.48,2.61,25.17,32,Storm,Road,70,High
+SUPP_030,Electronics,8931482.71,6.93,20.63,12,Rain,Rail,43,Medium
+SUPP_049,Packaging,985209.75,4.43,29.53,53,Storm,Road,86,High
+SUPP_006,Packaging,2608106.09,7.24,11.65,58,Snow,Road,73,High
+SUPP_025,Packaging,9019395.95,8.41,26.19,13,Snow,Sea,87,High
+SUPP_044,Machinery,8338411.84,10.5,9.45,6,Rain,Rail,30,Low
+SUPP_019,Machinery,3119268.67,0.4,17.89,34,Rain,Road,27,Low
+SUPP_031,Packaging,8545966.64,2.19,16.78,14,Rain,Road,17,Low
+SUPP_044,Machinery,996181.79,0.91,22.04,20,Clear,Rail,37,Medium
+SUPP_029,Textiles,7178707.17,3.82,26.45,57,Clear,Road,39,Medium
+SUPP_010,Machinery,9580410.66,13.27,28.07,23,Snow,Road,87,High
+SUPP_048,Raw Materials,3401634.63,8.59,25.97,57,Clear,Sea,70,High
+SUPP_013,Packaging,772119.24,12.77,7.17,9,Rain,Rail,39,Medium
+SUPP_008,Raw Materials,5451637.42,12.51,4.63,6,Snow,Rail,50,Medium
+SUPP_018,Textiles,5590342.68,14.2,13.03,55,Storm,Rail,70,High
+SUPP_023,Machinery,9307963.58,12.57,29.87,56,Snow,Rail,100,High
+SUPP_033,Packaging,1172938.54,9.18,24.8,53,Rain,Rail,59,Medium
+SUPP_007,Electronics,2430150.33,11.83,2.64,52,Storm,Rail,68,High
+SUPP_032,Raw Materials,6594998.36,14.39,28.0,4,Rain,Road,56,Medium
+SUPP_007,Electronics,5874485.46,8.26,19.57,8,Clear,Rail,25,Low
+SUPP_044,Electronics,892255.1,1.88,7.51,12,Rain,Rail,0,Low
+SUPP_039,Packaging,8412405.37,10.55,23.88,21,Rain,Sea,67,High
+SUPP_040,Textiles,4076304.73,5.97,6.56,3,Clear,Road,23,Low
+SUPP_043,Textiles,5929615.12,14.84,5.84,7,Snow,Rail,61,Medium
+SUPP_013,Packaging,7806340.23,3.86,25.06,4,Snow,Rail,67,High
+SUPP_033,Packaging,9459451.69,6.19,20.2,9,Storm,Road,76,High
+SUPP_049,Electronics,6324357.54,6.8,6.47,46,Snow,Road,53,Medium
+SUPP_025,Machinery,5309412.8,12.18,22.33,36,Storm,Rail,74,High
+SUPP_029,Machinery,1178201.6,10.84,15.51,13,Clear,Road,40,Medium
+SUPP_012,Textiles,9202715.79,0.92,24.8,23,Storm,Air,46,Medium
+SUPP_032,Machinery,3703337.78,8.18,5.29,11,Rain,Sea,35,Low
+SUPP_046,Machinery,133129.31,2.61,17.84,44,Snow,Road,65,Medium
+SUPP_037,Machinery,6322958.75,11.04,11.76,23,Snow,Rail,63,Medium
+SUPP_036,Raw Materials,6776125.27,10.61,15.19,46,Clear,Rail,47,Medium
+SUPP_017,Machinery,2259717.77,12.39,18.64,13,Snow,Sea,70,High
+SUPP_050,Packaging,9442759.27,0.81,25.65,50,Storm,Road,82,High
+SUPP_002,Textiles,8875074.0,12.18,11.85,59,Clear,Air,64,Medium
+SUPP_024,Packaging,7361762.68,4.64,6.11,51,Clear,Sea,35,Low
+SUPP_025,Electronics,3159809.34,13.73,25.38,40,Snow,Sea,95,High
+SUPP_023,Machinery,7727118.77,13.23,24.37,15,Storm,Road,85,High
+SUPP_043,Raw Materials,2993436.05,13.33,25.38,23,Rain,Air,65,Medium
+SUPP_042,Packaging,4511658.02,4.88,22.59,28,Clear,Road,44,Medium
+SUPP_020,Electronics,1935426.95,10.18,3.68,4,Storm,Air,47,Medium
+SUPP_002,Textiles,3505512.28,10.25,11.81,10,Storm,Road,68,High
+SUPP_030,Machinery,4090794.31,1.78,17.73,46,Snow,Sea,71,High
+SUPP_002,Machinery,5296830.81,13.31,25.3,4,Clear,Sea,72,High
+SUPP_025,Textiles,9224385.58,1.66,4.73,28,Snow,Sea,51,Medium
+SUPP_037,Electronics,8945028.05,14.62,2.34,56,Snow,Road,69,High
+SUPP_045,Raw Materials,1688941.58,10.37,15.92,37,Storm,Rail,71,High
+SUPP_033,Packaging,3229914.79,8.92,3.09,54,Rain,Sea,56,Medium
+SUPP_024,Machinery,5714349.76,12.2,24.43,13,Rain,Rail,53,Medium
+SUPP_041,Electronics,1146212.6,10.85,5.54,8,Rain,Sea,57,Medium
+SUPP_017,Electronics,6233571.01,11.69,15.51,10,Storm,Rail,60,Medium
+SUPP_015,Textiles,2810396.01,9.68,21.09,17,Clear,Road,34,Low
+SUPP_038,Packaging,3456224.12,11.57,17.28,47,Storm,Road,82,High
+SUPP_037,Textiles,5301730.48,7.81,17.76,32,Snow,Rail,40,Medium
+SUPP_014,Packaging,9648670.26,1.2,2.55,4,Clear,Sea,2,Low
+SUPP_033,Packaging,5322262.47,9.26,14.99,30,Snow,Sea,56,Medium
+SUPP_013,Machinery,2759242.32,2.62,19.0,41,Snow,Sea,55,Medium
+SUPP_040,Textiles,5716736.72,11.1,5.1,4,Snow,Air,48,Medium
+SUPP_002,Textiles,5844835.31,1.99,14.4,46,Rain,Rail,40,Medium
+SUPP_014,Machinery,3472597.38,4.23,29.9,38,Storm,Rail,58,Medium
+SUPP_037,Electronics,6464963.77,5.39,2.43,53,Rain,Sea,53,Medium
+SUPP_030,Raw Materials,5564103.49,11.45,16.58,32,Rain,Air,43,Medium
+SUPP_048,Packaging,382594.0,5.56,7.88,55,Snow,Rail,54,Medium
+SUPP_021,Electronics,770145.11,14.32,7.47,27,Rain,Rail,26,Low
+SUPP_018,Packaging,4287636.89,14.78,17.07,20,Rain,Sea,45,Medium
+SUPP_044,Textiles,103222.44,11.25,27.19,41,Rain,Rail,70,High
+SUPP_016,Electronics,1006452.22,6.43,28.08,44,Rain,Air,57,Medium
+SUPP_002,Raw Materials,1837470.89,14.4,12.17,3,Storm,Rail,70,High
+SUPP_032,Textiles,8752327.66,8.5,15.98,20,Snow,Rail,47,Medium
+SUPP_042,Electronics,833050.84,9.1,5.75,27,Rain,Air,33,Low
+SUPP_018,Raw Materials,9897879.15,5.72,13.9,53,Clear,Sea,46,Medium
+SUPP_018,Textiles,186645.22,13.83,4.73,13,Rain,Road,38,Medium
+SUPP_047,Machinery,8162778.51,13.35,16.06,43,Clear,Road,58,Medium
+SUPP_006,Packaging,2657248.29,13.24,26.86,53,Storm,Road,100,High
+SUPP_027,Packaging,6157767.15,1.41,12.35,58,Clear,Rail,21,Low
+SUPP_047,Raw Materials,6265771.66,4.31,11.96,58,Rain,Road,42,Medium
+SUPP_037,Textiles,7204277.06,7.61,21.55,2,Clear,Sea,50,Medium
+SUPP_032,Electronics,9241244.16,3.52,22.74,38,Rain,Road,36,Medium
+SUPP_050,Packaging,7508514.44,6.62,28.05,7,Storm,Rail,62,Medium
+SUPP_048,Raw Materials,2918543.26,9.61,9.32,8,Snow,Air,43,Medium
+SUPP_010,Electronics,4026005.19,12.8,15.51,22,Rain,Air,35,Low
+SUPP_018,Machinery,3950079.02,4.03,28.68,43,Snow,Sea,72,High
+SUPP_038,Electronics,9342815.82,3.13,5.26,7,Snow,Sea,52,Medium
+SUPP_045,Electronics,6825126.27,2.88,8.81,25,Storm,Rail,24,Low
+SUPP_031,Raw Materials,9864181.73,4.8,4.34,38,Storm,Air,37,Medium
+SUPP_024,Machinery,2606675.38,0.41,7.47,50,Storm,Sea,63,Medium
+SUPP_002,Textiles,1078779.62,6.53,7.67,38,Clear,Road,6,Low
+SUPP_045,Raw Materials,9408346.15,13.6,17.44,33,Storm,Rail,72,High
+SUPP_020,Packaging,3842411.48,6.24,22.1,54,Clear,Air,42,Medium
+SUPP_029,Machinery,8574462.97,14.17,10.74,58,Clear,Rail,43,Medium
+SUPP_017,Packaging,995812.54,3.09,12.99,5,Clear,Air,21,Low
+SUPP_020,Raw Materials,8771776.88,2.46,14.21,38,Rain,Rail,31,Low
+SUPP_041,Packaging,6934045.89,5.81,26.2,36,Snow,Road,72,High
+SUPP_018,Electronics,719044.31,7.02,24.8,52,Snow,Rail,91,High
+SUPP_048,Machinery,4965416.12,1.87,1.4,31,Storm,Rail,29,Low
+SUPP_007,Raw Materials,6995005.19,11.87,9.58,44,Storm,Road,69,High
+SUPP_023,Machinery,4240133.1,6.22,7.71,42,Storm,Rail,55,Medium
+SUPP_045,Electronics,2007051.15,0.92,6.75,57,Clear,Air,16,Low
+SUPP_041,Machinery,4052633.94,5.68,6.31,51,Rain,Road,47,Medium
+SUPP_026,Raw Materials,9845197.44,4.54,18.39,44,Storm,Sea,61,Medium
+SUPP_037,Electronics,9404789.36,13.39,16.53,47,Clear,Air,57,Medium
+SUPP_016,Textiles,4385556.85,3.44,12.27,7,Rain,Rail,15,Low
+SUPP_021,Machinery,7479376.1,1.5,15.86,36,Snow,Air,42,Medium
+SUPP_017,Raw Materials,8235346.88,3.23,12.43,48,Storm,Sea,59,Medium
+SUPP_013,Electronics,4031544.97,2.34,15.6,56,Snow,Sea,57,Medium
+SUPP_012,Machinery,4443263.4,7.41,25.61,39,Snow,Air,63,Medium
+SUPP_002,Electronics,4021138.04,6.29,12.83,34,Rain,Road,43,Medium
+SUPP_030,Raw Materials,7827786.62,11.41,14.88,2,Storm,Air,73,High
+SUPP_004,Machinery,3130115.05,4.46,24.52,29,Snow,Sea,69,High
+SUPP_010,Electronics,8066470.02,10.07,22.24,16,Storm,Air,70,High
+SUPP_037,Electronics,6813271.67,9.17,23.3,27,Clear,Rail,47,Medium
+SUPP_050,Machinery,4754614.97,9.69,4.13,8,Snow,Road,46,Medium
+SUPP_015,Raw Materials,9720910.91,0.66,10.16,18,Rain,Sea,23,Low
+SUPP_019,Machinery,6352967.99,1.68,19.23,41,Snow,Air,45,Medium
+SUPP_028,Raw Materials,994788.79,10.95,10.4,57,Rain,Sea,74,High
+SUPP_047,Raw Materials,2661960.61,1.92,15.78,30,Snow,Air,35,Low
+SUPP_027,Raw Materials,8893982.99,0.82,17.33,55,Clear,Sea,33,Low
+SUPP_017,Raw Materials,2134869.51,2.26,27.23,46,Snow,Air,71,High
+SUPP_024,Textiles,7302261.57,13.99,9.09,37,Snow,Road,68,High
+SUPP_001,Machinery,679463.58,9.08,2.66,4,Rain,Sea,25,Low
+SUPP_045,Machinery,5321600.12,10.07,25.12,31,Rain,Rail,60,Medium
+SUPP_046,Machinery,433986.04,13.2,10.13,53,Storm,Road,81,High
+SUPP_007,Textiles,4711189.31,9.01,1.9,30,Clear,Road,23,Low
+SUPP_022,Raw Materials,8956245.29,14.74,19.47,31,Snow,Sea,67,High
+SUPP_039,Textiles,9063201.43,7.79,5.46,58,Clear,Road,28,Low
+SUPP_017,Textiles,7586817.05,11.0,21.57,6,Snow,Sea,82,High
+SUPP_026,Packaging,6898515.33,3.37,13.72,11,Rain,Road,27,Low
+SUPP_038,Raw Materials,7850327.56,6.85,23.97,30,Storm,Air,63,Medium
+SUPP_033,Machinery,6884321.61,13.71,18.65,51,Storm,Rail,78,High
+SUPP_009,Electronics,9613126.77,9.45,8.53,24,Storm,Rail,54,Medium
+SUPP_010,Packaging,7067801.09,11.06,9.8,12,Clear,Sea,41,Medium
+SUPP_003,Raw Materials,9229595.43,8.57,11.55,49,Snow,Sea,84,High
+SUPP_048,Packaging,2610786.31,10.43,2.15,58,Snow,Sea,83,High
+SUPP_017,Textiles,4509299.93,9.59,7.42,55,Storm,Sea,77,High
+SUPP_028,Raw Materials,3039863.15,12.07,8.89,45,Storm,Rail,80,High
+SUPP_049,Raw Materials,2101660.94,3.82,10.76,11,Snow,Road,43,Medium
+SUPP_013,Raw Materials,2339340.69,6.15,24.96,9,Clear,Air,31,Low
+SUPP_012,Electronics,8070662.64,5.37,19.62,43,Snow,Sea,89,High
+SUPP_011,Machinery,1137330.48,11.94,3.87,19,Snow,Road,73,High
+SUPP_032,Electronics,8558338.75,5.26,29.22,18,Snow,Sea,65,Medium
+SUPP_046,Textiles,2719346.4,0.71,21.45,34,Snow,Rail,49,Medium
+SUPP_032,Electronics,7089852.05,0.56,26.24,55,Rain,Road,69,High
+SUPP_023,Electronics,1172329.34,10.62,27.44,14,Rain,Sea,60,Medium
+SUPP_012,Raw Materials,3615707.23,2.83,19.64,23,Storm,Air,36,Medium
+SUPP_038,Electronics,6336159.69,3.93,28.51,22,Rain,Rail,29,Low
+SUPP_005,Raw Materials,1573691.27,0.25,7.9,17,Snow,Road,41,Medium
+SUPP_022,Electronics,2132752.07,3.69,4.77,34,Storm,Road,26,Low
+SUPP_026,Packaging,6874468.94,12.52,8.25,35,Clear,Sea,39,Medium
+SUPP_010,Electronics,5352120.53,13.97,28.59,18,Clear,Rail,48,Medium
+SUPP_046,Machinery,7401073.76,13.41,13.99,52,Snow,Sea,80,High
+SUPP_039,Electronics,4186954.42,12.77,7.66,55,Storm,Road,86,High
+SUPP_042,Textiles,3757420.78,3.53,17.27,27,Snow,Sea,50,Medium
+SUPP_047,Textiles,3235852.88,13.71,12.87,2,Rain,Air,54,Medium
+SUPP_004,Packaging,8171467.13,14.83,12.28,9,Storm,Road,70,High
+SUPP_048,Electronics,8021656.46,9.11,6.76,59,Snow,Road,53,Medium
+SUPP_026,Packaging,7435986.94,11.58,15.49,17,Rain,Air,56,Medium
+SUPP_050,Machinery,9738738.69,9.98,12.84,20,Clear,Road,16,Low
+SUPP_014,Raw Materials,7324474.68,3.71,5.98,26,Snow,Rail,35,Low
+SUPP_019,Raw Materials,2935374.56,9.47,4.42,42,Clear,Sea,28,Low
+SUPP_032,Machinery,2868800.45,0.1,4.68,27,Storm,Air,44,Medium
+SUPP_023,Electronics,8680178.66,3.58,23.57,3,Storm,Air,50,Medium
+SUPP_032,Machinery,9710501.88,5.67,20.76,6,Snow,Rail,58,Medium
+SUPP_018,Textiles,6176474.23,10.4,12.72,17,Snow,Road,69,High
+SUPP_049,Machinery,4184159.3,6.1,2.05,50,Storm,Air,49,Medium
+SUPP_028,Machinery,270917.99,4.63,27.71,48,Clear,Road,59,Medium
+SUPP_033,Packaging,2453944.5,10.12,6.71,49,Snow,Air,83,High
+SUPP_042,Raw Materials,7080170.53,7.54,26.23,7,Snow,Road,70,High
+SUPP_019,Machinery,6795054.44,8.62,14.92,26,Snow,Road,61,Medium
+SUPP_031,Packaging,4835369.0,5.71,11.53,56,Rain,Air,53,Medium
+SUPP_044,Packaging,1126285.41,14.8,18.96,29,Rain,Rail,52,Medium
+SUPP_019,Textiles,2028972.44,3.68,20.12,58,Clear,Road,40,Medium
+SUPP_003,Textiles,9824786.02,3.05,4.89,25,Clear,Rail,14,Low
+SUPP_027,Electronics,8689555.33,4.49,1.05,30,Snow,Sea,50,Medium
+SUPP_023,Packaging,3437388.75,14.87,16.18,18,Clear,Road,39,Medium
+SUPP_008,Machinery,246271.18,2.11,21.16,19,Rain,Air,41,Medium
+SUPP_026,Electronics,3539836.12,11.39,17.89,33,Clear,Rail,48,Medium
+SUPP_046,Packaging,5691772.64,10.29,1.08,34,Storm,Rail,62,Medium
+SUPP_049,Machinery,1153656.3,6.15,23.36,18,Storm,Sea,65,Medium
+SUPP_012,Raw Materials,632439.17,4.65,5.57,21,Rain,Road,11,Low
+SUPP_048,Textiles,7619555.12,0.34,17.18,18,Storm,Road,50,Medium
+SUPP_028,Textiles,5090172.5,8.49,10.09,13,Clear,Road,35,Low
+SUPP_026,Electronics,7347348.4,13.08,6.58,8,Clear,Air,27,Low
+SUPP_042,Machinery,8983068.27,5.31,16.99,43,Snow,Rail,69,High
+SUPP_043,Textiles,5913849.87,7.92,6.89,22,Snow,Sea,46,Medium
+SUPP_040,Textiles,7979627.66,8.9,3.81,33,Storm,Rail,50,Medium
+SUPP_020,Electronics,7042246.08,11.91,19.24,19,Rain,Air,37,Medium
+SUPP_001,Raw Materials,7116224.0,10.19,1.71,14,Clear,Road,41,Medium
+SUPP_045,Raw Materials,6859070.07,5.46,20.37,4,Clear,Air,27,Low
+SUPP_031,Raw Materials,7988133.6,13.83,29.38,19,Rain,Rail,69,High
+SUPP_041,Textiles,2509690.93,14.94,4.0,18,Rain,Road,37,Medium
+SUPP_020,Machinery,1343761.24,4.98,7.1,32,Rain,Rail,11,Low
+SUPP_028,Electronics,268765.89,12.27,1.4,40,Clear,Air,26,Low
+SUPP_010,Machinery,3682684.51,9.21,21.18,55,Snow,Rail,83,High
+SUPP_002,Machinery,4972804.69,2.09,26.69,37,Rain,Air,40,Medium
+SUPP_019,Textiles,1677279.58,0.6,5.09,46,Snow,Road,40,Medium
+SUPP_022,Electronics,1833997.54,3.46,1.73,20,Clear,Rail,0,Low
+SUPP_027,Machinery,8113125.78,11.97,4.7,59,Storm,Road,74,High
+SUPP_032,Machinery,791379.1,7.7,29.11,51,Snow,Rail,73,High
+SUPP_015,Electronics,755616.1,2.92,23.37,13,Clear,Rail,17,Low
+SUPP_037,Packaging,9563521.92,10.5,7.03,46,Clear,Sea,46,Medium
+SUPP_042,Machinery,4820187.2,7.75,7.97,6,Snow,Road,46,Medium
+SUPP_032,Textiles,5882771.25,11.49,29.8,17,Storm,Rail,88,High
+SUPP_045,Machinery,5109961.97,7.2,8.85,14,Clear,Air,17,Low
+SUPP_019,Raw Materials,9460557.23,13.95,12.06,26,Snow,Sea,76,High
+SUPP_029,Raw Materials,639271.89,1.67,6.35,25,Rain,Sea,17,Low
+SUPP_039,Machinery,5458219.48,10.7,7.12,54,Rain,Sea,65,Medium
+SUPP_047,Machinery,7057377.79,8.42,27.2,48,Snow,Sea,85,High
+SUPP_031,Raw Materials,4315215.0,1.99,17.42,5,Rain,Sea,27,Low
+SUPP_045,Electronics,1741398.64,5.1,18.63,27,Snow,Air,50,Medium
+SUPP_012,Raw Materials,1678058.8,1.96,1.77,27,Rain,Rail,20,Low
+SUPP_007,Machinery,8804113.84,0.77,22.21,9,Snow,Sea,61,Medium
+SUPP_016,Raw Materials,1025675.59,6.6,28.91,53,Clear,Road,53,Medium
+SUPP_023,Packaging,4922555.12,11.46,25.17,20,Storm,Air,80,High
+SUPP_012,Textiles,8926921.52,7.11,16.31,58,Clear,Road,53,Medium
+SUPP_022,Machinery,1369409.71,3.58,14.15,22,Clear,Air,3,Low
+SUPP_008,Textiles,7647924.27,6.77,23.91,15,Rain,Rail,41,Medium
+SUPP_017,Packaging,1175342.41,2.43,13.67,31,Storm,Road,59,Medium
+SUPP_050,Textiles,7448265.48,8.75,12.26,43,Storm,Air,65,Medium
